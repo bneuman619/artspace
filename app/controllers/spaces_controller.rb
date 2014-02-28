@@ -9,6 +9,8 @@ class SpacesController < ApplicationController
   end
 
   def show
+    space = Space.find(params[:id])
+    @calendar_info = calendar_info(space).to_json
   end
 
   def edit
