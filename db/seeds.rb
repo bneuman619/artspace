@@ -34,5 +34,59 @@ Use.create(category: "any")
   			  email: Faker::Internet.email,
   			  password: "password",
   			  password_confirmation: "password"
-  	)
+  			)
 end
+
+#------------------------------------Seed Spaces---------------------------------
+
+5.times do
+  Space.create(creator_id: 1,
+  			  title: Faker::Company.name,
+  			  description: Faker::Lorem.paragraph, 
+  			  dimensions: "8 ft by 100 ft",
+  			  ammenities: Faker::Lorem.paragraph,
+  			  rate: 20.00,
+  			  address: Faker::Address.street_address,
+  			  city: "Chicago",
+  			  state: "IL",
+  			  zipcode: Faker::Address.zip_code,
+  			  email: Faker::Internet.email,
+  			  phone: Faker::PhoneNumber.phone_number)
+end
+5.times do
+  Space.create(creator_id: 2,
+  			  title: Faker::Company.name,
+  			  description: Faker::Lorem.paragraph, 
+  			  dimensions: "20 ft by 60 ft",
+  			  ammenities: Faker::Lorem.paragraph,
+  			  rate: 10.00,
+  			  address: Faker::Address.street_address,
+  			  city: "Chicago",
+  			  state: "IL",
+  			  zipcode: Faker::Address.zip_code,
+  			  email: Faker::Internet.email,
+  			  phone: Faker::PhoneNumber.phone_number)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
