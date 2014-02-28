@@ -5,6 +5,7 @@ Artspace::Application.routes.draw do
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy", as: "logout"
   get "signup", to: "users#new"
+  get "users/:id/manage", to: "users#manage", as: "manage"
 
   resources :users, except: [:new, :index]
 
