@@ -94,9 +94,16 @@ ActiveRecord::Schema.define(version: 20140227221740) do
   add_index "spaces", ["creator_id"], name: "index_spaces_on_creator_id", using: :btree
 
   create_table "stripes", force: true do |t|
+    t.integer  "creator_id"
+    t.string   "secret_api_key"
+    t.string   "publishable_api_key"
+    t.string   "refresh_token"
+    t.string   "stripe_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "stripes", ["creator_id"], name: "index_stripes_on_creator_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
