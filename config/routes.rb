@@ -5,8 +5,25 @@ Artspace::Application.routes.draw do
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy", as: "logout"
   get "signup", to: "users#new"
+  get "users/:id/manage", to: "users#manage", as: "manage"
 
-  resources :users
+  resources :users, except: [:new, :index]
+
+  resources :spaces
+
+  resources :reservations, only: [:create, :show, :destroy]
+
+
+  #homepage is still welcome#index
+  #not logged in home is welcome#index
+  #logged in home is users#show
+  #clicking on a space in the search results takes us to spaces#show
+
+  #clicking the book it button creates a reservation, involves parsing calendar shit and talking to stripe
+
+  #edit and create a space will be the same form
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
