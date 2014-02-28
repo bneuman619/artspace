@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
+//= require calendar/jquery_browser_backport
+//= require calendar/date
+//= require calendar/jquery.weekcalendar
 //= require turbolinks
 //= require_tree .
