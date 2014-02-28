@@ -87,6 +87,16 @@ Admin.create(administrator_id: 4,
   				)
 end
 
+#------------------------Seed Availabilities---------------------------------------
+
+Space.all.each do |space|
+  space.availabilities.create(space_id: space.id,
+  							  start_time: '09:00',
+  							  end_time: '17:00',
+  							  day: 1
+  							)
+end
+
 
 
 
