@@ -10,6 +10,8 @@ Artspace::Application.routes.draw do
 
   resources :spaces
 
+  resources :reservations, only: [:create, :show, :destroy]
+
 
   #homepage is still welcome#index
   #not logged in home is welcome#index

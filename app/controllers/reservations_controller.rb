@@ -1,8 +1,5 @@
 class ReservationsController < AplicationController
 
-  def index
-  end
-
   def create
   end
 
