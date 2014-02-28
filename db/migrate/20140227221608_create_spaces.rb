@@ -16,5 +16,7 @@ class CreateSpaces < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :spaces, :creator_id
   end
 end

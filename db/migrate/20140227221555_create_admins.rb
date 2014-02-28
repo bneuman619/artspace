@@ -6,5 +6,8 @@ class CreateAdmins < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :admins, :administrator_id
+    add_index :admins, :space_id
   end
 end

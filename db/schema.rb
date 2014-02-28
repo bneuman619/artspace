@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20140227221740) do
     t.datetime "updated_at"
   end
 
+  add_index "admins", ["administrator_id"], name: "index_admins_on_administrator_id", using: :btree
+  add_index "admins", ["space_id"], name: "index_admins_on_space_id", using: :btree
+
   create_table "availabilities", force: true do |t|
     t.integer  "space_id"
     t.datetime "start_time"
@@ -31,6 +34,8 @@ ActiveRecord::Schema.define(version: 20140227221740) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "availabilities", ["space_id"], name: "index_availabilities_on_space_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "space_id"
@@ -41,6 +46,8 @@ ActiveRecord::Schema.define(version: 20140227221740) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "photos", ["space_id"], name: "index_photos_on_space_id", using: :btree
 
   create_table "reservations", force: true do |t|
     t.integer  "renter_id"
@@ -53,6 +60,9 @@ ActiveRecord::Schema.define(version: 20140227221740) do
     t.datetime "updated_at"
   end
 
+  add_index "reservations", ["renter_id"], name: "index_reservations_on_renter_id", using: :btree
+  add_index "reservations", ["space_id"], name: "index_reservations_on_space_id", using: :btree
+
   create_table "space_uses", force: true do |t|
     t.integer  "use_id"
     t.integer  "space_id"
@@ -60,6 +70,9 @@ ActiveRecord::Schema.define(version: 20140227221740) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "space_uses", ["space_id"], name: "index_space_uses_on_space_id", using: :btree
+  add_index "space_uses", ["use_id"], name: "index_space_uses_on_use_id", using: :btree
 
   create_table "spaces", force: true do |t|
     t.integer  "creator_id"
@@ -77,6 +90,8 @@ ActiveRecord::Schema.define(version: 20140227221740) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "spaces", ["creator_id"], name: "index_spaces_on_creator_id", using: :btree
 
   create_table "stripes", force: true do |t|
     t.datetime "created_at"

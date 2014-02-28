@@ -7,5 +7,8 @@ class CreateSpaceUses < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :space_uses, :use_id
+    add_index :space_uses, :space_id
   end
 end

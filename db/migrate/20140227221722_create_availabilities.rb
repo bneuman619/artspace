@@ -8,5 +8,7 @@ class CreateAvailabilities < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :availabilities, :space_id
   end
 end

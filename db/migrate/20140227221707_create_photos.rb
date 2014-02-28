@@ -9,5 +9,7 @@ class CreatePhotos < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :photos, :space_id
   end
 end

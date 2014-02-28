@@ -10,5 +10,8 @@ class CreateReservations < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :reservations, :renter_id
+    add_index :reservations, :space_id
   end
 end
