@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20140227221740) do
 
   create_table "availabilities", force: true do |t|
     t.integer  "space_id"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time     "start_time"
+    t.time     "end_time"
     t.integer  "day"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -97,6 +97,14 @@ Space.all.each do |space|
   							)
 end
 
+#-----------------------Seed SpaceUses----------------------------------------------
+
+20.times do
+  SpaceUse.create(use_id: rand(1..14),
+  				  space_id: rand(1..10),
+				)
+end
+
 
 
 
