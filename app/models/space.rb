@@ -1,6 +1,6 @@
 class Space < ActiveRecord::Base
   has_many :admins
-  has_many :users, through: :admins
+  has_many :administrators, through: :admins
 
   has_many :reservations
   has_many :renters, through: :reservations

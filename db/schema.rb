@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140227221740) do
   enable_extension "plpgsql"
 
   create_table "admins", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "administrator_id"
     t.integer  "space_id"
     t.datetime "created_at"
     t.datetime "updated_at"

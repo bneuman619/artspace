@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :admins
-  has_many :spaces, through: :admins
+  has_many :admins, foreign_key: :administrator_id
+  has_many :spaces_administrated, through: :admins, source: :space
 
   has_many :spaces_created, class_name: "Space", foreign_key: "creator_id"
 
