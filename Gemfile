@@ -25,6 +25,11 @@ gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+# gems for loading photos
+gem 'aws-sdk' # S3 API
+gem 'paperclip' # file attachment syntax and callbacks
+gem 's3_direct_upload' # direct upload form helper and assests
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 

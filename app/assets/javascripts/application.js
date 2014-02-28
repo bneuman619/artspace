@@ -17,4 +17,5 @@
 //= require calendar/date
 //= require calendar/jquery.weekcalendar
 //= require turbolinks
+//= require s3_direct_upload
 //= require_tree .
