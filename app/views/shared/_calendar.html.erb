@@ -3,6 +3,12 @@
 </script>
 
 <button id="make_reservation" data-space-id='<%=params[:id]%>'>Make Reservation</button>
-
 <div id="calendar">
 </div>
+
+<script>
+
+$(document).ready(function() {
+  show_calendar("#calendar");
+});
+</script>
