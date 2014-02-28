@@ -6,9 +6,19 @@ Artspace::Application.routes.draw do
   delete "logout", to: "sessions#destroy", as: "logout"
   get "signup", to: "users#new"
 
-  resources :users
+  resources :users, except: [:new, :index]
 
   resources :spaces
+
+
+  #homepage is still welcome#index
+  #not logged in home is welcome#index
+  #logged in home is users#show
+  #clicking on a space in the search results takes us to spaces#show
+
+  #clicking the book it button creates a reservation, involves parsing calendar shit and talking to stripe
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
