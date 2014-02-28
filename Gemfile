@@ -46,3 +46,7 @@ gem 'bcrypt-ruby'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#for deploying to heroku
+gem 'rails_12factor', group: :production
+ruby "2.1.1"
