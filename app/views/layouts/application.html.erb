@@ -9,8 +9,14 @@
 <body>
   <div class="nav">
     <% if session[:current_user_id] != nil %>
+    <% user = User.find(session[:current_user_id]) %>
     <%= link_to 'Logout', logout_path, method: :delete %>
     <%= link_to 'Home', user_path %>
+        <% if user.spaces_administrated == [] && user.spaces_created == [] %>
+        <% else %>
+        <%= link_to 'Manage', manage_path, method: :get %>
+        <% end %>
+
     <% else %>
     <%= link_to 'Login', login_path, method: :get %>
     <%= link_to 'Sign Up', signup_path, method: :get %>
