@@ -1,0 +1,47 @@
+ body {
+      font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+      margin: 0;
+    }
+
+    h1 {
+      margin:0 0 2em;
+      padding: 0.5em;
+      font-size: 1.3em;
+    }
+
+    p.description {
+      font-size: 0.8em;
+      padding: 1em;
+      position: absolute;
+      top: 1.2em;
+      margin-right: 400px;
+    }
+
+    #calendar_selection {
+      font-size: 0.7em;
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      padding: 1em;
+      background: #ffc;
+      border: 1px solid #dda;
+      width: 270px;
+    }
+
+    #message {
+      font-size: 0.7em;
+      position: absolute;
+      top: 1em;
+      right: 320px;
+      padding: 1em;
+      background: #ddf;
+      border: 1px solid #aad;
+      width: 270px;
+    }
+
+#calendar {
+  margin: 5% 20% 10% 10%;
+  width: 80%;
+  height: 35%;
+  border: solid 1px gray;
+}
