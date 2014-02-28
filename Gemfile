@@ -35,6 +35,9 @@ end
 # For safe safe passwords!
 gem 'bcrypt-ruby'
 
+#For seeding fake data
+gem 'faker'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
