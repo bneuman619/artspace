@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20140227221740) do
   end
 
   create_table "uses", force: true do |t|
-    t.string   "type"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
