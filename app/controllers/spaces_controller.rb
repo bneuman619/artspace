@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = Space.all
+    @spaces = Space.search(params[:search])
   end
 
   def new
