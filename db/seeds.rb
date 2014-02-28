@@ -42,7 +42,7 @@ end
 5.times do
   Space.create(creator_id: 1,
   			  title: Faker::Company.name,
-  			  description: Faker::Lorem.paragraph, 
+  			  description: Faker::Lorem.paragraph,
   			  dimensions: "8 ft by 100 ft",
   			  ammenities: Faker::Lorem.paragraph,
   			  rate: 20.00,
@@ -56,7 +56,7 @@ end
 5.times do
   Space.create(creator_id: 2,
   			  title: Faker::Company.name,
-  			  description: Faker::Lorem.paragraph, 
+  			  description: Faker::Lorem.paragraph,
   			  dimensions: "20 ft by 60 ft",
   			  ammenities: Faker::Lorem.paragraph,
   			  rate: 10.00,
@@ -77,24 +77,30 @@ Admin.create(administrator_id: 4,
 
 #------------------------Seed Reservations------------------------------------------
 
-20.times do
-  Reservation.create(renter_id: rand(1..20),
-  					 space_id: rand(1..10),
-  					 start_time: DateTime.new(2014,3,3,3,0,0,'+7'),
-  					 end_time: DateTime.new(2014,3,3,4,0,0,'+7'),
-  					 num_people: rand(1..10),
-  					 intended_use: Faker::Lorem.paragraph
-  				)
+Space.all.each do |space|
+  5.times do
+    start_hour = rand(13..21)
+    end_hour = start_hour + 2
+    day = rand(24..28)
+    space.reservations.create(renter_id: rand(1..20),
+               start_time: DateTime.new(2014,2,day,start_hour,0,0),
+               end_time: DateTime.new(2014,2,day,end_hour,0,0),
+               num_people: rand(1..10),
+               intended_use: Faker::Lorem.paragraph
+            )
+  end
 end
 
 #------------------------Seed Availabilities---------------------------------------
 
 Space.all.each do |space|
-  space.availabilities.create(space_id: space.id,
-  							  start_time: '09:00',
-  							  end_time: '17:00',
-  							  day: 1
-  							)
+  (1..5).each do |day|
+    space.availabilities.create(space_id: space.id,
+                    start_time: DateTime.new(1011, 3, 3, 9, 0, 0),
+                    end_time: DateTime.new(1011, 3, 3, 17, 0, 0),
+                    day: day
+                  )
+  end
 end
 
 #-----------------------Seed SpaceUses----------------------------------------------

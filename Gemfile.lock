@@ -121,8 +121,8 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 4.0.0)
-  faker
   dotenv-rails
+  faker
   jbuilder (~> 1.2)
   jquery-rails
   pg
