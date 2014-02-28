@@ -10,6 +10,7 @@
   <div class="nav">
     <% if session[:current_user_id] != nil %>
     <%= link_to 'Logout', logout_path, method: :delete %>
+    <%= link_to 'Home', user_path %>
     <% else %>
     <%= link_to 'Login', login_path, method: :get %>
     <%= link_to 'Sign Up', signup_path, method: :get %>
