@@ -1,9 +1,12 @@
 <script id='calendar_info' type='application/json'>
  <%= @calendar_info.html_safe %>
 </script>
-
-<button id="make_reservation" data-space-id='<%=params[:id]%>'>Make Reservation</button>
-<div id="calendar">
+<div id="calendarbox">
+  <% if current_user %>
+  <button id="make_reservation" data-space-id='<%=params[:id]%>'>Make Reservation</button>
+  <% end %>
+  <div id="calendar">
+  </div>
 </div>
 
 <script>
