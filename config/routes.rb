@@ -21,6 +21,8 @@ Artspace::Application.routes.draw do
 
   #clicking the book it button creates a reservation, involves parsing calendar shit and talking to stripe
 
+  #edit and create a space will be the same form
+
 
 
 
