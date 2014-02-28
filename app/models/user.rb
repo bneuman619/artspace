@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :spaces_created, class_name: "Space", foreign_key: "creator_id"
 
   has_many :reservations, foreign_key: :renter_id
-  has_many :rentals, through: :reservations
+  has_many :rentals, through: :reservations, source: :space
 
   has_secure_password
   validates_presence_of :password, :on => :create

@@ -75,6 +75,18 @@ Admin.create(administrator_id: 3,
 Admin.create(administrator_id: 4,
 			 space_id: 2)
 
+#------------------------Seed Reservations------------------------------------------
+
+20.times do
+  Reservation.create(renter_id: rand(1..20),
+  					 space_id: rand(1..10),
+  					 start_time: DateTime.new(2014,3,3,3,0,0,'+7'),
+  					 end_time: DateTime.new(2014,3,3,4,0,0,'+7'),
+  					 num_people: rand(1..10),
+  					 intended_use: Faker::Lorem.paragraph
+  				)
+end
+
 
 
 
