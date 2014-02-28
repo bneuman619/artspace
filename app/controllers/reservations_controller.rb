@@ -1,7 +1,6 @@
 class ReservationsController < ApplicationController
 
   def create
-    make_reservations(params["data"])
     @space = Space.find(params[:spaceId])
     reservation_data = params["data"]
     reservations = reservation_data.values.collect do |reservation_datum|
