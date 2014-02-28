@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require 'faker'
+
+
+#------------------------------------Seed Uses------------------------------------
 Use.create(category: "dance")
 Use.create(category: "audio")
 Use.create(category: "studio art")
@@ -20,3 +24,88 @@ Use.create(category: "exhibition")
 Use.create(category: "reading")
 Use.create(category: "screening")
 Use.create(category: "any")
+
+#-----------------------------------Seed Users-------------------------------------
+
+20.times do
+  User.create(first_name: Faker::Name.first_name,
+  			  last_name: Faker::Name.last_name,
+  			  phone: Faker::PhoneNumber.phone_number,
+  			  email: Faker::Internet.email,
+  			  password: "password",
+  			  password_confirmation: "password"
+  			)
+end
+
+#------------------------------------Seed Spaces---------------------------------
+
+5.times do
+  Space.create(creator_id: 1,
+  			  title: Faker::Company.name,
+  			  description: Faker::Lorem.paragraph, 
+  			  dimensions: "8 ft by 100 ft",
+  			  ammenities: Faker::Lorem.paragraph,
+  			  rate: 20.00,
+  			  address: Faker::Address.street_address,
+  			  city: "Chicago",
+  			  state: "IL",
+  			  zipcode: Faker::Address.zip_code,
+  			  email: Faker::Internet.email,
+  			  phone: Faker::PhoneNumber.phone_number)
+end
+5.times do
+  Space.create(creator_id: 2,
+  			  title: Faker::Company.name,
+  			  description: Faker::Lorem.paragraph, 
+  			  dimensions: "20 ft by 60 ft",
+  			  ammenities: Faker::Lorem.paragraph,
+  			  rate: 10.00,
+  			  address: Faker::Address.street_address,
+  			  city: "Chicago",
+  			  state: "IL",
+  			  zipcode: Faker::Address.zip_code,
+  			  email: Faker::Internet.email,
+  			  phone: Faker::PhoneNumber.phone_number)
+end
+
+#-------------------------Seed Admins-----------------------------------------------
+
+Admin.create(administrator_id: 3,
+			 space_id: 1)
+Admin.create(administrator_id: 4,
+			 space_id: 2)
+
+#------------------------Seed Reservations------------------------------------------
+
+20.times do
+  Reservation.create(renter_id: rand(1..20),
+  					 space_id: rand(1..10),
+  					 start_time: DateTime.new(2014,3,3,3,0,0,'+7'),
+  					 end_time: DateTime.new(2014,3,3,4,0,0,'+7'),
+  					 num_people: rand(1..10),
+  					 intended_use: Faker::Lorem.paragraph
+  				)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
