@@ -68,6 +68,13 @@ end
   			  phone: Faker::PhoneNumber.phone_number)
 end
 
+#-------------------------Seed Admins-----------------------------------------------
+
+Admin.create(administrator_id: 3,
+			 space_id: 1)
+Admin.create(administrator_id: 4,
+			 space_id: 2)
+
 
 
 
