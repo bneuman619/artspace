@@ -1,0 +1,11 @@
+<ul>
+  <%= form_for(@user) do |f| %>
+  <li><%= f.text_field     :first_name, placeholder: "First name" %></li>
+  <li><%= f.text_field     :last_name, placeholder: "Last name" %></li>
+  <li><%= f.telephone_field :phone, placeholder: "Phone number" %></li>
+  <li><%= f.email_field    :email, placeholder: "Email" %></li>
+  <li><%= f.password_field :password, type: "password", placeholder: "Password" %></li>
+  <li><%= f.password_field :password_confirmation, type: "password", placeholder: "Confirm Password" %></li>
+  <li><%= f.submit "Sign Up" %></li>
+  <% end %>
+</ul>

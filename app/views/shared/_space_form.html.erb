@@ -1,0 +1,17 @@
+<ul>
+  <%= form_for(@space) do |f| %>
+  <li><%= f.text_field   :title, placeholder: "Title" %></li>
+  <li><%= f.text_area    :description, placeholder: "Description", size: "60x12" %></li>
+  <li><%= f.text_field   :dimensions, placeholder: "Dimensions" %></li>
+  <li><%= f.text_field   :ammenities, placeholder: "Ammenities" %></li>
+  <li><%= f.number_field :rate, placeholder: "Rate" %></li>
+  <li><%= f.text_field   :address, placeholder: "Address" %></li>
+  <li><%= f.text_field   :city, placeholder: "City" %></li>
+  <li><%= f.text_field   :state, placeholder: "State" %></li>
+  <li><%= f.number_field :zipcode, placeholder: "Zipcode" %></li>
+  <li><%= f.email_field  :email, placeholder: "Email" %></li>
+  <li><%= f.telephone_field :phone, placeholder: "Phone" %></li>
+
+  <li><%= f.submit "Create Space" %></li>
+  <% end %>
+</ul>
