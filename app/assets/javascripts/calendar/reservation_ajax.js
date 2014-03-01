@@ -10,7 +10,7 @@ $(document).ready(function() {
         console.log(response);
       },
       error: function(xhr, error) {
-        alert("error" + error);
+        alert("there was an error");
       }
     });
   });

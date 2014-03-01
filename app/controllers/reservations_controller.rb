@@ -17,6 +17,7 @@ class ReservationsController < ApplicationController
       totalCharge: (total_hours * @space.rate).round(2),
       reservation_ids: reservations.collect(&:id)
     }
+   
     render json: reservation_info.to_json
   end
 
