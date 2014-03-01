@@ -13,7 +13,12 @@ Artspace::Application.routes.draw do
 
   resources :reservations, only: [:create, :show, :destroy]
 
+
   post "uploaded", to: "spaces#add_photo"
+
+  resources :payments, only: [:new]
+  get "payments/callback", to: "payments#callback", as: "payments_callback"
+
 
   #homepage is still welcome#index
   #not logged in home is welcome#index

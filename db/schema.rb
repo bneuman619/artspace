@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227221740) do
+ActiveRecord::Schema.define(version: 20140228221011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 20140227221740) do
   end
 
   add_index "availabilities", ["space_id"], name: "index_availabilities_on_space_id", using: :btree
+
+  create_table "payments", force: true do |t|
+    t.integer  "creator_id"
+    t.string   "secret_api_key"
+    t.string   "publishable_api_key"
+    t.string   "refresh_token"
+    t.string   "stripe_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "payments", ["creator_id"], name: "index_payments_on_creator_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "space_id"
