@@ -9,4 +9,14 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates_presence_of :password, :on => :create
+
+  def upcoming_reservations
+  	reservations.where("start_time > ?", Date.today)
+  end
+
+  def favorite_spaces
+  	reservations.order(:id).uniq.limit(3).collect do |r|
+  	  r.space
+  	end
+  end
 end
