@@ -18,7 +18,8 @@ Artspace::Application.routes.draw do
 
   resources :payments, only: [:new]
   get "payments/callback", to: "payments#callback", as: "payments_callback"
-
+  post "payments/charge", to: "payments#charge", as: "payment_charge"
+  get "payments/pos", to: "payments#pos", as: "pos"
 
   #homepage is still welcome#index
   #not logged in home is welcome#index

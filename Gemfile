@@ -54,7 +54,7 @@ gem 'faker'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 #for deploying to heroku
 gem 'rails_12factor', group: :production

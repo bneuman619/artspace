@@ -1,8 +1,10 @@
-<%= render "shared/top_nav" %>
-this is the spaces#show page where we will see photos and a calendar where we can make reservations
-there will be a BOOK IT button where we can click to pay for the space through stripe
-
-<%= render "shared/calendar" %>
+Charge
+<br><br><br><br>
+<div id="space_description">Studio B, 7-9pm on March 7, 2014</div>
+<br><br>
+<input type="hidden" id="space_total" value="100">
+<br><br>
+<button id="book_it">Custom Purchase Example</button>
 
 <script>
   var handler = StripeCheckout.configure({
@@ -36,7 +38,7 @@ there will be a BOOK IT button where we can click to pay for the space through s
     }
   });
   
-  $('#make_reservation').on('click', function(e) {
+  $('#book_it').on('click', function(e) {
     handler.open({
       name: 'Artspace',
       description: $('#space_description').text(),
