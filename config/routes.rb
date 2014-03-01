@@ -9,8 +9,11 @@ Artspace::Application.routes.draw do
 
   resources :users, except: [:new, :index]
 
-  resources :spaces
+  resources :spaces do
+    resources :availabilities, only: [:new, :edit, :update]
+  end
 
+  resources :availabilities, only: [:create]
   resources :reservations, only: [:create, :show, :destroy]
 
 

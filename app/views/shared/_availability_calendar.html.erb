@@ -1,0 +1,11 @@
+<div id="calendarbox">
+  <button id="create_availabilities" data-space-id='<%=params[:space_id]%>'>Create availabilities</button>
+  <div id="calendar">
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  show_creation_calendar("#calendar");
+});
+</script>
