@@ -8,7 +8,8 @@ $(document).ready(function() {
       //console.log(token.id);
       var data = { token_key: token.id, 
                amount: totCharge, 
-               description: title
+               description: title,
+               space_id: $("#make_reservation").data("space-id")
              };
 
       $.post( '/payments/charge', data, function(response) {

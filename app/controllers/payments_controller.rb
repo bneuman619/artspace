@@ -30,10 +30,10 @@ class PaymentsController < ApplicationController
 
     token = params["token_key"] # obtained with checkout.js
     amount = params["amount"]
-    
+    space = Space.find(params["space_id"])
     description = params["description"]
-
-    Stripe.api_key = current_user.secret_key #current_space.creator.secret_key
+    debugger
+    Stripe.api_key = space.creator.secret_key
 
     @response =  Stripe::Charge.create(
       :amount => amount,
