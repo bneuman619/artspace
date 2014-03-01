@@ -1,6 +1,6 @@
-class CreateStripes < ActiveRecord::Migration
+class CreatePayments < ActiveRecord::Migration
   def change
-    create_table :stripes do |t|
+    create_table :payments do |t|
       t.integer :creator_id
       t.string :secret_api_key
       t.string :publishable_api_key
@@ -9,7 +9,6 @@ class CreateStripes < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    add_index :stripes, :creator_id
+    add_index :payments, :creator_id
   end
 end

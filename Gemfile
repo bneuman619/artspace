@@ -62,3 +62,8 @@ ruby "2.0.0"
 
 # Use dotenv for handling environment variables
 gem 'dotenv-rails'
+
+# Use stripe to process payments
+gem 'stripe'
+gem 'oauth2'
+
