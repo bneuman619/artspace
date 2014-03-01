@@ -42,7 +42,6 @@ class PaymentsController < ApplicationController
       :description => description
     )
 
-    return @response
   end
 
   def pos

@@ -5,7 +5,7 @@ $(document).ready(function() {
     key: $('#pub_key').val(),
     //image: '/square-image.png',
     token: function(token, args) {
-      console.log(token.id);
+      //console.log(token.id);
       var data = { token_key: token.id, 
                amount: totCharge, 
                description: title
@@ -13,7 +13,7 @@ $(document).ready(function() {
 
       $.post( '/payments/charge', data, function(response) {
         alert( 'success' );
-        console.log(response);
+        //console.log(response);
       })
         .done(function() {
           alert( 'second success' );
@@ -30,14 +30,14 @@ $(document).ready(function() {
 
   $("#make_reservation").on("click", function(event) {
     event.preventDefault();
-    console.log("stuff");
+    //console.log("stuff");
     $.ajax({
       data: {data: modifiedEvents, spaceId: $("#make_reservation").data().spaceId},
       type: 'post',
       url: '/reservations/',
       dataType: "json",
       success: function(response) {
-        console.log(response.totalCharge);
+        //console.log(response.totalCharge);
         totCharge = response.totalCharge;
         title = response.title;
         handler.open({
