@@ -120,7 +120,9 @@ end
 # https://s3.amazonaws.com/rentspaces/uploads/1393632926299-iyfjjlfl91zwipb9-9c680df8f63b16cead1273b97b413c62/mms_picture+(1).jpg?AWSAccessKeyId=ASIAI5T4P5OB4PR5JJEQ&Expires=1393634558&Signature=fBrBXT5aczzAguXty1CEN7MC4Lk%3D&x-amz-security-token=AQoDYXdzEML//////////wEagAJU8Af/6juOD35xVKWCHiOSQ1miT8ZcnK9t7Fqrr3oFaMGb/dgjbIYEpouJJH4L9ykQD75z5iTM4%2BVqDPcUn6ZnPFs0WlqdYdRb7Tdm7mTMdjHaEr8gJjv9vMTqf1HZl5a92j06cW9H9phfv85G/bbRdGy716Ko%2Bz/jAGSZFsFfT8J4b%2BG/ABCBQInM0P88Tc3FBGgceXBjmToz7CiyPp2PwQjGlrm9GmXTJP6nq6LIVIqDh9ZjK2lyUaXNDSiStHze9GhOR9NVJcnLNhBaEAUWiuvwmGeGvBlzIAC/eo/CqFF4KX38Qoejl6J4vi977qaA6K7LoFf0zwAj98JL0PtgINOCw5gF
 
 
-
+#-----------------------Seed Payments----------------------------------------------
+Payment.create(creator_id: 1, secret_api_key: "sk_test_mC0xJbEJjQn6fTFFXbF1iY0H", publishable_api_key: "pk_test_pnsJYKvwITr1blAJDXU8Yjv7", refresh_token: "rt_3aBCE7XsHeyoi5yqjCXndALQ6JIKltGTHH11KuPS0KBdUehx", stripe_user_id: "acct_103aBC2tZaA3CnwC")
+Payment.create(creator_id: 2, secret_api_key: "sk_test_bZj3yCI2T3bzV85XRzvzRzFl", publishable_api_key: "pk_test_GoDAjXI0FKBPyEUuT5qmNGbv", refresh_token: "rt_3aOB4oZsceUP5AVIBQ4hmYHeo715KjVrm9iGhmFVzDqLplDf", stripe_user_id: "acct_103Zex26RoKDB1cW")
 
 
 
