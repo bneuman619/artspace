@@ -21,4 +21,12 @@ class User < ActiveRecord::Base
   	  r.space
   	end
   end
+
+  def publishable_key
+    self.payments.first.publishable_api_key
+  end
+
+  def secret_key
+    self.payments.first.secret_api_key
+  end
 end

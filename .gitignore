@@ -17,3 +17,6 @@
 
 # Ignore local .env file
 /.env.local
+
+# Ignore local files
+/.DS_Store

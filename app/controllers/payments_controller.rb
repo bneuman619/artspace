@@ -26,4 +26,28 @@ class PaymentsController < ApplicationController
     end
   end
 
+  def charge
+
+    token = params["token_key"] # obtained with checkout.js
+    amount = params["amount"]
+    
+    description = params["description"]
+
+    Stripe.api_key = current_user.secret_key #current_space.creator.secret_key
+
+    @response =  Stripe::Charge.create(
+      :amount => amount,
+      :currency => "usd",
+      :card => token,
+      :description => description
+    )
+
+    return @response
+  end
+
+  def pos
+    @publishable_key = current_user.publishable_key #current_space.creator.publishable_key
+    @email = current_user.email
+  end
+
 end
