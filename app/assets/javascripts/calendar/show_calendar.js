@@ -4,13 +4,18 @@ function show_calendar(selector){
 }
 
 function show_creation_calendar(selector){
-  // var eventData = {options: {
-  //       timeslotsPerHour: 3,
-  //       timeslotHeight: 30,
-  //       defaultFreeBusy: {free: true}
-  //     }}
+  var eventData = {
+    options: {
+        timeslotsPerHour: 3,
+        timeslotHeight: 30,
+        defaultFreeBusy: {free: true}
+      },
 
-  var calendar = make_creation_calendar();
+    events: [],
+    freebusys: [],
+  };
+
+  var calendar = make_creation_calendar(eventData);
   $(selector).weekCalendar(calendar);
 }
 

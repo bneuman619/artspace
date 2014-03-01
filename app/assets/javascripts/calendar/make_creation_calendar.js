@@ -1,6 +1,6 @@
 modifiedEvents = []
 
-function make_creation_calendar() {
+function make_creation_calendar(events_input) {
   var calendar = {
     timeslotsPerHour: 4,
     scrollToHourMillis : 0,
@@ -62,6 +62,8 @@ function make_creation_calendar() {
 
       modifiedEvents.push(calEvent);
     },
+
+    data: get_data(events_input),
 
     displayOddEven: true,
     displayFreeBusys: true,
