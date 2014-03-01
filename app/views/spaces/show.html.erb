@@ -1,48 +1,5 @@
 <%= render "shared/top_nav" %>
 this is the spaces#show page where we will see photos and a calendar where we can make reservations
 there will be a BOOK IT button where we can click to pay for the space through stripe
-
+<input type="hidden" id="pub_key" value="<%= @publishable_key %>">
 <%= render "shared/calendar" %>
-
-<script>
-  // var handler = StripeCheckout.configure({
-  //   //key: 'pk_test_XYAoxUJ6VE4GGzZr7hQujucR', //Our publishable api key
-  //   key: '<%= @publishable_key %>',
-  //   //image: '/square-image.png',
-  //   token: function(token, args) {
-  //     console.log(token.id);
-  //     data = { token_key: token.id, 
-  //              amount: $('#space_total').val(), 
-  //              description: $('#space_description').text()
-  //            };
-
-  //     $.post( '/payments/charge', data, function(response) {
-  //       alert( 'success' );
-  //       console.log(response);
-  //     })
-  //       .done(function() {
-  //         alert( 'second success' );
-  //       })
-  //       .fail(function() {
-  //         alert( 'error' );
-  //       })
-  //       .always(function() {
-  //         alert( 'finished' );
-  //     });
-       
-  //     // window.location = "/payments/process?token_id=" + token.id;
-  //     // Use the token to create the charge with a server-side script.
-  //     // You can access the token ID with `token.id`
-  //   }
-  // });
-  
-  // $('#make_reservation').on('click', function(e) {
-  //   handler.open({
-  //     name: 'Artspace',
-  //     description: $('#space_description').text(),
-  //     email: '<%= @email %>',
-  //     amount: $('#space_total').val()
-  //   });
-  //   e.preventDefault();
-  // });
-</script>

@@ -14,10 +14,12 @@ class ReservationsController < ApplicationController
     
     reservation_info = {
       spaceId: @space.id,
-      totalCharge: (total_hours * @space.rate).round(2),
-      reservation_ids: reservations.collect(&:id)
+      totalCharge: ((total_hours * @space.rate).round(2)) * 100,
+      reservation_ids: reservations.collect(&:id),
+      space_title: @space.title,
+      email: current_user.email
     }
-   
+  
     render json: reservation_info.to_json
   end
 
