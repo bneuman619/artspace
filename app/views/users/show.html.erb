@@ -7,3 +7,9 @@ this page will show a user's favorite places as well as their upcoming rentals a
   <p><%= r.space.title %></p>
   <% end %>
 </div>
+<div id="favorite">
+  <h2>Favorite Spaces</h2>
+  <% current_user.favorite_spaces.each do |fave| %>
+  <p><%= fave.title %></p>
+  <% end %>
+</div>
