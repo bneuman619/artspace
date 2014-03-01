@@ -32,7 +32,7 @@ class PaymentsController < ApplicationController
     amount = params["amount"]
     space = Space.find(params["space_id"])
     description = params["description"]
-    debugger
+    
     Stripe.api_key = space.creator.secret_key
 
     @response =  Stripe::Charge.create(
