@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  $("#s3-uploader").S3Uploader()
+  $("#s3-uploader").S3Uploader();
 });
