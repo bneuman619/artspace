@@ -1,3 +1,120 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#focal{
+  height: 690px;
+  width: 60%;
+  margin: 100px auto;
+  background: url('dance_photo.jpg') no-repeat;
+  border-radius: 80px;
+}
+
+#login{
+  background-color: white;
+  width: 30%;
+  height: 100px;
+  float: right;
+  margin-left: 70%;
+  margin-top: 17.5%;
+  padding-left: 50px;
+  border-radius: 30px;
+  p{
+    padding-top: 12%;
+    padding-left: 10%;
+    a{
+      font-family: 'Jura', sans-serif;
+  	  padding: 4%;	
+  	  color: gray;
+      text-decoration: none;
+      &:hover{
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+#signup{
+  background-color: white;
+  width: 30%;
+  height: 100px;
+  float: right;
+  margin-left: 70%;
+  padding-left: 100px;
+  border-radius: 30px;
+  p{
+    padding-left: 10%;
+    a{
+      font-family: 'Jura', sans-serif;
+      padding: 4%;
+      color: gray;
+      text-decoration: none;
+      &:hover{
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.white_bar{
+  background-color: white;
+  width: 35%;
+  height: 80px;
+  float: left;
+  margin-right: 60%;
+  padding-left: 100px;
+  border-radius: 30px;
+}
+
+.white_bar2{
+  background-color: white;
+  width: 25%;
+  height: 80px;
+  float: left;
+  margin-right: 60%;
+  padding-left: 100px;
+  border-radius: 30px;
+}
+#signin{
+  position: absolute;
+  margin-left: 15%;
+  margin-top: 5%;
+  width: 100%;
+}
+
+#title{
+  position: absolute;
+  margin-left: 18%;
+  margin-top: 0;
+  font-family: 'Jura', sans-serif;
+  color: gray;
+  font-size: 50px;
+  text-shadow: 5px 3px 3px lightgray;
+}
+#search_form{
+  padding: 1%;
+  width: 15%;
+  border: 3px solid gray;
+  border-radius: 20px;
+  font-family: 'Jura', sans-serif;
+  font-size: 14px;
+}
+#search_it {
+  background-color: gray;
+  color: white;
+  border-radius: 20px;
+  border: 3px solid gray;
+  padding: 1%;
+  font-family: 'Jura', sans-serif;
+  font-size: 14px;
+}
+#search_it:hover{
+  border: 1px solid gray;
+  background: -webkit-linear-gradient(gray, gray, gray, gray, gray, lightgray);
+  background: -o-linear-gradient(gray, gray, gray, gray, gray, lightgray);
+  background: -moz-linear-gradient(gray, gray, gray, gray, gray, lightgray);
+  background: linear-gradient(gray, gray, gray, gray, gray, lightgray);
+}
