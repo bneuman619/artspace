@@ -10,13 +10,13 @@ class ReservationsController < ApplicationController
         end_time: reservation_datum[:end])
     end
 
-    total_hours = reservations.inject { |hours, reservation| hours += reservation.length_in_hours }
+    total_hours = reservations.inject(0) { |hours, reservation| hours += reservation.length_in_hours }
     
     reservation_info = {
       spaceId: @space.id,
-      totalCharge: total_hours * @space.rate
+      totalCharge: (total_hours * @space.rate).round(2),
+      reservation_ids: reservations.collect(&:id)
     }
-    
     render json: reservation_info.to_json
   end
 
