@@ -4,9 +4,17 @@ class SpacesController < ApplicationController
   end
 
   def new
+    @space = Space.new
   end
 
   def create
+    @space = Space.new(space_params)
+    @space.creator_id = session[:current_user_id]
+    if @space.save
+      redirect_to manage_path(session[:current_user_id])
+    else
+      #raise some sort of error and send the creator back to the form
+    end
   end
 
   def show
@@ -27,6 +35,15 @@ class SpacesController < ApplicationController
 
   def add_photo #temporary testing route, delete me
     puts params.inspect
+  end
+
+  private
+
+  def space_params
+    params.require(:space).permit(:title, :description, :dimensions, 
+                                  :ammenities, :rate, :address, 
+                                  :city, :state, :zipcode, :email,
+                                  :phone)
   end
 
 end
@@ -52,3 +69,6 @@ def get_reservations(space)
       "title" => reservation.renter.first_name + reservation.renter.last_name}
   end
 end
+
+
+

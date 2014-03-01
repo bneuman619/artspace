@@ -12,7 +12,7 @@ class CreateSpaces < ActiveRecord::Migration
       t.string :state
       t.integer :zipcode
       t.string :email
-      t.integer :phone
+      t.string :phone
 
       t.timestamps
     end

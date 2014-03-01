@@ -8,9 +8,9 @@
   <li><%= f.text_field   :address, placeholder: "Address" %></li>
   <li><%= f.text_field   :city, placeholder: "City" %></li>
   <li><%= f.text_field   :state, placeholder: "State" %></li>
-  <li><%= f.number_field :zipcode, placeholder: "Zipcode" %></li>
+  <li><%= f.text_field :zipcode, placeholder: "Zipcode" %></li>
   <li><%= f.email_field  :email, placeholder: "Email" %></li>
-  <li><%= f.telephone_field :phone, placeholder: "Phone" %></li>
+  <li><%= f.text_field :phone, placeholder: "Phone" %></li>
 
   <li><%= f.submit "Create Space" %></li>
   <% end %>
