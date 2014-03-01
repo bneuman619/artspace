@@ -26,8 +26,7 @@ class SpacesController < ApplicationController
   def show
     space = Space.find(params[:id])
     @calendar_info = calendar_info(space).to_json
-    # @publishable_key = space.creator.publishable_key
-    # @email = current_user.email
+    @publishable_key = space.creator.publishable_key
   end
 
   def edit
