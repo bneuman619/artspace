@@ -13,6 +13,7 @@ Artspace::Application.routes.draw do
 
   resources :reservations, only: [:create, :show, :destroy]
 
+  post "uploaded", to: "spaces#add_photo"
 
   #homepage is still welcome#index
   #not logged in home is welcome#index

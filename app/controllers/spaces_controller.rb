@@ -23,6 +23,10 @@ class SpacesController < ApplicationController
   def destroy
   end
 
+  def add_photo #temporary testing route, delete me
+    puts params.inspect
+  end
+
 end
 
 def calendar_info(space)
