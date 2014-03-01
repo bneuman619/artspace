@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20140228221011) do
     t.string   "state"
     t.integer  "zipcode"
     t.string   "email"
-    t.integer  "phone"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
