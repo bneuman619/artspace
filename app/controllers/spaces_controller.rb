@@ -17,7 +17,11 @@ class SpacesController < ApplicationController
       @use_ids.each do |u|
         SpaceUse.create(space_id: @space.id, use_id: u.to_i)
       end
-      redirect_to manage_path(session[:current_user_id])
+      # redirect_to manage_path(session[:current_user_id])
+      # redirect_to manage_path(session[:current_user_id])
+      # Add stripe to process flow when creating a space
+      redirect_to new_payment_path
+      
     else
       #raise some sort of error and send the creator back to the form
     end

@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
                                   publishable_api_key: @response.params["stripe_publishable_key"], 
                                   refresh_token: @response.refresh_token, 
                                   stripe_user_id: @response.params["stripe_user_id"])
-      # redirect_to "root"
+      redirect_to manage_path(current_user.id)
 
     end
   end
