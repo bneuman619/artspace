@@ -1,9 +1,10 @@
 modifiedEvents = []
 
-function make_calendar(events_input) {
+function make_creation_calendar() {
   var calendar = {
     timeslotsPerHour: 4,
     scrollToHourMillis : 0,
+    defaultFreeBusy : {free: true},
 
     height: function($calendar){
       return $(window).height() - $('h1').outerHeight(true);
@@ -54,7 +55,6 @@ function make_calendar(events_input) {
       calEvent.id = "new_event" +'_'+ calEvent.start.getTime();
 
       $(calendar).weekCalendar('updateFreeBusy', {
-        // userId: calEvent.userId,
         start: calEvent.start,
         end: calEvent.end,
         free:false
@@ -62,11 +62,6 @@ function make_calendar(events_input) {
 
       modifiedEvents.push(calEvent);
     },
-
-    data: get_data(events_input),
-
-
-    // data: null,
 
     displayOddEven: true,
     displayFreeBusys: true,
