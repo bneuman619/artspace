@@ -5,34 +5,14 @@
   <li><%= f.text_field   :dimensions, placeholder: "Dimensions" %></li>
   <li><%= f.text_field   :ammenities, placeholder: "Ammenities" %></li>
   <p>Permitted Uses:</p>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "dance") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "audio") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "studio art") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "theater") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "rehearsal") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "performance") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "class") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "audition") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "photoshoot") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "video") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "exhibition") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "reading") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "screening") %></li>
-  <li><%= check_box_tag(:use) %>
-  <%= label_tag(:use, "any") %></li>
+  <p>
+    <% for use in Use.find(:all) %>
+      <div>
+        <%= check_box_tag "space[use_ids][]", use.id, @space.uses.include?(use) %>
+        <%= use.category %>
+      </div>
+    <% end %>
+  </p>
   <li><%= f.number_field :rate, placeholder: "Rate" %></li>
   <li><%= f.text_field   :address, placeholder: "Address" %></li>
   <li><%= f.text_field   :city, placeholder: "City" %></li>

@@ -8,9 +8,13 @@ class SpacesController < ApplicationController
   end
 
   def create
+    @use_ids = params[:space][:use_ids] ||= []
     @space = Space.new(space_params)
     @space.creator_id = session[:current_user_id]
     if @space.save
+      @use_ids.each do |u|
+        SpaceUse.create(space_id: @space.id, use_id: u.to_i)
+      end
       redirect_to manage_path(session[:current_user_id])
     else
       #raise some sort of error and send the creator back to the form
