@@ -8,21 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="nav">
-    <% if session[:current_user_id] != nil %>
-    <% user = User.find(session[:current_user_id]) %>
-    <%= link_to 'Home', user %>
-        <% if user.spaces_administrated == [] && user.spaces_created == [] %>
-        <% else %>
-        <%= link_to 'Manage', manage_path(user), method: :get %>
-        <% end %>
-    <%= link_to 'New Space', new_space_path %>
-    <%= link_to 'Logout', logout_path, method: :delete %>
-    <% else %>
-    <%= link_to 'Login', login_path, method: :get %>
-    <%= link_to 'Sign Up', signup_path, method: :get %>
-    <% end %>
-  </div>
+
 
 
 <%= yield %>
