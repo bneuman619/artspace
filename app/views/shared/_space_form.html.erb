@@ -4,6 +4,15 @@
   <li><%= f.text_area    :description, placeholder: "Description", size: "60x12" %></li>
   <li><%= f.text_field   :dimensions, placeholder: "Dimensions" %></li>
   <li><%= f.text_field   :ammenities, placeholder: "Ammenities" %></li>
+  <p>Permitted Uses:</p>
+  <p>
+    <% for use in Use.find(:all) %>
+      <div>
+        <%= check_box_tag "space[use_ids][]", use.id, @space.uses.include?(use) %>
+        <%= use.category %>
+      </div>
+    <% end %>
+  </p>
   <li><%= f.number_field :rate, placeholder: "Rate" %></li>
   <li><%= f.text_field   :address, placeholder: "Address" %></li>
   <li><%= f.text_field   :city, placeholder: "City" %></li>
