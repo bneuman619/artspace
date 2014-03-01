@@ -1,0 +1,29 @@
+.nav{
+  background-color: gray;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Jura', sans-serif;
+    float: right;
+    margin-right: 100px;
+    margin-top: 80px;
+    &:hover{
+      color: lightgray;
+      font-weight: bold;
+    }
+  }
+}
+#title2{
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 0;
+  font-family: 'Jura', sans-serif;
+  color: #696969;
+  opacity: 0%;
+  font-size: 50px;
+  text-shadow: 5px 3px 3px lightgray;
+}
