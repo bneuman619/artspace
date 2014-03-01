@@ -1,3 +1,8 @@
+function show_renter_calendar(selector){
+  var calendar = make_calendar(parse_for_renter(get_calendar_data()));
+  $(selector).weekCalendar(calendar);
+}
+
 function show_calendar(selector){
   var calendar = make_calendar(parse(get_calendar_data()));
   $(selector).weekCalendar(calendar);
