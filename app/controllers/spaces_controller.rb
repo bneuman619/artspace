@@ -42,8 +42,14 @@ class SpacesController < ApplicationController
   end
 
   def update
+    # @space = params
+    @use_ids = params[:space][:use_ids] ||= []
     space = Space.find(params[:id])
     space.update(space_params)
+    space.space_uses.clear
+    @use_ids.each do |u|
+      SpaceUse.create(space_id: space.id, use_id: u.to_i)
+    end
     redirect_to manage_path(current_user.id)
   end
 
