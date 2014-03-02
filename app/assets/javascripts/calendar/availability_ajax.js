@@ -6,8 +6,12 @@ $(document).ready(function() {
       url: '/availabilities',
       dataType: "json",
       success: function(response) {
-        console.log(response);
-        window.location = "/payments/new";
+        if(response.status == 'error') {
+          alert("There was a problem with your availabilities");
+        }
+        else {
+          window.location = "/payments/new";
+        }
       },
       error: function(xhr, error) {
         alert("there was an error");
@@ -22,7 +26,6 @@ $(document).ready(function() {
         url: '/spaces/availabilities/update',
         dataType: "json",
         success: function(response) {
-          console.log(response);
           window.location = "/users/" + $("#edit_availabilities").data().userId + "/manage";
         },
         error: function(xhr, error) {

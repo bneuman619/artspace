@@ -14,10 +14,6 @@ function make_availability_edit_calendar(events_input) {
     },
 
     eventRender : function(calEvent, $event) {
-      calEvent.id = new_id_counter;
-      new_id_counter += 1;
-      modifiedEvents.push(calEvent);
-      
       if (calEvent.end.getTime() < new Date().getTime()) {
         $event.find('.wc-time').css({
           backgroundColor: '#999',
@@ -33,6 +29,7 @@ function make_availability_edit_calendar(events_input) {
           return true;
         }
       }
+      console.log("in drop");
       modifiedEvents.push(newCalEvent);
     },
 
@@ -64,9 +61,18 @@ function make_availability_edit_calendar(events_input) {
     switchDisplay: {'1 day': 1, 'full week': 7},
     headerSeparator: ' ',
     useShortDayNames: true,
-    dateFormat: 'd F y'
-  }
+    dateFormat: 'd F y',
+    allowCalEventOverlap: false,
+ 
 
+    calendarAfterLoad: function() {
+      event_css = $(".wc-cal-event");
+      $.each(event_css, function() {
+        modifiedEvents.push(event_css.data().calEvent);
+      });
+    }
+
+  }
   return calendar;
 
 }
