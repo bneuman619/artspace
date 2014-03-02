@@ -1,4 +1,5 @@
 <%= render "shared/top_nav" %>
+<div id="title5"><%= @space.title %></div>
 <div class="contents">
   <p><h5>description |</h5><%= @space.description %></p>
   <p><h5>dimensions |</h5><%= @space.dimensions %></p>
@@ -8,5 +9,6 @@
   <p><h5>phone |</h5><%= @space.phone %></p>     
   <p><h5>email |</h5><%= @space.email %></p>
 </div>
+<div id="title6">click on the calendar and drag the box to book space</div>
 <input type="hidden" id="pub_key" value="<%= @publishable_key %>">
 <%= render "shared/calendar" %>
