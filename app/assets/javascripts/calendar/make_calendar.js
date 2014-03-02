@@ -27,6 +27,7 @@ function make_calendar(events_input) {
         }
       }
       console.log("no match");
+      
       modifiedEvents.push(newCalEvent);
     },
 
@@ -57,7 +58,7 @@ function make_calendar(events_input) {
         // userId: calEvent.userId,
         start: calEvent.start,
         end: calEvent.end,
-        free:false
+        free: false
       });
 
       modifiedEvents.push(calEvent);
