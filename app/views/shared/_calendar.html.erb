@@ -7,11 +7,17 @@
   <% end %>
   <div id="calendar">
   </div>
+  <div id="event_info" style="display: none;">
+    <form id="event_form">
+     <p> Intended use: <input type="text" name="description" id="description" /> </p>
+     <p> Number of people: <input type="text" name="count" id="count" /></p>
+   </form>
+  </div>
 </div>
 
 <script>
 
 $(document).ready(function() {
-  show_calendar("#calendar");
+  show_renter_calendar("#calendar");
 });
 </script>

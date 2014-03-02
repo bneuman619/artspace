@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
                                   publishable_api_key: @response.params["stripe_publishable_key"], 
                                   refresh_token: @response.refresh_token, 
                                   stripe_user_id: @response.params["stripe_user_id"])
-      # redirect_to "root"
+      redirect_to manage_path(current_user.id)
 
     end
   end
@@ -30,10 +30,10 @@ class PaymentsController < ApplicationController
 
     token = params["token_key"] # obtained with checkout.js
     amount = params["amount"]
-    
+    space = Space.find(params["space_id"])
     description = params["description"]
-
-    Stripe.api_key = current_user.secret_key #current_space.creator.secret_key
+    
+    Stripe.api_key = space.creator.secret_key
 
     @response =  Stripe::Charge.create(
       :amount => amount,
@@ -42,7 +42,6 @@ class PaymentsController < ApplicationController
       :description => description
     )
 
-    return @response
   end
 
   def pos

@@ -1,6 +1,8 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = Space.search(params[:search])
+    @spaces = Space.scoped
+    @spaces = @spaces.title(params[:title]) if params[:title].present?
+    @spaces = @spaces.rate_less(params[:rate]) if params[:rate].present?
   end
 
   def new
@@ -15,7 +17,11 @@ class SpacesController < ApplicationController
       @use_ids.each do |u|
         SpaceUse.create(space_id: @space.id, use_id: u.to_i)
       end
-      redirect_to manage_path(session[:current_user_id])
+      # redirect_to manage_path(session[:current_user_id])
+      # redirect_to manage_path(session[:current_user_id])
+      # Add stripe to process flow when creating a space
+      redirect_to new_payment_path
+      
     else
       #raise some sort of error and send the creator back to the form
     end
@@ -24,8 +30,7 @@ class SpacesController < ApplicationController
   def show
     space = Space.find(params[:id])
     @calendar_info = calendar_info(space).to_json
-    # @publishable_key = space.creator.publishable_key
-    # @email = current_user.email
+    @publishable_key = space.creator.publishable_key
   end
 
   def edit

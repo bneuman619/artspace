@@ -96,7 +96,15 @@
 }
 #search_form{
   padding: 1%;
-  width: 15%;
+  width: 10%;
+  border: 3px solid gray;
+  border-radius: 20px;
+  font-family: 'Jura', sans-serif;
+  font-size: 14px;
+}
+#rate_form{
+  padding: 1%;
+  width: 3%;
   border: 3px solid gray;
   border-radius: 20px;
   font-family: 'Jura', sans-serif;

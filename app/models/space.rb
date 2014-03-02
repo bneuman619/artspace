@@ -14,11 +14,8 @@ class Space < ActiveRecord::Base
 
   has_many :availabilities
 
-  def self.search(search)
-  	if search
-  	  where('title ILIKE ?', "%#{search}%")
-  	else
-  	  all
-  	end
-  end
+
+  scope :title, lambda{ |t| where("title ILIKE ?", "%#{t}%") }    
+  scope :rate_less, lambda{ |r|  where("rate < ?", r.to_i)  }
+  
 end
