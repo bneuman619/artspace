@@ -5,7 +5,7 @@ Web application that helps artists that need a place to rehearse or practice thi
 
 ## Installation
 
-Create a .env.local folder and create the appropiate key values.
+Create a .env.local folder and create the appropiate key values. If no keys are available, you will have to comment out app/views/shared/_pic_form.html.erb data.
 Download the gist and then run the following commands.
 
 1) bundle
@@ -24,6 +24,10 @@ Open browser and use 'localhost:3000' in the URL
 
 We used Ruby 2.0.0 and Rails 4.0.2 for this project, dependant on AWS and Stripe services.
 
+## Heroku
+
+http://agile-sea-2416.herokuapp.com/
+
 ## Contributors
 
-Ben, Kevin, Laura, Shawn
+Ben, Kevin, Laura, [Shawn](https://github.com/Carpk)
