@@ -43,14 +43,15 @@ class SpacesController < ApplicationController
   end
 
   def add_photo #temporary testing route, delete me
-    puts params.inspect
+    params["url"]
+    redirect_to new_space_path
   end
 
   private
 
   def space_params
-    params.require(:space).permit(:title, :description, :dimensions, 
-                                  :ammenities, :rate, :address, 
+    params.require(:space).permit(:title, :description, :dimensions,
+                                  :ammenities, :rate, :address,
                                   :city, :state, :zipcode, :email,
                                   :phone)
   end
