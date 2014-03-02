@@ -61,14 +61,13 @@ class SpacesController < ApplicationController
   end
 
   def destroy
-    @space = Space.find(params[:id])
+    space = Space.find(params[:id])
     # remove availability of space
-    # if space has future reservations
-      # 
-    # otherwise delete space and all associated data OR set a flag to stop display
-
-    # @space.destroy
-    # redirect_to manage_path(current_user.id)
+    space.availabilities.clear
+    # mark space inactive
+    space.active = 0
+    space.save
+    redirect_to manage_path(current_user.id)
   end
 
   def add_photo #temporary testing route
