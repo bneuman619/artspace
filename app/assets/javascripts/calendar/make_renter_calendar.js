@@ -49,15 +49,26 @@ function make_calendar(events_input) {
         return false;
       }
 
-      alert('You\'ve added a new event. You would capture this event, add the logic for creating a new event with your own fields, data and whatever backend persistence you require.');
-
       calEvent.id = "new_event" +'_'+ calEvent.start.getTime();
 
       $(calendar).weekCalendar('updateFreeBusy', {
-        // userId: calEvent.userId,
         start: calEvent.start,
         end: calEvent.end,
         free:false
+      });
+
+      $("#event_info").show();
+      $("#event_info").dialog({
+        modal: true,
+        buttons: [
+        { 
+          text: "Ok", 
+          click: function() {
+            calEvent.intended_use = $("#description").val();
+            calEvent.num_people = $("#count").val();
+            $(this).dialog("close");
+          }
+        }]
       });
 
       modifiedEvents.push(calEvent);
@@ -91,3 +102,10 @@ function get_data(events_input) {
     return null;
   }
 }
+
+
+// function modal_dialog(reservation) {
+
+
+
+// }

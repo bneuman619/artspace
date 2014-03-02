@@ -3,11 +3,13 @@ class ReservationsController < ApplicationController
   def create
     @space = Space.find(params[:spaceId])
     reservation_data = params["data"]
-    reservations = reservation_data.values.collect do |reservation_datum|
+    reservations = reservation_data.values.collect do |reservation|
       @space.reservations.create(
         renter: current_user,
-        start_time: reservation_datum[:start],
-        end_time: reservation_datum[:end])
+        start_time: reservation[:start],
+        end_time: reservation[:end],
+        intended_use: reservation[:intended_use],
+        num_people: reservation[:num_people])
     end
 
     total_hours = reservations.inject(0) { |hours, reservation| hours += reservation.length_in_hours }
