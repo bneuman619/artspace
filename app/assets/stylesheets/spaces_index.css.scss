@@ -1,17 +1,20 @@
 #page{
-  margin-top: 10%;
+  margin-top: 100px;
 }
-* {
-    margin:0;
-    padding:0;
-}
-body {
-    background: #BBB;
+#outside {
+    background: white;
     position:relative;
 }
-h2 {
-    text-align:center;
-    padding-bottom:10px
+#search_placement{
+  padding-top: 10px;
+}
+#link{
+  text-align: center;
+  a{
+    text-decoration: none;
+    font-family: 'Jura', sans-serif; 
+    color: gray;
+  }
 }
 #outer-wrap {
     width: 100%; 
@@ -25,16 +28,20 @@ h2 {
     float:left;
     margin-right:-999em;
     padding-left:20px;
-    background:#BCC5E1;
+    background-color: white;
     padding:10px;
         position:relative;
 
 }
 .space_holder {
-    float:left; /*force into block level for dimensions*/
-    width:400px;
+    float:left; 
+    width:450px;
     height: 300px;
-    background:blue;
-    color:#FFF;
+    background-color: white;
+    font-family: 'Jura', sans-serif;
+    color: gray;
+    border: 3px solid lightgray;
+    border-radius: 40px;
+    padding: 20px;
     margin:20px 20px 0 0;
 }
