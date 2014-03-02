@@ -12,7 +12,6 @@ function make_creation_calendar(events_input) {
 
     eventRender : function(calEvent, $event) {
       if (calEvent.end.getTime() < new Date().getTime()) {
-        // $event.css('backgroundColor', '#aaa');
         $event.find('.wc-time').css({
           backgroundColor: '#999',
           border:'1px solid #888'
@@ -27,46 +26,34 @@ function make_creation_calendar(events_input) {
           return true;
         }
       }
-      console.log("no match");
       modifiedEvents.push(newCalEvent);
     },
 
     eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
-      var isFree = true;
-      $.each(FreeBusyManager.getFreeBusys(calEvent.start, calEvent.end), function() {
-        if (
-          this.getStart().getTime() != calEvent.end.getTime()
-          && this.getEnd().getTime() != calEvent.start.getTime()
-          && !this.getOption('free')
-        ){
-          isFree = false;
-          return false;
-        }
-      });
-
-      if (!isFree) {
-        alert('looks like you tried to add an event on busy part !');
-        $(calendar).weekCalendar('removeEvent',calEvent.id);
-        return false;
-      }
-
       alert('You\'ve added a new event. You would capture this event, add the logic for creating a new event with your own fields, data and whatever backend persistence you require.');
 
       calEvent.id = "new_event" +'_'+ calEvent.start.getTime();
 
-      $(calendar).weekCalendar('updateFreeBusy', {
-        start: calEvent.start,
-        end: calEvent.end,
-        free:false
-      });
-
       modifiedEvents.push(calEvent);
     },
 
-    data: get_data(events_input),
+    eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
+      if (confirm('You want to delete this reservation?')) {
+        for(i = 0; i < modifiedEvents.length; i++) {
+          if (modifiedEvents[i].id == calEvent.id) {
+            modifiedEvents.splice(i, 1);
+          }
+        }
+      }
+    },
+
+    data: function(start, end, callback) {
+      callback(events_input);
+    },
 
     displayOddEven: true,
-    displayFreeBusys: true,
+    displayFreeBusys: false,
+    allowEventDelete: true,
     daysToShow: 7,
     switchDisplay: {'1 day': 1, 'full week': 7},
     headerSeparator: ' ',
@@ -76,15 +63,4 @@ function make_creation_calendar(events_input) {
 
   return calendar;
 
-}
-
-function get_data(events_input) {
-  if (events_input) {
-    return function(start, end, callback) {
-      callback(events_input);
-    }
-  }
-  else {
-    return null;
-  }
 }

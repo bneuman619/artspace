@@ -11,7 +11,6 @@ function make_renter_calendar(events_input) {
 
     eventRender : function(calEvent, $event) {
       if (calEvent.end.getTime() < new Date().getTime()) {
-        // $event.css('backgroundColor', '#aaa');
         $event.find('.wc-time').css({
           backgroundColor: '#999',
           border:'1px solid #888'
@@ -27,21 +26,12 @@ function make_renter_calendar(events_input) {
             }
           }
 
-          $.each(dayFreeBusyManager.getFreeBusys(calEvent.start, calEvent.end), function() {
-            this.options.free = true;
-          });
-
-          calendar.weekCalendar('removeEvent',calEvent.id);
+        deleteEvent(calEvent, calendar);
         }
       },
 
-    eventDrag : function(calEvent, element) {
-      console.log(element);
-      console.log(element.data());
-    },
-
     eventDrop : function(newCalEvent, oldCalEvent, element) {
-      removeFreeBusy(oldCalEvent, "#calendar");
+      removeFreeBusy(oldCalEvent, $("#calendar"));
 
       for(i = 0; i < modifiedEvents.length; i++) {
         if (modifiedEvents[i].id == newCalEvent.id) {
@@ -49,7 +39,6 @@ function make_renter_calendar(events_input) {
           return true;
         }
       }
-      console.log("no match");
       modifiedEvents.push(newCalEvent);
     },
 
@@ -98,7 +87,9 @@ function make_renter_calendar(events_input) {
       modifiedEvents.push(calEvent);
     },
 
-    data: get_data(events_input),
+    data: function(start, end, callback) {
+      callback(events_input);
+    }, 
 
     displayOddEven: true,
     displayFreeBusys: true,
@@ -110,28 +101,14 @@ function make_renter_calendar(events_input) {
   }
 
   return calendar;
-
-}
-
-function get_data(events_input) {
-  if (events_input) {
-    return function(start, end, callback) {
-      callback(events_input);
-    }
-  }
-  else {
-    return null;
-  }
 }
 
 function removeFreeBusy(oldEvent, calendar) {
-  var busies = $(calendar).find(".free-busy-busy");
-  var freeBusyManager = $(calendar).weekCalendar("getFreeBusyManagerForEvent", oldEvent);
-  console.log(busies);
+  var busies = calendar.find(".free-busy-busy");
+  var freeBusyManager = calendar.weekCalendar("getFreeBusyManagerForEvent", oldEvent);
   
   for (var i = 0; i < busies.length; i++) {
     var options = $(busies[i]).data().wcFreeBusy.options;
-    console.log(options);
 
     if (options.start.getTime() == oldEvent.start.getTime() && 
     options.end.getTime() == oldEvent.end.getTime()) {
@@ -142,8 +119,6 @@ function removeFreeBusy(oldEvent, calendar) {
       return true;
     }
   }
-
-  console.log("no match");
 }
 
 function _removeFreeBusyFromManager(oldEvent, freeBusyManager) {
@@ -155,8 +130,8 @@ function _removeFreeBusyFromManager(oldEvent, freeBusyManager) {
     }
   }
 }
-// function modal_dialog(reservation) {
 
-
-
-// }
+function deleteEvent(calEvent, calendar) {
+  removeFreeBusy(calEvent, calendar);
+  calendar.weekCalendar('removeEvent',calEvent.id);
+}
