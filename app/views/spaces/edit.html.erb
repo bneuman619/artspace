@@ -4,10 +4,16 @@
   <div id="edit_div">
   <%= form_for @space, :html => {:class => "spaceform"} do |f| %>
     <%= render :partial => "shared/space_details", :locals=>{:f=>f} %>
-    <%= f.submit "Save & Edit Availability", :class => "search_it" %>
+    <% if @space.active == 0 %>
+      <%= f.submit "Activate & Edit Availability", :class => "search_it" %>
+    <% else %>
+      <%= f.submit "Save & Edit Availability", :class => "search_it" %>
+    <% end %>
   <% end %>
-  <%= button_to "Delete Space", { action: "destroy", id: @space.id },
+  <% if @space.active == 1 %>
+    <%= button_to "Make Space Inactive", { action: "destroy", id: @space.id },
                                 class: "search_it", method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
   </div>
 </div>
 

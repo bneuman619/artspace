@@ -56,6 +56,8 @@ class SpacesController < ApplicationController
     @use_ids.each do |u|
       SpaceUse.create(space_id: space.id, use_id: u.to_i)
     end
+    space.active = 1
+    space.save
     # redirect_to manage_path(current_user.id)
     redirect_to edit_availabilities_path(space)
   end

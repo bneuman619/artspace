@@ -5,6 +5,7 @@
         <div id="inner-wrap">
           <% @spaces.each do |space| %>
               <div class="space_holder">
+                <h3><% if space.active == 0 %>Inactive<% end %></h3>
                 <h2 id="link"><%= link_to "#{space.title}", edit_space_path(space.id) %></h2>
                 <p><h5>dimensions |</h5><%= space.dimensions %></p>
                 <p><h5>equipment |</h5><%= space.ammenities %></p>
