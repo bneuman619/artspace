@@ -39,17 +39,24 @@ $(document).ready(function() {
       dataType: "json",
       success: function(response) {
         //console.log(response.totalCharge);
-        totCharge = response.totalCharge;
-        title = response.title;
-        handler.open({
-          name: 'Artspace',
-          description: title,
-          email: response.email,
-          amount: totCharge
-        });
+        if (response.status == 'error') {
+          console.log(response.error);
+        }
+        else {
+          totCharge = response.totalCharge;
+          title = response.title;
+          handler.open({
+            name: 'Artspace',
+            description: title,
+            email: response.email,
+            amount: totCharge
+          });
+        }
       },
       error: function(xhr, error) {
-        alert("there was an error");
+        console.log('in error');
+        console.log(error);
+        // alert("there was an error");
       }
     });
   });
