@@ -1,5 +1,14 @@
 <%= render "shared/top_nav" %>
-this is the spaces#show page where we will see photos and a calendar where we can make reservations
-there will be a BOOK IT button where we can click to pay for the space through stripe
+<div id="title5"><%= @space.title %></div>
+<div class="contents">
+  <p><h5>description |</h5><%= @space.description %></p>
+  <p><h5>dimensions |</h5><%= @space.dimensions %></p>
+  <p><h5>equipment |</h5><%= @space.ammenities %></p>
+  <p><h5>per hour |</h5><%= @space.rate %></p>
+  <p><h5>address |</h5><br><%= @space.address %><br><%= @space.city %>, <%= @space.state %> <%= @space.zipcode %></p>
+  <p><h5>phone |</h5><%= @space.phone %></p>     
+  <p><h5>email |</h5><%= @space.email %></p>
+</div>
+<div id="title6">click on the calendar and drag the box to book space</div>
 <input type="hidden" id="pub_key" value="<%= @publishable_key %>">
 <%= render "shared/calendar" %>
