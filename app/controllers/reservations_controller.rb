@@ -41,6 +41,17 @@ class ReservationsController < ApplicationController
 end
 
 def invalid_timerange_check(reservation)
+  unavailable_timerange_check(reservation) || reserved_timerange_check(reservation)
+end
+
+def unavailable_timerange_check(reservation)
+  reservation.space.availabilities.none? do |availability|
+    reservation.start_time.between?(availability.start_time, availability.end_time) &&
+    reservation.end_time.between?(availability.start_time, availability.end_time)
+  end
+end
+
+def reserved_timerange_check(reservation)
   reservation.space.reservations.any? do |space_reservation|
     space_reservation.start_time.between?(reservation.start_time, reservation.end_time) ||
     space_reservation.end_time.between?(reservation.start_time, reservation.end_time)

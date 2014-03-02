@@ -41,6 +41,7 @@ $(document).ready(function() {
         //console.log(response.totalCharge);
         if (response.status == 'error') {
           console.log(response.error);
+          alert("There was a problem with your reservation.");
         }
         else {
           totCharge = response.totalCharge;

@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $("#create_availabilities").on("click", function(event) {
-    console.log("hello");
     $.ajax({
       data: {data: modifiedEvents, spaceId: $("#create_availabilities").data().spaceId},
       type: 'post',
@@ -17,7 +16,6 @@ $(document).ready(function() {
   });
 
    $("#edit_availabilities").on("click", function(event) {
-      console.log("hello");
       $.ajax({
         data: {data: modifiedEvents, spaceId: $("#edit_availabilities").data().spaceId},
         type: 'post',
