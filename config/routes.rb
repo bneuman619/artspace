@@ -10,9 +10,11 @@ Artspace::Application.routes.draw do
   resources :users, except: [:new, :index]
 
   resources :spaces do
-    resources :availabilities, only: [:new, :edit, :update]
+    resources :availabilities, only: [:new, :update]
   end
 
+  get "spaces/:space_id/edit_availabilities", to: "availabilities#edit", as: "edit_availabilities"
+  post "spaces/availabilities/update", to: "availabilities#update", as: "update_availabilities"
   resources :availabilities, only: [:create]
   resources :reservations, only: [:create, :show, :destroy]
 

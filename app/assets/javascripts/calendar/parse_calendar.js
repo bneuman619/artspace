@@ -50,3 +50,18 @@ function parse_for_renter(calendar_data) {
 
   return eventData;
 }
+
+function parse_for_availability_edit(calendar_data) {
+  var eventData = {
+    options: {
+        timeslotsPerHour: 3,
+        timeslotHeight: 30,
+        defaultFreeBusy: {free: true}
+      },
+
+    events : calendar_data,
+    freebusys: [],
+  };
+
+  return eventData;
+}

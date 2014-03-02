@@ -1,0 +1,14 @@
+<script id='calendar_info' type='application/json'>
+ <%= @calendar_info.html_safe %>
+</script>
+<div id="calendarbox">
+  <button id="edit_availabilities" data-space-id='<%=params[:space_id]%>'>Edit availabilities</button>
+  <div id="calendar">
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  show_edit_availability_calendar("#calendar");
+});
+</script>
