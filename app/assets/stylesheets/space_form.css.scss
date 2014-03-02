@@ -1,25 +1,7 @@
 #space_form_list{
   list-style: none;
 }
-#space_form{
-  input{
-    font-size: 12px;
-  }
-  textarea{
-    font-family: 'Jura', sans-serif;
-    font-size: 14px;
-    padding: 20px;
-    border-radius: 40px;
-    color: gray;
-  }
-  input[type=number]{
-    font-family: 'Jura', sans-serif;
-    font-size: 14px;
-    padding: 10px;
-    border-radius: 40px;
-    color: darkorange;
-  }
-}
+
 #uses{
   float:left;
   width: 100%;
@@ -34,5 +16,60 @@
   border-radius: 40px;	
   text-align: center;
   margin: 0 auto;
+  margin-top: 180px;
 }
+.spaceform{
+  font-family: 'Jura', sans-serif;
+  border: 1px solid gray;
+  border-radius: 40px;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 10%;
+  padding: 20px;	
+  text-align: center;
+  input{
+  font-size: 14px;
+  }
+  input[type=text]{
+    font-family: 'Jura', sans-serif;
+    padding: 10px;
+    border-radius: 40px;
+    color: darkorange;
+  }
+  input[type=password]{
+    font-family: 'Jura', sans-serif;
+    padding: 10px;
+    border-radius: 40px;
+    color: darkorange;
+  }
+  input[type=email]{
+    font-family: 'Jura', sans-serif;
+    padding: 10px;
+    border-radius: 40px;
+    color: darkorange;
+  }
+  textarea{
+    font-family: 'Jura', sans-serif;
+    padding: 20px;
+    border-radius: 40px;
+    color: gray;
+  }
+  input[type=number]{
+    font-family: 'Jura', sans-serif;
+    padding: 10px;
+    border-radius: 40px;
+    color: darkorange;
+  }
+}
+#title3{
+  position: absolute;
+  margin-left: 21%;
+  margin-top: -60px;
+  font-family: 'Jura', sans-serif;
+  color: gray;
+  font-size: 50px;
+  text-shadow: 5px 3px 3px lightgray;
+}
+
+
 

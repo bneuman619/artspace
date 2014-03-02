@@ -1,5 +1,5 @@
 <ul id="space_form_list">
-  <%= form_for @space, :html => {:class => "form", :id => "space_form"} do |f| %>
+  <%= form_for @space, :html => {:class => "spaceform"} do |f| %>
   <li><p>please provide a title for your space<br>this is how artists will search for your space<br><%= f.text_field   :title, placeholder: "Title" %></p></li>
   <li><p><%= f.text_area    :description, placeholder: "Description", size: "60x12" %></p></li>
   <li><p><%= f.text_field   :dimensions, placeholder: "Dimensions" %></p></li>
