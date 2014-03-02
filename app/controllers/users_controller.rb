@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def manage
+    @spaces = current_user.spaces_created
   end
 
   private
