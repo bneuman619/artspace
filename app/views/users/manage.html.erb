@@ -18,4 +18,13 @@
         </div>
       </div>
     </div>
+    <div id="bookings">
+      <% @spaces.each do |space| %>
+
+        <% space.upcoming_bookings.each do |booking| %>
+        <p><%= booking.renter.first_name %>  <%= booking.renter.last_name %></p>
+        <% end %>
+        
+      <% end %>
+    </div>
 </div>

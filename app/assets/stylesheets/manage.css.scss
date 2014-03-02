@@ -2,13 +2,25 @@
 #outer-wrap1 {
     width: 520px; 
     height: 400px;
-    margin:0 auto;
-    margin-top: 200px;
+    float: left;
+    display: inline;
+    margin-top: 50px;
+    margin-left: 100px;
     padding-top: 5px;
     overflow: auto; 
     background-color: white;
     border:1px solid lightgray; 
     border-radius: 40px;
+}
+#bookings{
+  width: 500px;
+  height: 400px;
+  margin-top: 50px;
+  margin-left: 100px;
+  border:1px solid lightgray; 
+  float: left;
+  display: inline;
+  border-radius: 40px;
 }
 
 
