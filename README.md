@@ -26,8 +26,8 @@ We used Ruby 2.0.0 and Rails 4.0.2 for this project, dependant on AWS and Stripe
 
 ## Heroku
 
-http://agile-sea-2416.herokuapp.com/
+We are currently have heroku temporarily hosting our site, can be found here: [ArtSpace](http://agile-sea-2416.herokuapp.com/)
 
 ## Contributors
 
-Ben, Kevin, Laura, [Shawn](https://github.com/Carpk)
+[Ben](https://github.com/bneuman619), [Kevin](https://github.com/KevinFalank), [Laura](https://github.com/ballauriena), [Shawn](https://github.com/Carpk)
