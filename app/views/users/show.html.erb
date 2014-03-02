@@ -6,13 +6,15 @@
 	<div id="favorite" class="user_show">
 	  <h2>Favorite Spaces</h2>
 	  <% current_user.favorite_spaces.each do |fave| %>
-	  <p><%= fave.title %></p>
+	  <div class="fave"><p><%= link_to "#{fave.title}", space_path(fave.id) %></p></div>
 	  <% end %>
 	</div>
 	<div id="upcoming" class="user_show">
 	  <h2>Upcoming Rentals</h2>
-	  <% current_user.rentals.each do |r| %>
-	  <p><%= r.title %></p>
+	  <% current_user.upcoming_reservations.each do |r| %>
+	  <p><span class="color">AT</span><%= r.space.title %><span class="color">FROM</span><%= r.start_time %><span class="color">TO</span><%= r.end_time %></p>
+	  <%= r.space.address %>     <%= r.space.city %>,    <%= r.space.state %>     <%= r.space.zipcode %>
+	  <hr>
 	  <% end %>
 	</div>
 </div>
