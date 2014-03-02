@@ -50,10 +50,19 @@ class SpacesController < ApplicationController
     @use_ids.each do |u|
       SpaceUse.create(space_id: space.id, use_id: u.to_i)
     end
-    redirect_to manage_path(current_user.id)
+    # redirect_to manage_path(current_user.id)
+    redirect_to edit_availabilities_path(space)
   end
 
   def destroy
+    @space = Space.find(params[:id])
+    # remove availability of space
+    # if space has future reservations
+      # 
+    # otherwise delete space and all associated data OR set a flag to stop display
+
+    # @space.destroy
+    # redirect_to manage_path(current_user.id)
   end
 
   def add_photo #temporary testing route, delete me
