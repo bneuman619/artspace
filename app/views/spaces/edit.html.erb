@@ -1,9 +1,9 @@
 <div id="page">
   <%= render "shared/top_nav" %>
-  this is the new space page that will have a form that posts to spaces#create
-  <%= form_for(@space) do |f| %>
+
+  <%= form_for @space, :html => {:class => "spaceform"} do |f| %>
     <%= render :partial => "shared/space_details", :locals=>{:f=>f} %>
-    <%= f.submit "Save & Quit Editing" %>
-    <%= f.button "Edit Available Times" %>
+    <%= f.submit "Save & Quit Editing", :class => "search_it" %>
+    <%= f.button "Edit Available Times", :class => "search_it" %>
   <% end %>
 </div>

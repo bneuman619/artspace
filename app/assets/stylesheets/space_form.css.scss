@@ -51,6 +51,7 @@
   textarea{
     font-family: 'Jura', sans-serif;
     padding: 20px;
+    font-size: 14px;
     border-radius: 40px;
     color: gray;
   }
@@ -69,6 +70,9 @@
   color: gray;
   font-size: 50px;
   text-shadow: 5px 3px 3px lightgray;
+}
+#edit_space_fields{
+  list-style: none;
 }
 
 
