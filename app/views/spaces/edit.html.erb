@@ -5,9 +5,9 @@
   <%= form_for @space, :html => {:class => "spaceform"} do |f| %>
     <%= render :partial => "shared/space_details", :locals=>{:f=>f} %>
     <%= f.submit "Save & Edit Availability", :class => "search_it" %>
+    <%= button_to "Delete Space", { action: "destroy", id: @space.id },
+                                class: "search_it", method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
   </div>
-  <%= button_to "Delete Space", { action: "destroy", id: @space.id, :class => "search_it" },
-                                method: :delete, data: { confirm: "Are you sure?" } %>
 </div>
 
