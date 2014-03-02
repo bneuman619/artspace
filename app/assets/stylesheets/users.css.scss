@@ -3,19 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div.user_show{
   font-family: 'Jura', sans-serif;
-  float: left;
-  display: inline;
-  margin: 5%;
-  h2{
-    color: lightgray;
-    text-align: center;
-  }
+  padding-top: 100px;
+
 }
 #favorite{
-  width: 20%;
+  width: 100%;
+  margin-left: 10%;
 }
+#favorite_label{
+  margin-top: 110px;
+  color: black;
+  float: left;
+  display: inline;
+  padding-left: 10%;
+  font-family: 'Jura', sans-serif;
+  position: absolute;
+}
+
 #upcoming{
-  width: 50%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
   border: 1px solid lightgray;
   border-radius: 40px;
   padding: 20px;
@@ -23,13 +32,19 @@ div.user_show{
   p{
    color: black; 
   }
+  h2{
+    text-align: center;
+  }
 }
 div.fave{
   width: 50px;
   height: 50px;
   border-radius: 40px;
-  margin: 30px auto;
+  margin: 0 auto;
+  margin-left: 18%;
   border: 1px solid lightgray;
+  float: left;
+  display: inline;
   background: -webkit-linear-gradient(lightgray, lightgray, lightgray, lightgray, lightgray, white);
   background: -o-linear-gradient(lightgray, lightgray, lightgray, lightgray, lightgray, white);
   background: -moz-linear-gradient(lightgray, lightgray, lightgray, lightgray, lightgray, white);
@@ -54,4 +69,17 @@ span.color{
   padding-left: 10px;
   font-size: 20px;
 }
-hr{ background-color: lightgray; height: 1px; border: 0; }
+hr{ 
+  background-color: lightgray; 
+  height: 1px; 
+  border: 0; 
+  }
+#search_placement{
+  padding-top: 10px;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  background-color: white;
+  padding-left: 35%;
+  float: left;
+}
