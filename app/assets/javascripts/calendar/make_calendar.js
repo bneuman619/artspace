@@ -64,10 +64,9 @@ function make_calendar(events_input) {
       modifiedEvents.push(calEvent);
     },
 
-    data: get_data(events_input),
-
-
-    // data: null,
+    data: function(start, end, callback) {
+      callback(events_input);
+    },
 
     displayOddEven: true,
     displayFreeBusys: true,
@@ -80,15 +79,4 @@ function make_calendar(events_input) {
 
   return calendar;
 
-}
-
-function get_data(events_input) {
-  if (events_input) {
-    return function(start, end, callback) {
-      callback(events_input);
-    }
-  }
-  else {
-    return null;
-  }
 }
