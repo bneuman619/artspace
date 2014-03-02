@@ -8,6 +8,7 @@ $(document).ready(function() {
       dataType: "json",
       success: function(response) {
         console.log(response);
+        window.location = "/payments/new";
       },
       error: function(xhr, error) {
         alert("there was an error");

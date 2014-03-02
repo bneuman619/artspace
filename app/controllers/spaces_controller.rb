@@ -19,8 +19,12 @@ class SpacesController < ApplicationController
       end
       # redirect_to manage_path(session[:current_user_id])
       # redirect_to manage_path(session[:current_user_id])
+      
+      # Redirect to space availability
+      redirect_to new_space_availability_path(@space)
+
       # Add stripe to process flow when creating a space
-      redirect_to new_payment_path
+      # redirect_to new_payment_path
       
     else
       #raise some sort of error and send the creator back to the form
