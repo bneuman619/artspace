@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228221011) do
+ActiveRecord::Schema.define(version: 20140302230207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,23 +92,37 @@ ActiveRecord::Schema.define(version: 20140228221011) do
     t.text     "description"
     t.string   "dimensions"
     t.text     "ammenities"
-    t.integer  "rate"
+    t.float    "rate"
     t.string   "address"
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
     t.string   "email"
-    t.string   "phone"
+    t.integer  "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "active",      default: 1
+  end
+
+  add_index "spaces", ["active"], name: "index_spaces_on_active", using: :btree
+  add_index "spaces", ["creator_id"], name: "index_spaces_on_creator_id", using: :btree
+
+  create_table "stripes", force: true do |t|
+    t.integer  "creator_id"
+    t.string   "secret_api_key"
+    t.string   "publishable_api_key"
+    t.string   "refresh_token"
+    t.string   "stripe_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "spaces", ["creator_id"], name: "index_spaces_on_creator_id", using: :btree
+  add_index "stripes", ["creator_id"], name: "index_stripes_on_creator_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "phone"
+    t.integer  "phone"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
