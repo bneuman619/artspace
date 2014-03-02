@@ -12,7 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery.ui.core
+//= require jquery.ui.widget.js
+//= require jquery.ui.dialog
+//= require jquery.ui.button.js
+//= require jquery.ui.draggable.js
+//= require jquery.ui.droppable.js
+//= require jquery.ui.mouse.js
+//= require jquery.ui.position.js
+//= require jquery.ui.resizable.js
+//= require jquery.ui.datepicker.js
 //= require calendar/jquery_browser_backport
 //= require calendar/date
 //= require calendar/jquery.weekcalendar

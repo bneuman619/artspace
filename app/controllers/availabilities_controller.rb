@@ -43,9 +43,14 @@ def parse_availability_time(time)
 end
 
 def get_openings(space)
+  today = DateTime.now
+  this_monday = today - (today.wday - 1)
   space.availabilities.all.collect do |availability|
-  {"start" => DateTime.new(2014, 2, 24, availability.start_time.hour, availability.start_time.strftime("%m").to_i) + (availability.day - 1).day,
-   "end" => DateTime.new(2014, 2, 24, availability.end_time.hour, availability.end_time.strftime("%m").to_i) + (availability.day - 1).day,
-   "title" => "",}
+  {"start" => DateTime.new(this_monday.year, this_monday.month, this_monday.day, availability.start_time.hour, availability.start_time.strftime("%m").to_i) + (availability.day - 1).day,
+   "end" => DateTime.new(this_monday.year, this_monday.month, this_monday.day, availability.end_time.hour, availability.end_time.strftime("%m").to_i) + (availability.day - 1).day,
+   "title" => ""}
   end
 end
+
+
+
