@@ -38,8 +38,8 @@ function parse_for_renter(calendar_data) {
 
   var eventData = {
     options: {
-        timeslotsPerHour: 3,
-        timeslotHeight: 30,
+        timeslotsPerHour: 4,
+        timeslotHeight: 40,
         defaultFreeBusy: {free: false},
         allowEventDelete: true
       },

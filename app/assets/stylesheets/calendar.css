@@ -42,6 +42,6 @@
 #calendarbox {
   margin: 5% 20% 10% 10%;
   width: 80%;
-  height: 35%;
+ /* height: 35%;*/
   border: solid 1px gray;
 }

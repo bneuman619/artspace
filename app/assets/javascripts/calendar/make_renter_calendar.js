@@ -92,9 +92,6 @@ function make_calendar(events_input) {
 
     data: get_data(events_input),
 
-
-    // data: null,
-
     displayOddEven: true,
     displayFreeBusys: true,
     daysToShow: 7,
