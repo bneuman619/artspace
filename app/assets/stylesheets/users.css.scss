@@ -1,3 +1,25 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.user_show{
+  font-family: 'Jura', sans-serif;
+  float: left;
+  display: inline;
+  margin: 50px;
+  h2{
+    color: lightgray;
+    text-align: center;
+  }
+}
+#favorite{
+  width: 20%;
+}
+#upcoming{
+  width: 50%;
+  border: 1px solid lightgray;
+  border-radius: 40px;
+  padding: 20px;
+  h2{
+    
+  }
+}

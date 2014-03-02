@@ -1,18 +1,18 @@
 <div id="page">
-	<%= render "shared/top_nav" %>
+	<div id="search_placement"><%= render "shared/top_nav" %></div>
 
 	<%= render "shared/search" %>
 
-	<div id="upcoming">
-	  <h2>Upcoming Rentals</h2>
-	  <% current_user.upcoming_reservations.each do |r| %>
-	  <p><%= r.space.title %></p>
-	  <% end %>
-	</div>
-	<div id="favorite">
+	<div id="favorite" class="user_show">
 	  <h2>Favorite Spaces</h2>
 	  <% current_user.favorite_spaces.each do |fave| %>
 	  <p><%= fave.title %></p>
+	  <% end %>
+	</div>
+	<div id="upcoming" class="user_show">
+	  <h2>Upcoming Rentals</h2>
+	  <% current_user.rentals.each do |r| %>
+	  <p><%= r.title %></p>
 	  <% end %>
 	</div>
 </div>
