@@ -3,14 +3,19 @@ class AvailabilitiesController < ApplicationController
   end
 
   def create
-    @space = Space.find(params[:spaceId])
+    space = Space.find(params[:spaceId])
     availability_data = params["data"]
     availabilities = availability_data.values.collect do |availability|
-      @space.availabilities.create(
+      space.availabilities.create(
         parse_availability(availability))
     end
 
-    render json: "a response".to_json
+    if availabilities.any?(&:invalid?)
+      space.availabilities.destroy_all
+      render json: {status: 'error', message: "Validation error with availabilities"}.to_json
+    else
+      render json: {status: 'success'}.to_json
+    end
   end
 
   def edit
@@ -20,16 +25,22 @@ class AvailabilitiesController < ApplicationController
   end
 
   def update
-    @space = Space.find(params[:spaceId])
-    @space.availabilities.destroy_all
+    space = Space.find(params[:spaceId])
+    old_availabilities = space.availabilities.destroy_all
+
     availability_data = params["data"]
     availabilities = availability_data.values.collect do |availability|
-      @space.availabilities.create(
+      space.availabilities.create(
         parse_availability(availability))
     end
 
-    render json: "a response".to_json
-
+    if availabilities.any?(&:invalid?)
+      space.availabilities.destroy_all
+      old_availabilities.each { |avail| space.availabilities.create(avail.attributes) }
+      render json: {status: 'error', message: "Validation error with availabilities"}.to_json
+    else
+      render json: {status: 'success'}.to_json
+    end
   end
 end
 
