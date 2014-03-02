@@ -1,3 +1,57 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.user_show{
+  font-family: 'Jura', sans-serif;
+  float: left;
+  display: inline;
+  margin: 5%;
+  h2{
+    color: lightgray;
+    text-align: center;
+  }
+}
+#favorite{
+  width: 20%;
+}
+#upcoming{
+  width: 50%;
+  border: 1px solid lightgray;
+  border-radius: 40px;
+  padding: 20px;
+  text-align: center;
+  p{
+   color: black; 
+  }
+}
+div.fave{
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  margin: 30px auto;
+  border: 1px solid lightgray;
+  background: -webkit-linear-gradient(lightgray, lightgray, lightgray, lightgray, lightgray, white);
+  background: -o-linear-gradient(lightgray, lightgray, lightgray, lightgray, lightgray, white);
+  background: -moz-linear-gradient(lightgray, lightgray, lightgray, lightgray, lightgray, white);
+  background: linear-gradient(lightgray, lightgray, lightgray, lightgray, lightgray, white);
+  p{
+    width: 500%;
+    padding-left: 20px;
+    a{
+      color: gray;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      &:hover{
+        color: darkorange;
+      }
+    }
+  }
+}
+span.color{
+  color: darkorange;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+hr{ background-color: lightgray; height: 1px; border: 0; }

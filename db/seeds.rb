@@ -81,10 +81,10 @@ Space.all.each do |space|
   5.times do
     start_hour = rand(13..21)
     end_hour = start_hour + 2
-    day = rand(24..28)
+    day = rand(3..10)
     space.reservations.create(renter_id: rand(1..20),
-               start_time: DateTime.new(2014,2,day,start_hour,0,0),
-               end_time: DateTime.new(2014,2,day,end_hour,0,0),
+               start_time: DateTime.new(2014,3,day,start_hour,0,0),
+               end_time: DateTime.new(2014,3,day,end_hour,0,0),
                num_people: rand(1..10),
                intended_use: Faker::Lorem.paragraph
             )

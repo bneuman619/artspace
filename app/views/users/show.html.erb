@@ -1,18 +1,20 @@
 <div id="page">
-	<%= render "shared/top_nav" %>
-	User show page
+	<div id="search_placement"><%= render "shared/top_nav" %></div>
+
 	<%= render "shared/search" %>
-	this page will show a user's favorite places as well as their upcoming rentals and a search bar to find spaces
-	<div id="upcoming">
-	  <h2>Upcoming Rentals</h2>
-	  <% current_user.upcoming_reservations.each do |r| %>
-	  <p><%= r.space.title %></p>
-	  <% end %>
-	</div>
-	<div id="favorite">
+
+	<div id="favorite" class="user_show">
 	  <h2>Favorite Spaces</h2>
 	  <% current_user.favorite_spaces.each do |fave| %>
-	  <p><%= fave.title %></p>
+	  <div class="fave"><p><%= link_to "#{fave.title}", space_path(fave.id) %></p></div>
+	  <% end %>
+	</div>
+	<div id="upcoming" class="user_show">
+	  <h2>Upcoming Rentals</h2>
+	  <% current_user.upcoming_reservations.each do |r| %>
+	  <p><span class="color">AT</span><%= r.space.title %><span class="color">FROM</span><%= r.start_time %><span class="color">TO</span><%= r.end_time %></p>
+	  <%= r.space.address %>     <%= r.space.city %>,    <%= r.space.state %>     <%= r.space.zipcode %>
+	  <hr>
 	  <% end %>
 	</div>
 </div>

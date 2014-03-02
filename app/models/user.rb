@@ -17,9 +17,10 @@ class User < ActiveRecord::Base
   end
 
   def favorite_spaces
-  	reservations.order(:id).uniq.limit(3).collect do |r|
+  	spaces = reservations.order(:id).limit(3).collect do |r|
   	  r.space
   	end
+    spaces.uniq
   end
 
   def publishable_key
