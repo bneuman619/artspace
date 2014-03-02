@@ -1,10 +1,3 @@
 
-<%= form_for @user, :html => {:class => "login_form"} do |f| %>
-<p><%= f.text_field :first_name, placeholder: "First Name" %></p>
-<p><%= f.text_field :last_name, placeholder: "Last Name" %></p>
-<p><%= f.text_field :phone, placeholder: "Phone Number" %></p>
-<p><%= f.email_field :email, placeholder: "Email" %></p>
-<p><%= f.text_field :password, type: "password", placeholder: "Password" %></p>
-<p><%= f.text_field :password_confirmation, type: "password", placeholder: "Confirm Password" %></p>
-<%= f.submit "Sign Up", class: "search_it" %>
-<% end %>
+
+<%= render "shared/user_form" %>
