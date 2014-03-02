@@ -110,16 +110,16 @@
   font-family: 'Jura', sans-serif;
   font-size: 14px;
 }
-#search_it {
+.search_it {
   background-color: gray;
   color: white;
   border-radius: 20px;
   border: 3px solid gray;
-  padding: 1%;
+  padding: 13px;
   font-family: 'Jura', sans-serif;
   font-size: 14px;
 }
-#search_it:hover{
+.search_it:hover{
   border: 1px solid gray;
   background: -webkit-linear-gradient(gray, gray, gray, gray, gray, lightgray);
   background: -o-linear-gradient(gray, gray, gray, gray, gray, lightgray);
