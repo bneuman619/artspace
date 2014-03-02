@@ -58,6 +58,7 @@ function make_creation_calendar(events_input) {
     switchDisplay: {'1 day': 1, 'full week': 7},
     headerSeparator: ' ',
     useShortDayNames: true,
+    allowCalEventOverlap: false,
     dateFormat: 'd F y',
   }
 
