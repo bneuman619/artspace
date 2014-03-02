@@ -5,8 +5,9 @@ Web application that helps artists that need a place to rehearse or practice thi
 
 ## Installation
 
-Create a .env.local folder and create the appropiate key values. If no keys are available, you will have to comment out app/views/shared/_pic_form.html.erb data.
-Download the gist and then run the following commands.
+After you download the repo, create a .env.local folder and create the appropiate key values. If no keys are available, you will have to comment out the html in app/views/shared/picform.html.erb data.
+
+Then run the following commands.
 
 1) bundle
 
