@@ -1,9 +1,10 @@
 <ul id="space_form_list">
   <%= form_for @space, :html => {:class => "spaceform"} do |f| %>
+  <div id="form_container"></div>
   <li><p>please provide a title for your space<br>this is how artists will search for your space<br><%= f.text_field   :title, placeholder: "Title" %></p></li>
   <li><p><%= f.text_area    :description, placeholder: "Description", size: "60x12" %></p></li>
   <li><p><%= f.text_field   :dimensions, placeholder: "Dimensions" %></p></li>
-  
+
   <li><p>list any equipment that is provided in the space<br><%= f.text_area   :ammenities, placeholder: "Ammenities", size: "60x6" %></p></li>
   <p>Permitted Uses:</p>
   <p>
@@ -14,7 +15,7 @@
       </div>
     <% end %>
   </p>
- 
+
   <li><p>please specify an hourly rental rate<br><%= f.number_field :rate, placeholder: "Rate" %></p></li>
   <li><p>street address<br><%= f.text_field   :address, placeholder: "Address" %></p></li>
   <li><p><%= f.text_field   :city, placeholder: "City" %></p></li>

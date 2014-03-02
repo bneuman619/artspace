@@ -112,23 +112,24 @@ end
 end
 
 # here is some seed data, you can upload photos and the spaces#add_photo route will post its url in console, cheers!
-# also, the .env.local needs my keys!, email me and I will share you my google drive that has the keys.
-# https://s3.amazonaws.com/rentspaces/uploads/1393634155457-9tn5lleq5sjug14i-da7febbe96331e606efac97fbbc24fef/mms_picture+(1).jpg?AWSAccessKeyId=ASIAI5T4P5OB4PR5JJEQ&Expires=1393634484&Signature=DUWGxd8SrgpQkSSw%2B4JHHIR4jbU%3D&x-amz-security-token=AQoDYXdzEML//////////wEagAJU8Af/6juOD35xVKWCHiOSQ1miT8ZcnK9t7Fqrr3oFaMGb/dgjbIYEpouJJH4L9ykQD75z5iTM4%2BVqDPcUn6ZnPFs0WlqdYdRb7Tdm7mTMdjHaEr8gJjv9vMTqf1HZl5a92j06cW9H9phfv85G/bbRdGy716Ko%2Bz/jAGSZFsFfT8J4b%2BG/ABCBQInM0P88Tc3FBGgceXBjmToz7CiyPp2PwQjGlrm9GmXTJP6nq6LIVIqDh9ZjK2lyUaXNDSiStHze9GhOR9NVJcnLNhBaEAUWiuvwmGeGvBlzIAC/eo/CqFF4KX38Qoejl6J4vi977qaA6K7LoFf0zwAj98JL0PtgINOCw5gF
-# https://s3.amazonaws.com/rentspaces/uploads/1393634147511-kkpnvs1ww7wlv7vi-da7febbe96331e606efac97fbbc24fef/mms_picture+copy.jpg?AWSAccessKeyId=ASIAI5T4P5OB4PR5JJEQ&Expires=1393634511&Signature=JtqW0rqnPxFbgd938N4JwPdpASs%3D&x-amz-security-token=AQoDYXdzEML//////////wEagAJU8Af/6juOD35xVKWCHiOSQ1miT8ZcnK9t7Fqrr3oFaMGb/dgjbIYEpouJJH4L9ykQD75z5iTM4%2BVqDPcUn6ZnPFs0WlqdYdRb7Tdm7mTMdjHaEr8gJjv9vMTqf1HZl5a92j06cW9H9phfv85G/bbRdGy716Ko%2Bz/jAGSZFsFfT8J4b%2BG/ABCBQInM0P88Tc3FBGgceXBjmToz7CiyPp2PwQjGlrm9GmXTJP6nq6LIVIqDh9ZjK2lyUaXNDSiStHze9GhOR9NVJcnLNhBaEAUWiuvwmGeGvBlzIAC/eo/CqFF4KX38Qoejl6J4vi977qaA6K7LoFf0zwAj98JL0PtgINOCw5gF
-# https://s3.amazonaws.com/rentspaces/uploads/1393633681768-tgcz56st91s2lnmi-da7febbe96331e606efac97fbbc24fef/mms_picture+(1).jpg?AWSAccessKeyId=ASIAI5T4P5OB4PR5JJEQ&Expires=1393634525&Signature=Xwy%2BwphWTAM1f5pUW%2BrXrRtupGE%3D&x-amz-security-token=AQoDYXdzEML//////////wEagAJU8Af/6juOD35xVKWCHiOSQ1miT8ZcnK9t7Fqrr3oFaMGb/dgjbIYEpouJJH4L9ykQD75z5iTM4%2BVqDPcUn6ZnPFs0WlqdYdRb7Tdm7mTMdjHaEr8gJjv9vMTqf1HZl5a92j06cW9H9phfv85G/bbRdGy716Ko%2Bz/jAGSZFsFfT8J4b%2BG/ABCBQInM0P88Tc3FBGgceXBjmToz7CiyPp2PwQjGlrm9GmXTJP6nq6LIVIqDh9ZjK2lyUaXNDSiStHze9GhOR9NVJcnLNhBaEAUWiuvwmGeGvBlzIAC/eo/CqFF4KX38Qoejl6J4vi977qaA6K7LoFf0zwAj98JL0PtgINOCw5gF
-# https://s3.amazonaws.com/rentspaces/uploads/1393633625786-rr5xa8suvykl0udi-c43fd35a4105a9482ca5f6e69863edc4/mms_picture+(2).jpg?AWSAccessKeyId=ASIAI5T4P5OB4PR5JJEQ&Expires=1393634543&Signature=HOr4/cWLglzkUrQ/g8l%2BiMVgzYY%3D&x-amz-security-token=AQoDYXdzEML//////////wEagAJU8Af/6juOD35xVKWCHiOSQ1miT8ZcnK9t7Fqrr3oFaMGb/dgjbIYEpouJJH4L9ykQD75z5iTM4%2BVqDPcUn6ZnPFs0WlqdYdRb7Tdm7mTMdjHaEr8gJjv9vMTqf1HZl5a92j06cW9H9phfv85G/bbRdGy716Ko%2Bz/jAGSZFsFfT8J4b%2BG/ABCBQInM0P88Tc3FBGgceXBjmToz7CiyPp2PwQjGlrm9GmXTJP6nq6LIVIqDh9ZjK2lyUaXNDSiStHze9GhOR9NVJcnLNhBaEAUWiuvwmGeGvBlzIAC/eo/CqFF4KX38Qoejl6J4vi977qaA6K7LoFf0zwAj98JL0PtgINOCw5gF
-# https://s3.amazonaws.com/rentspaces/uploads/1393632926299-iyfjjlfl91zwipb9-9c680df8f63b16cead1273b97b413c62/mms_picture+(1).jpg?AWSAccessKeyId=ASIAI5T4P5OB4PR5JJEQ&Expires=1393634558&Signature=fBrBXT5aczzAguXty1CEN7MC4Lk%3D&x-amz-security-token=AQoDYXdzEML//////////wEagAJU8Af/6juOD35xVKWCHiOSQ1miT8ZcnK9t7Fqrr3oFaMGb/dgjbIYEpouJJH4L9ykQD75z5iTM4%2BVqDPcUn6ZnPFs0WlqdYdRb7Tdm7mTMdjHaEr8gJjv9vMTqf1HZl5a92j06cW9H9phfv85G/bbRdGy716Ko%2Bz/jAGSZFsFfT8J4b%2BG/ABCBQInM0P88Tc3FBGgceXBjmToz7CiyPp2PwQjGlrm9GmXTJP6nq6LIVIqDh9ZjK2lyUaXNDSiStHze9GhOR9NVJcnLNhBaEAUWiuvwmGeGvBlzIAC/eo/CqFF4KX38Qoejl6J4vi977qaA6K7LoFf0zwAj98JL0PtgINOCw5gF
-
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393786528482-pj9aezsu8qfflxr-dc20b9d73fdc6e87bab2b3935f8d2e2c%2Fimage_view.jpeg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393786238790-gwip961oje3a0pb9-4ea79c2f649e7b192497a0571ab54669%2Fsouth_space_large.jpg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393786143147-0esjp61262zqia4i-54f4514197f477b174bab6c11a466241%2Fdl2.jpg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393786148919-dxo28k26efef80k9-54f4514197f477b174bab6c11a466241%2Ftumblr_l00r7wG6xt1qzoh1b.jpg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393785811893-n0yau8vrclo0qkt9-4c20bbe51412da2e07a6b3b216b998f7%2Fdownload.jpeg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393787711815-9ul6lz3r6gsnhfr-7f0797ab436b8098227f8d3abcf09c82%2FOriginal-Empty-Room-Resized.jpg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393787719281-qbjt34jv4bpm0a4i-7f0797ab436b8098227f8d3abcf09c82%2FI%2Bbelieve%2Bit%2Bwould%2Bbe%2Bsomething%2Blike%2Bthis%2B_93d4703edf64676729594cc837f99582.jpg
 
 #-----------------------Seed Payments----------------------------------------------
 Payment.create(creator_id: 1, secret_api_key: "sk_test_mC0xJbEJjQn6fTFFXbF1iY0H", publishable_api_key: "pk_test_pnsJYKvwITr1blAJDXU8Yjv7", refresh_token: "rt_3aBCE7XsHeyoi5yqjCXndALQ6JIKltGTHH11KuPS0KBdUehx", stripe_user_id: "acct_103aBC2tZaA3CnwC")
 Payment.create(creator_id: 2, secret_api_key: "sk_test_bZj3yCI2T3bzV85XRzvzRzFl", publishable_api_key: "pk_test_GoDAjXI0FKBPyEUuT5qmNGbv", refresh_token: "rt_3aOB4oZsceUP5AVIBQ4hmYHeo715KjVrm9iGhmFVzDqLplDf", stripe_user_id: "acct_103Zex26RoKDB1cW")
 
 
-
-
-
-
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393793550915-avlx57x6sguy2e29-e4a45dc51eacfeb964193f208e908e2b%2Fimages.jpeg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393794116931-bkpqo7pvez2rzfr-051bd9a4f9b4afe9b19fa26c4c4d15e8%2FRosana-empty-studio.jpg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393794127242-ugv41c3owv2yy14i-051bd9a4f9b4afe9b19fa26c4c4d15e8%2F1251910935-yd-a-528x343.jpg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393793550915-avlx57x6sguy2e29-e4a45dc51eacfeb964193f208e908e2b%2Fimages.jpeg
+# https://s3.amazonaws.com/rentspaces/uploads%2F1393793556754-hfngcnc56gmygb9-e4a45dc51eacfeb964193f208e908e2b%2FRosana-empty-studio.jpg
 
 
 
