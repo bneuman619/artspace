@@ -10,7 +10,7 @@
 	<p>
 	  <%= text_field_tag :title, params[:title], placeholder: "search for space", size: 20, id:"search_form" %>
 	  <%= text_field_tag :rate, params[:rate], placeholder: "max $", size: 10, id:"rate_form" %>
-	  <%= submit_tag "Search", :name => nil, :id => "search_it" %>
+	  <%= submit_tag "Search", :name => nil, :class => "search_it" %>
 	</p>
   <% end %>
 </div>
