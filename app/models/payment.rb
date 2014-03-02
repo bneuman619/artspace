@@ -2,7 +2,7 @@ class Payment < ActiveRecord::Base
 
   belongs_to :creator, class_name: "User", foreign_key: "creator_id"
 
-  validates :stripe_user_id, uniqueness: true
+  validates :creator_id, uniqueness: true
 
 
   CLIENT_ID = ENV["ARTSPACE_CLIENT_ID"]
