@@ -3,6 +3,7 @@ new_id_counter = 1;
 
 function make_availability_edit_calendar(events_input) {
   var calendar = {
+    allowEventDelete: true,
     timeslotsPerHour: 4,
     scrollToHourMillis : 0,
     defaultFreeBusy : {free: true},
@@ -14,6 +15,7 @@ function make_availability_edit_calendar(events_input) {
     eventRender : function(calEvent, $event) {
       calEvent.id = new_id_counter;
       new_id_counter += 1;
+      modifiedEvents.push(calEvent);
       
       if (calEvent.end.getTime() < new Date().getTime()) {
         // $event.css('backgroundColor', '#aaa');
@@ -33,6 +35,18 @@ function make_availability_edit_calendar(events_input) {
       }
       console.log("no match");
       modifiedEvents.push(newCalEvent);
+    },
+
+    eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
+      if (confirm('You want to delete this reservation?')) {
+        for(i = 0; i < modifiedEvents.length; i++) {
+          if (modifiedEvents[i].id == calEvent.id) {
+            modifiedEvents.splice(i, 1);
+          }
+        }
+
+        calendar.weekCalendar('removeEvent',calEvent.id);
+      }
     },
 
     eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
@@ -73,7 +87,7 @@ function make_availability_edit_calendar(events_input) {
     },
 
     displayOddEven: true,
-    displayFreeBusys: true,
+    displayFreeBusys: false,
     daysToShow: 7,
     switchDisplay: {'1 day': 1, 'full week': 7},
     headerSeparator: ' ',
