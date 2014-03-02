@@ -71,8 +71,21 @@
   font-size: 50px;
   text-shadow: 5px 3px 3px lightgray;
 }
+#title4{
+  position: absolute;
+  margin-left: 33%;
+  margin-top: 20px;
+  font-family: 'Jura', sans-serif;
+  color: gray;
+  font-size: 50px;
+  text-shadow: 5px 3px 3px lightgray;
+}
 #edit_space_fields{
   list-style: none;
+  padding: 0;
+}
+#edit_div{
+  padding-top: 100px;
 }
 
 

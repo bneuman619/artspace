@@ -1,9 +1,11 @@
+<%= render "shared/top_nav" %>
+<div id="title4">Edit My Space Listing</div>
 <div id="page">
-  <%= render "shared/top_nav" %>
-
+  <div id="edit_div">
   <%= form_for @space, :html => {:class => "spaceform"} do |f| %>
     <%= render :partial => "shared/space_details", :locals=>{:f=>f} %>
     <%= f.submit "Save & Quit Editing", :class => "search_it" %>
     <%= f.button "Edit Available Times", :class => "search_it" %>
   <% end %>
+  </div>
 </div>
