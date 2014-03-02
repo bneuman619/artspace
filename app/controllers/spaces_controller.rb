@@ -17,15 +17,21 @@ class SpacesController < ApplicationController
       @use_ids.each do |u|
         SpaceUse.create(space_id: @space.id, use_id: u.to_i)
       end
+
+    if params["pic_url"]
+      params["pic_url"].split(',').each do |url|
+        Photo.create(space: @space, url: url)
+      end
+    end
       # redirect_to manage_path(session[:current_user_id])
       # redirect_to manage_path(session[:current_user_id])
-      
+
       # Redirect to space availability
       redirect_to new_space_availability_path(@space)
 
       # Add stripe to process flow when creating a space
       # redirect_to new_payment_path
-      
+
     else
       #raise some sort of error and send the creator back to the form
     end
@@ -65,8 +71,7 @@ class SpacesController < ApplicationController
     # redirect_to manage_path(current_user.id)
   end
 
-  def add_photo #temporary testing route, delete me
-    params["url"]
+  def add_photo #temporary testing route
     redirect_to new_space_path
   end
 
