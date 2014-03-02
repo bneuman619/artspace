@@ -24,3 +24,12 @@ function show_creation_calendar(selector){
   $(selector).weekCalendar(calendar);
 }
 
+function show_edit_availability_calendar(selector) {
+  var data = get_calendar_data();
+  console.log(data);
+  var parsed = parse_for_availability_edit(data);
+  console.log(parsed);
+
+  var calendar = make_availability_edit_calendar(parse_for_availability_edit(get_calendar_data()));
+  $(selector).weekCalendar(calendar);
+}
