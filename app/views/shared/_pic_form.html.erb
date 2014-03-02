@@ -1,8 +1,8 @@
-<ul>
+
   <p><%= s3_uploader_form callback_url: uploaded_url, callback_method: "POST", callback_param: "upload[image_url]", id: "s3-uploader" do %>
   <%= hidden_field_tag  "Content-Type", "" %>
   <%= file_field_tag :file, multiple: true %></p>
   <% end %>
 
-</ul>
-<div id="uploads_container"></div>
+  <div id="uploads_container"></div>
+
