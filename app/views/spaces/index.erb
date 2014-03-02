@@ -1,8 +1,26 @@
 <div id="page">
+  <div id="outside">
 	<%= render "shared/top_nav" %>
-	<%= render "shared/search" %>
+	<div id="search_placement"><%= render "shared/search" %></div>
+	  <div id="wrapper">
+		  <div id="outer-wrap">
+		    <div id="inner-wrap">
+			  <% @spaces.each do |space| %>
+					  <div class="space_holder">
+						<h2 id="link"><%= link_to "#{space.title}", space_path(space.id) %></h2>
+						<p><h5>dimensions |</h5><%= space.dimensions %></p>
+						<p><h5>equipment |</h5><%= space.ammenities %></p>
+						<p><h5>per hour |</h5><%= space.rate %></p>
+						<p><h5>address |</h5><br><%= space.address %><br>
+							<%= space.city %>, <%= space.state %> <%= space.zipcode %>
+						</p>
 
-	<% @spaces.each do |space| %>
-	<p><%= link_to "#{space.title}", space_path(space.id) %></p>
-	<% end %>
+					   </div>
+
+			  <% end %>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
 </div>

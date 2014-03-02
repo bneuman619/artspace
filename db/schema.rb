@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20140228221011) do
     t.text     "description"
     t.string   "dimensions"
     t.text     "ammenities"
-    t.float    "rate"
+    t.integer  "rate"
     t.string   "address"
     t.string   "city"
     t.string   "state"
