@@ -1,2 +1,9 @@
-<%= render "shared/top_nav" %>
-this page has the form for editing a space
+<div id="page">
+  <%= render "shared/top_nav" %>
+  this is the new space page that will have a form that posts to spaces#create
+  <%= form_for(@space) do |f| %>
+    <%= render :partial => "shared/space_details", :locals=>{:f=>f} %>
+    <%= f.submit "Save & Quit Editing" %>
+    <%= f.button "Edit Available Times" %>
+  <% end %>
+</div>
