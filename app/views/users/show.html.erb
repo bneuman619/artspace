@@ -1,14 +1,15 @@
 <div id="page">
-	<div id="search_placement"><%= render "shared/top_nav" %></div>
+	<%= render "shared/top_nav" %>
 
-	<%= render "shared/search" %>
+	<div id="search_placement"><%= render "shared/search" %></div>
 
-	<div id="favorite" class="user_show">
-	  <h2>Favorite Spaces</h2>
-	  <% current_user.favorite_spaces.each do |fave| %>
-	  <div class="fave"><p><%= link_to "#{fave.title}", space_path(fave.id) %></p></div>
-	  <% end %>
-	</div>
+		<h2 id="favorite_label">Favorite Spaces</h2>
+		<div id="favorite" class="user_show">
+		  <% current_user.favorite_spaces.each do |fave| %>
+		  <div class="fave"><p><%= link_to "#{fave.title}", space_path(fave.id) %></p></div>
+		  <% end %>
+		</div>
+
 	<div id="upcoming" class="user_show">
 	  <h2>Upcoming Rentals</h2>
 	  <% current_user.upcoming_reservations.each do |r| %>
