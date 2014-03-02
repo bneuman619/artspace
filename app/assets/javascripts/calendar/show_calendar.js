@@ -1,5 +1,5 @@
 function show_renter_calendar(selector){
-  var calendar = make_calendar(parse_for_renter(get_calendar_data()));
+  var calendar = make_renter_calendar(parse_for_renter(get_calendar_data()));
   $(selector).weekCalendar(calendar);
 }
 

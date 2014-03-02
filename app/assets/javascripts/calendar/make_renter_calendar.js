@@ -1,6 +1,6 @@
 modifiedEvents = []
 
-function make_calendar(events_input) {
+function make_renter_calendar(events_input) {
   var calendar = {
     timeslotsPerHour: 4,
     scrollToHourMillis : 0,
@@ -35,7 +35,14 @@ function make_calendar(events_input) {
         }
       },
 
+    eventDrag : function(calEvent, element) {
+      console.log(element);
+      console.log(element.data());
+    },
+
     eventDrop : function(newCalEvent, oldCalEvent, element) {
+      removeFreeBusy(oldCalEvent, "#calendar");
+
       for(i = 0; i < modifiedEvents.length; i++) {
         if (modifiedEvents[i].id == newCalEvent.id) {
           modifiedEvents[i] = newCalEvent;
@@ -54,6 +61,7 @@ function make_calendar(events_input) {
           && this.getEnd().getTime() != calEvent.start.getTime()
           && !this.getOption('free')
         ){
+          console.log(this);
           isFree = false;
           return false;
         }
@@ -116,7 +124,37 @@ function get_data(events_input) {
   }
 }
 
+function removeFreeBusy(oldEvent, calendar) {
+  var busies = $(calendar).find(".free-busy-busy");
+  var freeBusyManager = $(calendar).weekCalendar("getFreeBusyManagerForEvent", oldEvent);
+  console.log(busies);
+  
+  for (var i = 0; i < busies.length; i++) {
+    var options = $(busies[i]).data().wcFreeBusy.options;
+    console.log(options);
 
+    if (options.start.getTime() == oldEvent.start.getTime() && 
+    options.end.getTime() == oldEvent.end.getTime()) {
+      
+      $(busies).eq(i).removeClass('free-busy-busy').addClass('free-busy-free');
+      options.free = true;
+      _removeFreeBusyFromManager(oldEvent, freeBusyManager);
+      return true;
+    }
+  }
+
+  console.log("no match");
+}
+
+function _removeFreeBusyFromManager(oldEvent, freeBusyManager) {
+  for (var i = 0; i < freeBusyManager.freeBusys.length; i++) {
+    var options = freeBusyManager.freeBusys[i].options;
+    if (options.start.getTime() == oldEvent.start.getTime() && 
+    options.end.getTime() == oldEvent.end.getTime()) {
+      options.free = true;
+    }
+  }
+}
 // function modal_dialog(reservation) {
 
 
