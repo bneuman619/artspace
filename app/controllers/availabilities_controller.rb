@@ -15,6 +15,7 @@ class AvailabilitiesController < ApplicationController
 
   def edit
     space = Space.find(params[:space_id])
+    @user_id = current_user.id
     @calendar_info = get_openings(space).to_json
   end
 
