@@ -19,6 +19,22 @@ function make_calendar(events_input) {
       }
     },
 
+    eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
+        if (confirm('You want to delete this reservation?')) {
+          for(i = 0; i < modifiedEvents.length; i++) {
+            if (modifiedEvents[i].id == calEvent.id) {
+              modifiedEvents.splice(i, 1);
+            }
+          }
+
+          $.each(dayFreeBusyManager.getFreeBusys(calEvent.start, calEvent.end), function() {
+            this.options.free = true;
+          });
+
+          calendar.weekCalendar('removeEvent',calEvent.id);
+        }
+      },
+
     eventDrop : function(newCalEvent, oldCalEvent, element) {
       for(i = 0; i < modifiedEvents.length; i++) {
         if (modifiedEvents[i].id == newCalEvent.id) {
