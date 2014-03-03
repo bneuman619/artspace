@@ -1,5 +1,3 @@
-modifiedEvents = []
-
 function make_creation_calendar(events_input) {
   var calendar = {
     scrollToHourMillis : 0,

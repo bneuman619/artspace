@@ -1,6 +1,3 @@
-modifiedEvents = []
-new_id_counter = 1;
-
 function make_availability_edit_calendar(events_input) {
   var calendar = {
     allowEventDelete: true,
