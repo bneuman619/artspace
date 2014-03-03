@@ -29,43 +29,15 @@ function make_availability_edit_calendar(events_input) {
       }
     },
 
-    // eventDrop : function(newCalEvent, oldCalEvent, element) {
-    //   // for(i = 0; i < modifiedEvents.length; i++) {
-    //   //   if (modifiedEvents[i].id == newCalEvent.id) {
-    //   //     modifiedEvents[i] = newCalEvent;
-    //   //     return true;
-    //   //   }
-    //   // }
-    //   // modifiedEvents.push(newCalEvent);
-    // },
-
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
       if (confirm('You want to delete this reservation?')) {
-        // for(i = 0; i < modifiedEvents.length; i++) {
-        //   if (modifiedEvents[i].id == calEvent.id) {
-        //     modifiedEvents.splice(i, 1);
-        //   }
-        // }
         removeEvent(calEvent, calendar);
       }
     },
 
-    // eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
-    //   // calEvent.id = "new_event" +'_'+ calEvent.start.getTime();
-    //   // modifiedEvents.push(calEvent);
-    // },
-
     data: function(start, end, callback) {
       callback(events_input);
     },
-
-
-    // calendarAfterLoad: function() {
-    //   event_css = $(".wc-cal-event");
-    //   $.each(event_css, function() {
-    //     modifiedEvents.push(event_css.data().calEvent);
-    //   });
-    // },
 
     getHeaderDate: function(date, calendar) {
       return get_day(date);

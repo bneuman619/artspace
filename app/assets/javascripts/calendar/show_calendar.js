@@ -3,6 +3,12 @@ function show_renter_calendar(selector){
   $(selector).weekCalendar(calendar);
 }
 
+function show_read_only_calendar(selector) {
+  var calendar = make_renter_calendar(parse_for_renter(get_calendar_data()));
+  calendar.allowEventCreation = false;
+  $(selector).weekCalendar(calendar);
+}
+
 function show_creation_calendar(selector){
   var eventData = {
     events: [],
