@@ -1,5 +1,9 @@
 function show_renter_calendar(selector){
   var calendar = make_renter_calendar(parse_for_renter(get_calendar_data()));
+  calendar.options =  {
+
+  };
+
   $(selector).weekCalendar(calendar);
 }
 
@@ -10,14 +14,14 @@ function show_calendar(selector){
 
 function show_creation_calendar(selector){
   var eventData = {
+    events: [],
+    freebusys: [],
+
     options: {
         timeslotsPerHour: 2,
         timeslotHeight: 20,
         defaultFreeBusy: {free: true}
       },
-
-    events: [],
-    freebusys: [],
   };
 
   var calendar = make_creation_calendar(eventData);
