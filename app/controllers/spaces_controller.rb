@@ -59,7 +59,7 @@ class SpacesController < ApplicationController
     space.active = 1
     space.save
     # redirect_to manage_path(current_user.id)
-    redirect_to edit_availabilities_path(space)
+    redirect_to manage_path(session[:current_user_id])
   end
 
   def destroy
