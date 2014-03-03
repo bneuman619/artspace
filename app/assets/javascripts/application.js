@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.ui.core
 //= require jquery.ui.widget.js
@@ -25,6 +26,6 @@
 //= require calendar/jquery_browser_backport
 //= require calendar/date
 //= require calendar/jquery.weekcalendar
-//= require turbolinks
 //= require s3_direct_upload
 //= require_tree .
+//= require turbolinks
