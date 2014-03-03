@@ -7,6 +7,7 @@
 		    <div id="inner-wrap">
 			  <% @spaces.each do |space| %>
 					  <div class="space_holder" style='background:url("<%=space.photos.first.url%>");background-size:100%;z-index:2;'>
+					  		<h4><%= space.title %></h4>
 						  	<div class="hidden_text">
 							<h2 id="link"><%= link_to "#{space.title}", space_path(space.id) %></h2>
 							<p><h5>dimensions |</h5><%= space.dimensions %></p>
