@@ -31,11 +31,6 @@ function make_creation_calendar(events_input) {
 
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
       if (confirm('You want to delete this reservation?')) {
-        // for(i = 0; i < modifiedEvents.length; i++) {
-        //   if (modifiedEvents[i].id == calEvent.id) {
-        //     modifiedEvents.splice(i, 1);
-        //   }
-        // }
         removeEvent(calEvent, calendar);
       }
     },
