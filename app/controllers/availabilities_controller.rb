@@ -20,8 +20,14 @@ class AvailabilitiesController < ApplicationController
 
   def edit
     space = Space.find(params[:space_id])
-    @user_id = current_user.id
-    @calendar_info = get_openings(space).to_json
+    if !session[:current_user_id]
+      render "welcome/index"
+    elsif session[:current_user_id] != space.creator_id
+      redirect_to user_path(current_user.id)
+    else
+      @user_id = current_user.id
+      @calendar_info = get_openings(space).to_json
+    end
   end
 
   def update

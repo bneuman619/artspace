@@ -45,6 +45,11 @@ class SpacesController < ApplicationController
 
   def edit
     @space = Space.find(params[:id])
+    if !session[:current_user_id]
+      render "welcome/index"
+    elsif session[:current_user_id] != @space.creator_id
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def update

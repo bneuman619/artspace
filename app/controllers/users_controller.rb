@@ -18,7 +18,12 @@ class UsersController < ApplicationController
   end
 
   def manage
-    @spaces = current_user.spaces_created
+    if session[:current_user_id]
+      @spaces = current_user.spaces_created
+      creator_id = @spaces.first.creator_id
+    else 
+      render "welcome/index"
+    end
   end
 
   private
