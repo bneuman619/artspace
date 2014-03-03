@@ -118,10 +118,18 @@ end
 def week_openings(day, space)
   sunday = day - day.wday.day
   space.availabilities.all.collect do |availability|
-  {"start" => DateTime.new(sunday.year, sunday.month, sunday.day, availability.start_time.hour, availability.start_time.min, 0, '-6') + availability.day.day - 6.hour,
-   "end" => DateTime.new(sunday.year, sunday.month, sunday.day, availability.end_time.hour, availability.end_time.min, 0, '-6') + availability.day.day - 6.hour,
+  {"start" => convert_availability_date(sunday, availability.start_time, availability.day)
+   "end" => convert_availability_date(sunday, availability.end_time, availability.day),
    "title" => "",
    "day" => availability.day}
+  end
+end
+
+def convert_availability_date(sunday, availability_dt, day_num)
+  if availability_dt.hour <= 6
+    DateTime.new(sunday.year, sunday.month, sunday.day + 1, availability.dt.hour, availability.dt.min, 0, '-6') + day_num.day - 6.hour
+  else
+    DateTime.new(sunday.year, sunday.month, sunday.day, availability.dt.hour, availability.dt.min, 0, '-6') + day_num.day - 6.hour
   end
 end
 
