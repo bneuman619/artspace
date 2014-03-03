@@ -63,10 +63,22 @@ div.options{
   display: inline;
   margin: 1%;
   padding: 1%;
+  a{
+    font-family: 'Jura', sans-serif;
+    margin-right: 50px;  
+    color: gray;
+    text-decoration: none;
+    &:hover{
+      color: black;
+      font-weight: bold;
+    }
+  }
 }
 .inactive{
   color: lightgray;
   text-align: center;
 }
-
+div.space_holder1{
+  font-family: 'Jura', sans-serif;
+}
 
