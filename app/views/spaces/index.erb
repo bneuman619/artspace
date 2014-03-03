@@ -1,8 +1,11 @@
+<%= render "shared/top_nav" %>
 <div id="page">
-  <div id="outside">
-	<%= render "shared/top_nav" %>
-	<div id="search_placement1"><%= render "shared/search" %></div>
-	  <div id="wrapper">
+
+
+
+	<div class="search_bar"><%= render "shared/search" %></div>
+		  <div class="directions">hover over an image to view details about the space</div>
+		  <div id="outside">
 		  <div id="outer-wrap">
 		    <div id="inner-wrap">
 			  <% @spaces.each do |space| %>
@@ -22,7 +25,7 @@
 			  <% end %>
 		  </div>
 		</div>
-	  </div>
+
 	</div>
   </div>
 </div>
