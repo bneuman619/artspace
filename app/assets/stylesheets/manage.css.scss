@@ -1,0 +1,77 @@
+
+#outer-wrap1 {
+    width: 520px; 
+    height: 400px;
+    float: left;
+    display: inline;
+    margin-top: 50px;
+    margin-left: 20px;
+    padding-top: 5px;
+    overflow: auto; 
+    background-color: gray;
+    border:5px solid lightgray; 
+    border-radius: 5px;
+}
+#inner-wrap1 {
+    float:left;
+    margin-right:-999em;
+    padding-left:20px;
+    background-color: gray;
+    border-radius: 20px;
+    padding:10px;
+        position:relative;
+
+}
+#bookings{
+  font-family: 'Jura', sans-serif;
+}
+
+#outer-wrap2 {
+    width: 55%; 
+    height: 400px;
+    float: left;
+    display: inline;
+    margin-top: 50px;
+    margin-left: 20px;
+    padding-top: 5px;
+    overflow: auto; 
+    background-color: white;
+    border:5px solid lightgray; 
+    border-radius: 40px;
+}
+span.color1{
+  color: black;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#manager_nav{
+  width: 90%;
+  margin: 0 auto;
+  li{
+    float: left;
+    display: inline;
+    list-style: none;
+    a{
+      font-family: 'Jura', sans-serif;
+      margin-right: 50px;  
+      color: gray;
+      text-decoration: none;
+      &:hover{
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}
+#title7{
+  margin: 0 auto;
+  margin-top: 20px;
+  font-family: 'Jura', sans-serif;
+  color: gray;
+  font-size: 50px;
+  text-shadow: 5px 3px 3px lightgray;
+}
+
+
