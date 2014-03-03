@@ -1,11 +1,9 @@
 
 #outer-wrap1 {
-    width: 520px; 
+    width: 90%;
+    margin: 0 auto; 
     height: 400px;
-    float: left;
-    display: inline;
-    margin-top: 50px;
-    margin-left: 20px;
+    margin-top: 10px;
     padding-top: 5px;
     overflow: auto; 
     background-color: gray;
@@ -19,25 +17,34 @@
     background-color: gray;
     border-radius: 20px;
     padding:10px;
-        position:relative;
-
+    position:relative;
+}
+.space_holder1 {
+    float:left; 
+    width:700px;
+    height: 300px;
+    background-color: white;
+    font-family: 'Jura', sans-serif;
+    color: gray;
+    border: 3px solid lightgray;
+    border-radius: 40px;
+    padding: 20px;
+    margin:20px 20px 0 0;
 }
 #bookings{
   font-family: 'Jura', sans-serif;
 }
 
 #outer-wrap2 {
-    width: 55%; 
+    width: 80%; 
     height: 400px;
-    float: left;
-    display: inline;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 20px;
     padding-top: 5px;
     overflow: auto; 
     background-color: white;
     border:5px solid lightgray; 
-    border-radius: 40px;
+    border-radius: 5px;
 }
 span.color1{
   color: black;
@@ -46,31 +53,37 @@ span.color1{
   font-size: 20px;
   font-weight: bold;
 }
-#manager_nav{
-  width: 90%;
-  margin: 0 auto;
-  li{
-    float: left;
-    display: inline;
-    list-style: none;
-    a{
-      font-family: 'Jura', sans-serif;
-      margin-right: 50px;  
-      color: gray;
-      text-decoration: none;
-      &:hover{
-        color: black;
-        font-weight: bold;
+#nav_wrapper{
+  text-align: center;
+  #manager_nav{
+    display: inline-block;
+    list-style-type: none;
+    li{
+      float: left;
+      display: inline;
+      list-style: none;
+      a{
+        font-family: 'Jura', sans-serif;
+        margin-right: 50px;  
+        color: gray;
+        text-decoration: none;
+        &:hover{
+          color: black;
+          font-weight: bold;
+        }
       }
     }
   }
 }
 #title7{
   margin: 0 auto;
-  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 150px;
   font-family: 'Jura', sans-serif;
-  color: gray;
-  font-size: 50px;
+  font-weight: bold;
+  color: black;
+  font-size: 35px;
   text-shadow: 5px 3px 3px lightgray;
 }
 

@@ -1,7 +1,7 @@
 <%= render "shared/top_nav" %>
 <div id="page">
-<div id="title7">click on a space to edit or view reservations</div>
-<div>
+<div id="title7">CLICK ON A TITLE TO EDIT INFORMATION AND AVAILABILITY</div>
+<div id="nav_wrapper">
   <ul id="manager_nav">
     <% @spaces.each do |space| %>
     <li>
@@ -14,12 +14,9 @@
       <div id="outer-wrap1">
         <div id="inner-wrap1">
           <% @spaces.each do |space| %>
-<<<<<<< HEAD
-              <div class="space_holder">
+              <div class="space_holder1" id="<%= space.title %>">
                 <h3><% if space.active == 0 %>Inactive<% end %></h3>
-=======
-              <div class="space_holder" id="<%= space.title %>">
->>>>>>> updating scrolling views
+              
                 <h2 id="link"><%= link_to "#{space.title}", edit_space_path(space.id) %></h2>
                 <p><h5>dimensions |</h5><%= space.dimensions %></p>
                 <p><h5>equipment |</h5><%= space.ammenities %></p>
@@ -33,26 +30,6 @@
       </div>
     </div>
     
-
-<div id="wrapper">
-      <div id="outer-wrap2">
-        <div id="inner-wrap">
-          <% @spaces.each do |space| %>
-              <div id="bookings">
-                <% @spaces.each do |space| %>
-                  <span class="color"><%= space.title %></span>
-                  <% space.upcoming_reservations.each do |r| %>
-                  <p><span class="color1">RENTER</span><%= r.renter.first_name %>  <%= r.renter.last_name %><span class="color1">FROM</span><%= r.start_time %><span class="color1">TO</span><%= r.end_time %></p>
-                  <% end %>
-                  <hr>
-                <% end %>
-              </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-
 
 </div>
 
