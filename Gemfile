@@ -67,3 +67,5 @@ gem 'dotenv-rails'
 gem 'stripe'
 gem 'oauth2'
 
+# Use jquery-turbolinks to resolve the javascript loading problem
+gem 'jquery-turbolinks'
