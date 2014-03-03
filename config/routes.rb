@@ -20,7 +20,7 @@ Artspace::Application.routes.draw do
 
   get  "spaces/:id/pic", to: "spaces#edit_pic", as: "edit_pic"
   post "uploaded", to: "spaces#add_photo", as: "uploaded"
-
+  post "delete_pic", to: "spaces#delete_photo"
   resources :payments, only: [:new]
   get "payments/callback", to: "payments#callback", as: "payments_callback"
   post "payments/charge", to: "payments#charge", as: "payment_charge"

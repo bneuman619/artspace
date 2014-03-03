@@ -20,9 +20,12 @@ $(function() {
       $(event.target).hide();
     }
   })
+
+  $(".old_pic").click(function() {
+    var img_id = $(this).attr('name')
+    $('#' + img_id).fadeOut();
+    $.post( "/delete_pic", {id: img_id} )
+  })
+
 });
 
-
-$(".remove_img").click(function() {
-  console.log("hello")
-})
