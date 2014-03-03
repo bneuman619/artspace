@@ -41,7 +41,7 @@ class ReservationsController < ApplicationController
 end
 
 def invalid_timerange_check(reservation)
-  unavailable_timerange_check(reservation) || reserved_timerange_check(reservation)
+  reserved_timerange_check(reservation)
 end
 
 def unavailable_timerange_check(reservation)
