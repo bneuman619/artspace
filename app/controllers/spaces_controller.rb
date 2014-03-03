@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = Space.scoped
+    @spaces = Space.scoped.where(active: 1)
     @spaces = @spaces.title(params[:title]) if params[:title].present?
     @spaces = @spaces.rate_less(params[:rate]) if params[:rate].present?
   end
