@@ -42,8 +42,6 @@ class AvailabilitiesController < ApplicationController
         parse_availability(availability))
     end
 
-    puts "HELLO STUPID #{availabilities.to_s}"
-
     if availabilities.any?(&:invalid?)
       space.availabilities.destroy_all
       old_availabilities.each { |avail| space.availabilities.create(avail.attributes) }
