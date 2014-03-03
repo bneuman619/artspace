@@ -32,5 +32,30 @@
   font-size: 35px;
   text-shadow: 5px 3px 3px lightgray;
 }
+#link{
+  width: 100%;
+  float: left;
+  display: inline;
+}
+
+div.upcoming_reservations{
+  border: 1px solid gray;
+  border-radius: 20px;
+  width: 65%;
+  float: left;
+  display: inline;
+  margin: 1%;
+  padding: 1%;
+}
+
+div.options{
+  border: 1px solid gray;
+  border-radius: 20px;
+  width: 25%;
+  float: left;
+  display: inline;
+  margin: 1%;
+  padding: 1%;
+}
 
 

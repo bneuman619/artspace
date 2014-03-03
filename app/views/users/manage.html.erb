@@ -16,7 +16,13 @@
     <div class="space_holder1" id="<%= space.title %>">
       <h3><% if space.active == 0 %>Inactive<% end %></h3>
       <h2 id="link"><%= link_to "#{space.title}", edit_space_path(space.id) %></h2>
-
+      <div class="upcoming_reservations">
+        <% space.upcoming_reservations.each do |r| %>
+          <p>RENTER <%= r.renter.first_name %>  <%= r.renter.last_name %> FROM <%= r.start_time %> TO <%= r.end_time %></p>
+        <% end %>
+      </div>
+      <div class="options">
+      </div>
     </div>
   <% end %>
 
