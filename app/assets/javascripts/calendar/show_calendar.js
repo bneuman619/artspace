@@ -23,28 +23,3 @@ function show_edit_availability_calendar(selector) {
 
 
 
-
-// function show_calendar(selector){
-//   var calendar = make_calendar(parse(get_calendar_data()));
-//   $(selector).weekCalendar(calendar);
-// }
-
-// function parse(calendar_data) {
-//   for(var i = 0; i < calendar_data.openings.length; i++) {
-//     calendar_data.openings[i].free = true;
-//   }
-
-//   var eventData = {
-//     options: {
-//         timeslotsPerHour: 3,
-//         timeslotHeight: 30,
-//         defaultFreeBusy: {free: false}
-//       },
-
-//     events : calendar_data.reservations,
-
-//     freebusys: calendar_data.openings
-//   };
-
-//   return eventData;
-// }
