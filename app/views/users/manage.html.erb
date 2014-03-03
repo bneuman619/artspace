@@ -24,7 +24,11 @@
         <% end %>
       </div>
       <div class="options">
-        <p><%= link_to "EDIT DETAILS", edit_space_path(space.id)%></p>
+        <% if space.active == 1 %>
+          <p><%= link_to "EDIT DETAILS", edit_space_path(space.id)%></p>
+        <% else %>
+          <p><%= link_to "ACTIVATE/EDIT DETAILS", edit_space_path(space.id)%></p>
+        <% end %>
         <p><%= link_to "EDIT SCHEDULE", edit_availabilities_path(space.id)%></p>
         <p><%= link_to "EDIT PHOTOS", edit_space_path(space.id) %></p>
         <% if space.active == 1 %>

@@ -5,7 +5,7 @@
   <%= form_for @space, :html => {:class => "spaceform"} do |f| %>
     <%= render :partial => "shared/space_details", :locals=>{:f=>f} %>
     <% if @space.active == 0 %>
-      <%= f.submit "Activate & Edit Availability", :class => "search_it" %>
+      <%= f.submit "Activate & Save", :class => "search_it" %>
     <% else %>
       <%= f.submit "Save", :class => "search_it" %>
     <% end %>
