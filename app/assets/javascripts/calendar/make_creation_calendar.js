@@ -31,21 +31,21 @@ function make_creation_calendar(events_input) {
       }
     },
 
-    eventDrop : function(newCalEvent, oldCalEvent, element) {
-      // for(i = 0; i < modifiedEvents.length; i++) {
-      //   if (modifiedEvents[i].id == newCalEvent.id) {
-      //     modifiedEvents[i] = newCalEvent;
-      //     return true;
-      //   }
-      // }
-      // modifiedEvents.push(newCalEvent);
-    },
+    // eventDrop : function(newCalEvent, oldCalEvent, element) {
+    //   // for(i = 0; i < modifiedEvents.length; i++) {
+    //   //   if (modifiedEvents[i].id == newCalEvent.id) {
+    //   //     modifiedEvents[i] = newCalEvent;
+    //   //     return true;
+    //   //   }
+    //   // }
+    //   // modifiedEvents.push(newCalEvent);
+    // },
 
-    eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
-      // calEvent.id = "new_event" +'_'+ calEvent.start.getTime();
+    // eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
+    //   // calEvent.id = "new_event" +'_'+ calEvent.start.getTime();
 
-      // modifiedEvents.push(calEvent);
-    },
+    //   // modifiedEvents.push(calEvent);
+    // },
 
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
       if (confirm('You want to delete this reservation?')) {
