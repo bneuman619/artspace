@@ -66,3 +66,9 @@ function parse_for_availability_edit(calendar_data) {
 
   return eventData;
 }
+
+function get_day(date) {
+  var day_num = date.getDay();
+  var day = $("#calendar").data().uiWeekCalendar.options.longDays[day_num];
+  return day;
+}

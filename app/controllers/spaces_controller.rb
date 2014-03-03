@@ -115,7 +115,8 @@ def week_openings(day, space)
   space.availabilities.all.collect do |availability|
   {"start" => DateTime.new(monday.year, monday.month, monday.day, availability.start_time.hour, availability.start_time.strftime("%m").to_i) + (availability.day - 1).day,
    "end" => DateTime.new(monday.year, monday.month, monday.day, availability.end_time.hour, availability.end_time.strftime("%m").to_i) + (availability.day - 1).day,
-   "title" => ""}
+   "title" => "",
+   "day" => availability.day}
   end
 end
 

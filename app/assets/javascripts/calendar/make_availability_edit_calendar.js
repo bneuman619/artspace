@@ -29,7 +29,6 @@ function make_availability_edit_calendar(events_input) {
           return true;
         }
       }
-      console.log("in drop");
       modifiedEvents.push(newCalEvent);
     },
 
@@ -58,7 +57,6 @@ function make_availability_edit_calendar(events_input) {
     displayOddEven: true,
     displayFreeBusys: false,
     daysToShow: 7,
-    switchDisplay: {'1 day': 1, 'full week': 7},
     headerSeparator: ' ',
     useShortDayNames: true,
     dateFormat: 'd F y',
@@ -70,7 +68,14 @@ function make_availability_edit_calendar(events_input) {
       $.each(event_css, function() {
         modifiedEvents.push(event_css.data().calEvent);
       });
-    }
+    },
+
+    getHeaderDate: function(date, calendar) {
+      return get_day(date);
+    },
+
+    buttons: false,
+    showHeader: false,
 
   }
   return calendar;

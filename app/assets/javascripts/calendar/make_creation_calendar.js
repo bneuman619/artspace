@@ -51,6 +51,13 @@ function make_creation_calendar(events_input) {
       callback(events_input);
     },
 
+     getHeaderDate: function(date, calendar) {
+      return get_day(date);
+    },
+
+    buttons: false,
+    showHeader: false,
+
     displayOddEven: true,
     displayFreeBusys: false,
     allowEventDelete: true,
