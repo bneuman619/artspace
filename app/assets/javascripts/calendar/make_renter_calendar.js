@@ -14,7 +14,7 @@ function make_renter_calendar(events_input) {
     headerSeparator: ' ',
     useShortDayNames: true,
     allowCalEventOverlap: false,
-    dateFormat: 'd F y',
+    dateFormat: 'F d',
     businessHours: false,
 
     height: function($calendar){
@@ -32,11 +32,11 @@ function make_renter_calendar(events_input) {
 
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
         if (confirm('You want to delete this reservation?')) {
-          for(i = 0; i < modifiedEvents.length; i++) {
-            if (modifiedEvents[i].id == calEvent.id) {
-              modifiedEvents.splice(i, 1);
-            }
-          }
+          // for(i = 0; i < modifiedEvents.length; i++) {
+          //   if (modifiedEvents[i].id == calEvent.id) {
+          //     modifiedEvents.splice(i, 1);
+          //   }
+          // }
 
         deleteEvent(calEvent, calendar);
         }
@@ -45,13 +45,13 @@ function make_renter_calendar(events_input) {
     eventDrop : function(newCalEvent, oldCalEvent, element) {
       removeFreeBusy(oldCalEvent, $("#calendar"));
 
-      for(i = 0; i < modifiedEvents.length; i++) {
-        if (modifiedEvents[i].id == newCalEvent.id) {
-          modifiedEvents[i] = newCalEvent;
-          return true;
-        }
-      }
-      modifiedEvents.push(newCalEvent);
+      // for(i = 0; i < modifiedEvents.length; i++) {
+      //   if (modifiedEvents[i].id == newCalEvent.id) {
+      //     modifiedEvents[i] = newCalEvent;
+      //     return true;
+      //   }
+      // }
+      // modifiedEvents.push(newCalEvent);
     },
 
     eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
@@ -74,8 +74,6 @@ function make_renter_calendar(events_input) {
         return false;
       }
 
-      calEvent.id = "new_event" +'_'+ calEvent.start.getTime();
-
       $(calendar).weekCalendar('updateFreeBusy', {
         start: calEvent.start,
         end: calEvent.end,
@@ -96,12 +94,19 @@ function make_renter_calendar(events_input) {
         }]
       });
 
-      modifiedEvents.push(calEvent);
+    },
+
+    eventBody: function() {
+      return "Reservation";
     },
 
     data: function(start, end, callback) {
       callback(events_input);
     },
+
+    title: function(date, calendar) {
+      return new Date().getMonthName() + " " + new Date().getFullYear();
+    }
   }
 
   return calendar;

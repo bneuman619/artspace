@@ -70,6 +70,10 @@ function make_availability_edit_calendar(events_input) {
     getHeaderDate: function(date, calendar) {
       return get_day(date);
     },
+
+    eventBody: function() {
+      return "Available hours";
+    }
   }
   return calendar;
 

@@ -60,9 +60,18 @@ function make_creation_calendar(events_input) {
       callback(events_input);
     },
 
-     getHeaderDate: function(date, calendar) {
+    getHeaderDate: function(date, calendar) {
       return get_day(date);
     },
+
+    eventBody: function() {
+      return "Available hours";
+    },
+
+
+
+    // date: new Date(2014, 2, 10)
+
   }
 
   return calendar;
