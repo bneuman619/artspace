@@ -1,6 +1,19 @@
 <%= render "shared/top_nav" %>
 <div id="title5"><%= @space.title %></div>
-<div class="photo"><img src="<%=@space.photos.first.url%>"></div>
+<div class="photo">
+  <img id="primary_photo" src="<%=@space.photos.first.url%>">
+  <div>
+    <ul id="thumbnails">
+      <% for i in 1..4 %>
+        <% if @space.photos[i] %>
+          <img id="thumb<%=i%>" src="<%= @space.photos[i].url %>">
+        <% else %>
+          <img id="thumb<%=i%>" src="">  
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
 <div class="contents">
   <p><h5>description |</h5><%= @space.description %></p>
   <p><h5>dimensions |</h5><%= @space.dimensions %></p>
@@ -17,3 +30,20 @@
 <% end %>
 <input type="hidden" id="pub_key" value="<%= @publishable_key %>">
 <%= render "shared/calendar" %>
+<script>
+  $('#thumbnails img').on('click', function(e){ 
+    if (this.src != this.baseURI) {
+      var sourceURL = this.src;
+      var targetURL = $('#primary_photo').attr('src');
+      this.src = targetURL;
+      $('#primary_photo').attr('src', sourceURL);
+    }
+    // console.log('hello');
+    // console.log(e.currentTarget);
+    // console.log(e.currentTarget.src);
+    // console.log(e.currentTarget.baseURI);
+    // console.log(this.src);
+    // console.log(this.baseURI);
+    // console.log(e);
+  });
+</script>
