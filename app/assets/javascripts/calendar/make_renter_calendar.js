@@ -15,6 +15,7 @@ function make_renter_calendar(events_input) {
     useShortDayNames: true,
     allowCalEventOverlap: false,
     dateFormat: 'd F y',
+    businessHours: false,
 
     height: function($calendar){
       return $(window).height() - $('h1').outerHeight(true);
