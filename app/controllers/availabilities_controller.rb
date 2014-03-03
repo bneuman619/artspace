@@ -51,7 +51,7 @@ def parse_availability(availability)
 end
 
 def parse_availability_time(time)
-  DateTime.new(2000, 01, 01, time.hour, time.minute, time.second) + (time.wday - 1)
+  DateTime.new(2000, 01, 01, time.hour, time.minute, time.second, '-6') + (time.wday - 1)
 end
 
 def get_openings(space)
