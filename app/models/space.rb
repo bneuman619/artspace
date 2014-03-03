@@ -18,7 +18,7 @@ class Space < ActiveRecord::Base
   scope :title, lambda{ |t| where("title ILIKE ?", "%#{t}%") }    
   scope :rate_less, lambda{ |r|  where("rate <= ?", r.to_i)  }
 
-  def upcoming_bookings
+  def upcoming_reservations
     reservations.where("start_time > ? AND space_id = ?", Date.today, self.id)
   end
 end
