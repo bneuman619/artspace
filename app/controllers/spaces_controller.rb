@@ -81,6 +81,16 @@ class SpacesController < ApplicationController
     redirect_to new_space_path
   end
 
+  def edit_pic
+    space = Space.find(params[:id])
+    @photos = Photo.where(space_id: space.id).all
+    if !session[:current_user_id]
+      render "welcome/index"
+    elsif session[:current_user_id] != space.creator_id
+      redirect_to user_path(current_user.id)
+    end
+  end
+
   private
 
   def space_params

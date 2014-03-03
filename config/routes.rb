@@ -18,8 +18,8 @@ Artspace::Application.routes.draw do
   resources :availabilities, only: [:create]
   resources :reservations, only: [:create, :show, :destroy]
 
-
-  post "uploaded", to: "spaces#add_photo"
+  get  "spaces/:id/pic", to: "spaces#edit_pic", as: "edit_pic"
+  post "uploaded", to: "spaces#add_photo", as: "uploaded"
 
   resources :payments, only: [:new]
   get "payments/callback", to: "payments#callback", as: "payments_callback"

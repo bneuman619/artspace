@@ -21,3 +21,8 @@ $(function() {
     }
   })
 });
+
+
+$(".remove_img").click(function() {
+  console.log("hello")
+})

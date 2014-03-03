@@ -1,0 +1,19 @@
+<%= render "shared/top_nav" %>
+<div id="title4">Edit My Space Pictures</div>
+<div id="page">
+  <div id="edit_div">
+    <form class="spaceform form_container" >
+
+      <% @photos.each do |photo| %>
+       <p class="" ><img class="remove_img" src=<%=photo.url%> style="max-height: 600px; max-width: 600px;"><br>
+       <input type="button" value="delete"><br></p>
+      <%end%>
+      <div class="uploads_container"></div>
+      <div id="photo_uploader">
+      <%= render "shared/pic_form" %>
+      </div>
+      <input style="margin: 12px" type="submit" value="Save">
+
+    </form>
+  </div>
+</div>
