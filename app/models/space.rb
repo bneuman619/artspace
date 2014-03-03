@@ -14,7 +14,6 @@ class Space < ActiveRecord::Base
 
   has_many :availabilities
 
-
   scope :title, lambda{ |t| where("title ILIKE ?", "%#{t}%") }    
   scope :rate_less, lambda{ |r|  where("rate <= ?", r.to_i)  }
 
