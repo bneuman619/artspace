@@ -7,7 +7,7 @@ $(document).ready(function() {
       dataType: "json",
       success: function(response) {
         if(response.status == 'error') {
-          alert("There was a problem with your availabilities");
+          console.log(response);
         }
         else {
           window.location = "/payments/new";
@@ -27,7 +27,6 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
           if(response.status == 'error') {
-            alert("There was a problem with your availabilities");
           }
           else {
           window.location = "/users/" + $("#edit_availabilities").data().userId + "/manage";
