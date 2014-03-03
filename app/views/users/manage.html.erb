@@ -1,6 +1,6 @@
 <%= render "shared/top_nav" %>
 <div id="page">
-  <div id="title7">CLICK ON A TITLE TO EDIT INFORMATION AND AVAILABILITY</div>
+  <div id="title7">CLICK ON A TITLE TO NAVIGATE TO YOUR OPTIONS</div>
   <div id="nav_wrapper">
     <ul id="manager_nav">
       <% @spaces.each do |space| %>
@@ -17,8 +17,9 @@
       <h3><% if space.active == 0 %>Inactive<% end %></h3>
       <h2 id="link"><%= link_to "#{space.title}", edit_space_path(space.id) %></h2>
       <div class="upcoming_reservations">
+        <h3> UPCOMING RESERVATIONS </h3>
         <% space.upcoming_reservations.each do |r| %>
-          <p>RENTER <%= r.renter.first_name %>  <%= r.renter.last_name %> FROM <%= r.start_time %> TO <%= r.end_time %></p>
+          <p><span class="color">RENTER </span><%= r.renter.first_name %>  <%= r.renter.last_name %><span class="color"> FROM </span><%= r.start_time %><span class="color"> TO </span><%= r.end_time %></p>
         <% end %>
       </div>
       <div class="options">
