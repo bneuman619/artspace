@@ -26,6 +26,7 @@ $(document).ready(function() {
         url: '/spaces/availabilities/update',
         dataType: "json",
         success: function(response) {
+          console.log(response);
           if(response.status == 'error') {
             alert("There was a problem with your availabilities");
           }

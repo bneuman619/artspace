@@ -35,10 +35,14 @@ class AvailabilitiesController < ApplicationController
     old_availabilities = space.availabilities.destroy_all
 
     availability_data = params["data"]
+
+
     availabilities = availability_data.values.collect do |availability|
       space.availabilities.create(
         parse_availability(availability))
     end
+
+    puts "HELLO STUPID #{availabilities.to_s}"
 
     if availabilities.any?(&:invalid?)
       space.availabilities.destroy_all
@@ -57,15 +61,17 @@ def parse_availability(availability)
 end
 
 def parse_availability_time(time)
-  DateTime.new(2000, 01, 01, time.hour, time.minute, time.second, '-6') + (time.wday - 1)
+  DateTime.new(2000, 01, 01, time.hour, time.minute, time.second, '-6')
 end
 
 def get_openings(space)
   today = DateTime.now
-  this_monday = today - (today.wday - 1)
+  this_sunday = today - today.wday
   space.availabilities.all.collect do |availability|
-  {"start" => DateTime.new(this_monday.year, this_monday.month, this_monday.day, availability.start_time.hour, availability.start_time.strftime("%m").to_i) + (availability.day - 1).day,
-   "end" => DateTime.new(this_monday.year, this_monday.month, this_monday.day, availability.end_time.hour, availability.end_time.strftime("%m").to_i) + (availability.day - 1).day,
+    start_time = availability.start_time - 6.hour
+    end_time = availability.end_time - 6.hour
+  {"start" => DateTime.new(this_sunday.year, this_sunday.month, this_sunday.day, start_time.hour, start_time.min, 0,'-6') + availability.day.day,
+   "end" => DateTime.new(this_sunday.year, this_sunday.month, this_sunday.day, end_time.hour, end_time.min, 0, '-6') + availability.day.day,
    "title" => ""}
   end
 end
