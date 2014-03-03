@@ -27,6 +27,7 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
           if(response.status == 'error') {
+            console.log(response);
           }
           else {
           window.location = "/users/" + $("#edit_availabilities").data().userId + "/manage";
