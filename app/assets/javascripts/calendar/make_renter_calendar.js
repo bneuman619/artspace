@@ -137,5 +137,9 @@ function _removeFreeBusyFromManager(oldEvent, freeBusyManager) {
 
 function deleteEvent(calEvent, calendar) {
   removeFreeBusy(calEvent, calendar);
+  removeEvent(calEvent, calendar);
+}
+
+function removeEvent(calEvent, calendar) {
   calendar.weekCalendar('removeEvent',calEvent.id);
 }
