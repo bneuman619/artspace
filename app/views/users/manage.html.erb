@@ -1,34 +1,25 @@
 <%= render "shared/top_nav" %>
 <div id="page">
-<div id="title7">CLICK ON A TITLE TO EDIT INFORMATION AND AVAILABILITY</div>
-<div id="nav_wrapper">
-  <ul id="manager_nav">
-    <% @spaces.each do |space| %>
-    <li>
-      <%= link_to "#{space.title}", "##{space.title}" %>
-    </li>
-    <% end %>
-  </ul>
-</div>
-    <div id="wrapper">
-      <div id="outer-wrap1">
-        <div id="inner-wrap1">
-          <% @spaces.each do |space| %>
-              <div class="space_holder1" id="<%= space.title %>">
-                <h3><% if space.active == 0 %>Inactive<% end %></h3>
-              
-                <h2 id="link"><%= link_to "#{space.title}", edit_space_path(space.id) %></h2>
-                <p><h5>dimensions |</h5><%= space.dimensions %></p>
-                <p><h5>equipment |</h5><%= space.ammenities %></p>
-                <p><h5>per hour |</h5><%= space.rate %></p>
-                <p><h5>address |</h5><br><%= space.address %><br>
-                  <%= space.city %>, <%= space.state %> <%= space.zipcode %>
-                </p>
-              </div>
-          <% end %>
-        </div>
-      </div>
+  <div id="title7">CLICK ON A TITLE TO EDIT INFORMATION AND AVAILABILITY</div>
+  <div id="nav_wrapper">
+    <ul id="manager_nav">
+      <% @spaces.each do |space| %>
+      <li>
+        <%= link_to "#{space.title}", "##{space.title}" %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+    
+
+  <% @spaces.each do |space| %>
+    <div class="space_holder1" id="<%= space.title %>">
+      <h3><% if space.active == 0 %>Inactive<% end %></h3>
+      <h2 id="link"><%= link_to "#{space.title}", edit_space_path(space.id) %></h2>
+
     </div>
+  <% end %>
+
     
 
 </div>
