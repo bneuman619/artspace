@@ -4,9 +4,9 @@
   <img id="primary_photo" src="<%=@space.photos.first.url%>">
   <div>
     <ul id="thumbnails">
-      <% for i in 1..4 %>
+      <% for i in 0..3 %>
         <% if @space.photos[i] %>
-          <img id="thumb<%=i%>" src="<%= @space.photos[i].url %>">
+          <img class="highlight" id="thumb<%=i%>" src="<%= @space.photos[i].url %>">
         <% else %>
           <img id="thumb<%=i%>" src="">  
         <% end %>
@@ -33,17 +33,7 @@
 <script>
   $('#thumbnails img').on('click', function(e){ 
     if (this.src != this.baseURI) {
-      var sourceURL = this.src;
-      var targetURL = $('#primary_photo').attr('src');
-      this.src = targetURL;
-      $('#primary_photo').attr('src', sourceURL);
+      $('#primary_photo').attr('src', this.src);
     }
-    // console.log('hello');
-    // console.log(e.currentTarget);
-    // console.log(e.currentTarget.src);
-    // console.log(e.currentTarget.baseURI);
-    // console.log(this.src);
-    // console.log(this.baseURI);
-    // console.log(e);
   });
 </script>

@@ -38,7 +38,7 @@ div.photo{
 
 #thumbnails {
   display: inline;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 0;
 }
 
@@ -47,5 +47,14 @@ div.photo{
   height: 85px;
   width: 85px;
   background-color: lightgrey;
-  
+  margin: 2px;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+
+#thumbnails .highlight:hover {
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
 }
