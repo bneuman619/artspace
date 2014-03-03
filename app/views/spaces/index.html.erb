@@ -1,0 +1,41 @@
+<%= render "shared/top_nav" %>
+<div id="page">
+
+
+
+	<div class="search_bar"><%= render "shared/search" %></div>
+	
+		<div class="description">ArtSpace supports artists and business owners alike by providing a place for venues to advertise availability via an interactive schedule. Artists, find the perfect space for your upcoming rehearsals, performances, and events. Book in advance or on the fly. New to the area? Discover venues most coveted by locals in the scene. Search by hourly rate, venue name, or simply browse them all.</div>
+
+		  <div class="directions">hover over an image to view details about the space</div>
+		  <div id="outside">
+		  <div id="back">
+		  	<
+		  </div>
+		  <div id="forward">
+		    >
+		  </div>
+		  <div id="outer-wrap">
+		    <div id="inner-wrap">
+			  <% @spaces.each do |space| %>
+					  <div class="space_holder" style='background:url("<%=space.photos.first.url%>");background-size:100%;z-index:2;'>
+					  		<h4><%= space.title %></h4>
+						  	<div class="hidden_text">
+							<h2 id="link"><%= link_to "#{space.title}", space_path(space.id) %></h2>
+							<p><h5>dimensions |</h5><%= space.dimensions %></p>
+							<p><h5>equipment |</h5><%= space.ammenities %></p>
+							<p><h5>per hour |</h5><%= space.rate %></p>
+							<p><h5>address |</h5><br><%= space.address %><br>
+								<%= space.city %>, <%= space.state %> <%= space.zipcode %>
+							</p>
+						   </div>
+					   </div>
+
+			  <% end %>
+		  </div>
+		</div>
+
+	</div>
+
+  </div>
+</div>

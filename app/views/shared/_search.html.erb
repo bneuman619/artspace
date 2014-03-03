@@ -1,8 +1,8 @@
 
-  <%= form_tag(spaces_path, :method => "get", class:"s") do %>
-	<p>
-	  <%= text_field_tag :title, params[:title], placeholder: "search for space", size: 20, id:"search_form" %>
-	  <%= text_field_tag :rate, params[:rate], placeholder: "max $", size: 10, id:"rate_form" %>
+  <%= form_tag(spaces_path, :method => "get") do %>
+
+	  <%= text_field_tag :title, params[:title], placeholder: "search for space", size: 20, id:"search_form2" %>
+	  <%= text_field_tag :rate, params[:rate], placeholder: "max $", size: 10, id:"rate_form2" %>
 	  <%= submit_tag "Search", :name => nil, :class => "search_it" %>
-	</p>
+
   <% end %>
