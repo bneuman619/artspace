@@ -12,6 +12,7 @@ class AvailabilitiesController < ApplicationController
 
     if availabilities.any?(&:invalid?)
       space.availabilities.destroy_all
+      availabilities.select(&:invaild?).collect {|invalid| invalid.errors.full_messages}
       render json: {status: 'error', message: "Validation error with availabilities", availablities: availabilities}.to_json
     else
       render json: {status: 'success'}.to_json
