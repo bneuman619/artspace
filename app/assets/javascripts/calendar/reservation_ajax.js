@@ -6,8 +6,8 @@ $(document).ready(function() {
     //image: '/square-image.png',
     token: function(token, args) {
       //console.log(token.id);
-      var data = { token_key: token.id, 
-               amount: totCharge, 
+      var data = { token_key: token.id,
+               amount: totCharge,
                description: title,
                space_id: $("#make_reservation").data("space-id")
              };
@@ -27,13 +27,13 @@ $(document).ready(function() {
       });
     }
   });
-  
+
 
   $("#make_reservation").on("click", function(event) {
     event.preventDefault();
     //console.log("stuff");
     $.ajax({
-      data: {data: modifiedEvents, spaceId: $("#make_reservation").data().spaceId},
+      data: {data: $("#calendar").weekCalendar("serializeEvents"), spaceId: $("#make_reservation").data().spaceId},
       type: 'post',
       url: '/reservations/',
       dataType: "json",

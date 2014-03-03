@@ -18,6 +18,12 @@
 <script>
 
 $(document).ready(function() {
-  show_renter_calendar("#calendar");
+  <% if current_user %>
+    show_renter_calendar("#calendar");
+    console.log(<%= @calendar_info.html_safe %>);
+  <% else %>
+    show_read_only_calendar("#calendar");
+  <% end %>
 });
+
 </script>

@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#create_availabilities").on("click", function(event) {
     $.ajax({
-      data: {data: modifiedEvents, spaceId: $("#create_availabilities").data().spaceId},
+      data: {data: $("#calendar").weekCalendar("serializeEvents"), spaceId: $("#create_availabilities").data().spaceId},
       type: 'post',
       url: '/availabilities',
       dataType: "json",
@@ -21,11 +21,12 @@ $(document).ready(function() {
 
    $("#edit_availabilities").on("click", function(event) {
       $.ajax({
-        data: {data: modifiedEvents, spaceId: $("#edit_availabilities").data().spaceId},
+        data: {data: $("#calendar").weekCalendar("serializeEvents"), spaceId: $("#edit_availabilities").data().spaceId},
         type: 'post',
         url: '/spaces/availabilities/update',
         dataType: "json",
         success: function(response) {
+          console.log(response);
           if(response.status == 'error') {
             console.log(response);
           }

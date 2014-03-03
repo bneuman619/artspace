@@ -45,6 +45,11 @@ class SpacesController < ApplicationController
 
   def edit
     @space = Space.find(params[:id])
+    if !session[:current_user_id]
+      render "welcome/index"
+    elsif session[:current_user_id] != @space.creator_id
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def update
@@ -59,7 +64,7 @@ class SpacesController < ApplicationController
     space.active = 1
     space.save
     # redirect_to manage_path(current_user.id)
-    redirect_to edit_availabilities_path(space)
+    redirect_to manage_path(session[:current_user_id])
   end
 
   def destroy
@@ -88,7 +93,7 @@ class SpacesController < ApplicationController
 end
 
 def calendar_info(space)
-  {openings: get_openings(space),
+  {openings: get_openings_for_four_weeks(week_openings(DateTime.now, space)),
    reservations: get_reservations(space)
   }
 end
@@ -101,8 +106,8 @@ def get_openings_for_four_weeks(one_week_openings)
   openings = []
   (1..3).each do |week|
     one_week_openings.each do |opening|
-      openings << {"start" => opening["start"] + week.week,
-       "end" => opening["end"] + week.week,
+      openings << {"start" => opening["start"] + week.week - 1.hour,
+       "end" => opening["end"] + week.week - 1.hour,
        "title" => opening["title"]
       }
     end
@@ -111,10 +116,10 @@ def get_openings_for_four_weeks(one_week_openings)
 end
 
 def week_openings(day, space)
-  monday = day - (day.wday - 1)
+  sunday = day - day.wday.day
   space.availabilities.all.collect do |availability|
-  {"start" => DateTime.new(monday.year, monday.month, monday.day, availability.start_time.hour, availability.start_time.strftime("%m").to_i) + (availability.day - 1).day,
-   "end" => DateTime.new(monday.year, monday.month, monday.day, availability.end_time.hour, availability.end_time.strftime("%m").to_i) + (availability.day - 1).day,
+  {"start" => DateTime.new(sunday.year, sunday.month, sunday.day, availability.start_time.hour, availability.start_time.min, 0, '-6') + availability.day.day - 6.hour,
+   "end" => DateTime.new(sunday.year, sunday.month, sunday.day, availability.end_time.hour, availability.end_time.min, 0, '-6') + availability.day.day - 6.hour,
    "title" => "",
    "day" => availability.day}
   end

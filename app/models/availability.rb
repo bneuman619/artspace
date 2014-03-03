@@ -1,6 +1,6 @@
 class Availability < ActiveRecord::Base
   belongs_to :space
-  validate :check_overlap
+  # validate :check_overlap
 
   def check_overlap
     availabilities = self.space.availabilities
