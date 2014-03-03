@@ -15,7 +15,7 @@
   <% @spaces.each do |space| %>
     <div class="space_holder1" id="<%= space.title %>">
       <h3><% if space.active == 0 %>Inactive<% end %></h3>
-      <h2 id="link"><%= link_to "#{space.title}", edit_space_path(space.id) %></h2>
+      <h2 id="link"><%= space.title %></h2>
       <div class="upcoming_reservations">
         <h3> UPCOMING RESERVATIONS </h3>
         <% space.upcoming_reservations.each do |r| %>
@@ -23,6 +23,7 @@
         <% end %>
       </div>
       <div class="options">
+        <%= link_to "EDIT DETAILS", edit_space_path(space.id)%>
       </div>
     </div>
   <% end %>
