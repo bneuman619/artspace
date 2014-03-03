@@ -26,7 +26,7 @@ class AvailabilitiesController < ApplicationController
       redirect_to user_path(current_user.id)
     else
       @user_id = current_user.id
-      @calendar_info = get_openings(space).to_json
+      @calendar_info = week_openings(DateTime.now, space).to_json
     end
   end
 
@@ -74,5 +74,12 @@ def get_openings(space)
   end
 end
 
+# def convert_availability_date(sunday, availability_dt, day_num)
+#   if availability_dt.hour <= 6
+#     DateTime.new(sunday.year, sunday.month, sunday.day + 1, availability.dt.hour, availability.dt.min, 0, '-6') + day_num.day - 6.hour
+#   else
+#     DateTime.new(sunday.year, sunday.month, sunday.day, availability.dt.hour, availability.dt.min, 0, '-6') + day_num.day - 6.hour
+#   end
+# end
 
 
