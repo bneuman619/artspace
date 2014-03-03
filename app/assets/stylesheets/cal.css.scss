@@ -47,7 +47,7 @@ div.photo{
   margin-left: 200px;
   position: absolute;
   img{
-    max-height: 300px;
+    height: 300px;
     border-radius: 40px;
   }
 }
@@ -60,4 +60,20 @@ div.photo{
   font-family: 'Jura', sans-serif;
   color: darkgreen;
   font-size: 20px;
+}
+.hidden_text{
+  z-index: 3;
+  position: absolute;
+  text-align: center;
+  width:450px;
+  height: 300px;
+  background-color: white;
+  font-family: 'Jura', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  border: 3px solid lightgray;
+  border-radius: 40px;
+  display: none;
+  opacity: 0.85;
 }
