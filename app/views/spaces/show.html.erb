@@ -1,5 +1,6 @@
 <%= render "shared/top_nav" %>
 <div id="title5"><%= @space.title %></div>
+<div class="photo"><img src="<%=@space.photos.first.url%>"></div>
 <div class="contents">
   <p><h5>description |</h5><%= @space.description %></p>
   <p><h5>dimensions |</h5><%= @space.dimensions %></p>
