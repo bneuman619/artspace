@@ -30,16 +30,26 @@ div.contents{
   border-radius: 40px;
   width: 30%;
   margin-left: 50%;
-  margin-top: 150px;
+  margin-top: 200px;
   padding: 20px;
 }
 #title5{
   position: absolute;
   margin-left: 15%;
+  margin-top: -50px;
   font-family: 'Jura', sans-serif;
   color: darkgreen;
   font-size: 30px;
   text-shadow: 5px 3px 3px lightgray;
+}
+div.photo{
+  float: left;
+  margin-left: 200px;
+  position: absolute;
+  img{
+    max-height: 300px;
+    border-radius: 40px;
+  }
 }
 #title6{
   width: 50%;
