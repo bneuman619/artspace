@@ -1,6 +1,19 @@
 <%= render "shared/top_nav" %>
 <div id="title5"><%= @space.title %></div>
-<div class="photo"><img src="<%=@space.photos.first.url%>"></div>
+<div class="photo">
+  <img id="primary_photo" src="<%=@space.photos.first.url%>">
+  <div>
+    <ul id="thumbnails">
+      <% for i in 0..3 %>
+        <% if @space.photos[i] %>
+          <img class="highlight" id="thumb<%=i%>" src="<%= @space.photos[i].url %>">
+        <% else %>
+          <img id="thumb<%=i%>" src="">  
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
 <div class="contents">
   <p><h5>description |</h5><%= @space.description %></p>
   <p><h5>dimensions |</h5><%= @space.dimensions %></p>
@@ -10,6 +23,17 @@
   <p><h5>phone |</h5><%= @space.phone %></p>     
   <p><h5>email |</h5><%= @space.email %></p>
 </div>
-<div id="title6">click on the calendar and drag the box to book space</div>
+<% if current_user %> 
+  <div id="title6">click on the calendar and drag the box to book space</div>
+<% else %>
+  <div id="title6">you must login to book a reservation</div>
+<% end %>
 <input type="hidden" id="pub_key" value="<%= @publishable_key %>">
 <%= render "shared/calendar" %>
+<script>
+  $('#thumbnails img').on('click', function(e){ 
+    if (this.src != this.baseURI) {
+      $('#primary_photo').attr('src', this.src);
+    }
+  });
+</script>

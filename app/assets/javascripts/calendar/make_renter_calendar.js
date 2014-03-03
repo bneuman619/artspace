@@ -33,26 +33,13 @@ function make_renter_calendar(events_input) {
 
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
         if (confirm('You want to delete this reservation?')) {
-          // for(i = 0; i < modifiedEvents.length; i++) {
-          //   if (modifiedEvents[i].id == calEvent.id) {
-          //     modifiedEvents.splice(i, 1);
-          //   }
-          // }
 
-        deleteEvent(calEvent, calendar);
+          deleteEvent(calEvent, calendar);
         }
       },
 
     eventDrop : function(newCalEvent, oldCalEvent, element) {
       removeFreeBusy(oldCalEvent, $("#calendar"));
-
-      // for(i = 0; i < modifiedEvents.length; i++) {
-      //   if (modifiedEvents[i].id == newCalEvent.id) {
-      //     modifiedEvents[i] = newCalEvent;
-      //     return true;
-      //   }
-      // }
-      // modifiedEvents.push(newCalEvent);
     },
 
     eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
