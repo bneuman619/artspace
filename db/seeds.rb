@@ -96,8 +96,8 @@ end
 Space.all.each do |space|
   (1..5).each do |day|
     space.availabilities.create(space_id: space.id,
-                    start_time: DateTime.new(1011, 3, 3, 9, 0, 0),
-                    end_time: DateTime.new(1011, 3, 3, 17, 0, 0),
+                    start_time: DateTime.new(1011, 3, 3, 9, 0, 0, '-6'),
+                    end_time: DateTime.new(1011, 3, 3, 17, 0, 0, '-6'),
                     day: day
                   )
   end
