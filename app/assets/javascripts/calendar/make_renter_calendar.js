@@ -15,6 +15,7 @@ function make_renter_calendar(events_input) {
     useShortDayNames: true,
     allowCalEventOverlap: false,
     dateFormat: 'F d',
+
     businessHours: false,
 
     height: function($calendar){
@@ -107,6 +108,7 @@ function make_renter_calendar(events_input) {
     title: function(date, calendar) {
       return new Date().getMonthName() + " " + new Date().getFullYear();
     }
+
   }
 
   return calendar;

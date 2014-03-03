@@ -29,22 +29,6 @@ function make_creation_calendar(events_input) {
       }
     },
 
-    // eventDrop : function(newCalEvent, oldCalEvent, element) {
-    //   // for(i = 0; i < modifiedEvents.length; i++) {
-    //   //   if (modifiedEvents[i].id == newCalEvent.id) {
-    //   //     modifiedEvents[i] = newCalEvent;
-    //   //     return true;
-    //   //   }
-    //   // }
-    //   // modifiedEvents.push(newCalEvent);
-    // },
-
-    // eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
-    //   // calEvent.id = "new_event" +'_'+ calEvent.start.getTime();
-
-    //   // modifiedEvents.push(calEvent);
-    // },
-
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
       if (confirm('You want to delete this reservation?')) {
         // for(i = 0; i < modifiedEvents.length; i++) {
@@ -64,13 +48,10 @@ function make_creation_calendar(events_input) {
       return get_day(date);
     },
 
+
     eventBody: function() {
       return "Available hours";
     },
-
-
-
-    // date: new Date(2014, 2, 10)
 
   }
 
