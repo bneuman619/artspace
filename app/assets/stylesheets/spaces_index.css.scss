@@ -10,7 +10,7 @@
   text-align: center;
   a{
     text-decoration: none;
-    font-family: 'Jura', sans-serif; 
+    font-family: 'Jura', sans-serif;
     color: gray;
     &:hover{
       color: black;
@@ -20,12 +20,12 @@
   }
 }
 #outer-wrap {
-    width: 1040px; 
+    width: 1040px;
     height: 400px;
     margin:0 auto;
 
     padding-top: 5px;
-    overflow: auto; 
+    overflow: auto;
     background-color: white;
 
     border-radius: 5px;
@@ -41,7 +41,7 @@
 
 }
 .space_holder {
-    float:left; 
+    float:left;
     width:450px;
     height: 300px;
     background-color: white;
@@ -94,7 +94,7 @@ h5{
   font-family: 'Jura', sans-serif;
   font-size: 18px;
   font-weight: bold;
-  color: gray;  
+  color: gray;
   text-align: center;
   width: 70%;
   margin: 0 auto;
