@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     end
 
     invalid_reservations = reservations.select { |reservation| invalid_timerange_check(reservation) }
-        
+
     if !invalid_reservations.empty?
       render json: {status: 'error', error: "Invalid reservations"}.to_json
     else
@@ -28,21 +28,26 @@ class ReservationsController < ApplicationController
         space_title: @space.title,
         email: current_user.email
       }
-  
+
       render json: reservation_info.to_json
     end
   end
 
   def show
+    render text: params.to_s
   end
 
   def destroy
   end
+
+  def undo
+    puts params.to_s
+    deleted = Reservation.where(id: params["reservation_ids"]).destroy_all
+    render json: deleted.to_json
+  end
 end
 
-def invalid_timerange_check(reservation)
-  reserved_timerange_check(reservation)
-end
+
 
 def unavailable_timerange_check(reservation)
   reservation.space.availabilities.none? do |availability|
@@ -51,9 +56,4 @@ def unavailable_timerange_check(reservation)
   end
 end
 
-def reserved_timerange_check(reservation)
-  reservation.space.reservations.any? do |space_reservation|
-    space_reservation.start_time.between?(reservation.start_time, reservation.end_time) ||
-    space_reservation.end_time.between?(reservation.start_time, reservation.end_time)
-  end                               
-end
+

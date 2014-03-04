@@ -1,66 +1,40 @@
 $(document).ready(function() {
 
-  var handler = StripeCheckout.configure({
-    //key: 'pk_test_XYAoxUJ6VE4GGzZr7hQujucR', //Our publishable api key
-    key: $('#pub_key').val(),
-    //image: '/square-image.png',
-    token: function(token, args) {
-      //console.log(token.id);
-      var data = { token_key: token.id,
-               amount: totCharge,
-               description: title,
-               space_id: $("#make_reservation").data("space-id")
-             };
-
-      $.post( '/payments/charge', data, function(response) {
-        alert( 'success' );
-        //console.log(response);
-      })
-        .done(function() {
-          alert( 'second success' );
-        })
-        .fail(function() {
-          alert( 'error' );
-        })
-        .always(function() {
-          alert( 'finished' );
-      });
-    }
-  });
-
-
   $("#make_reservation").on("click", function(event) {
     event.preventDefault();
-    //console.log("stuff");
-    $.ajax({
-      data: {data: $("#calendar").weekCalendar("serializeEvents"), spaceId: $("#make_reservation").data().spaceId},
-      type: 'post',
-      url: '/reservations/',
-      dataType: "json",
-      success: function(response) {
-        //console.log(response.totalCharge);
-        if (response.status == 'error') {
-          console.log(response.error);
-          alert("There was a problem with your reservation.");
-        }
-        else {
-          totCharge = response.totalCharge;
-          title = response.title;
-          handler.open({
-            name: 'Artspace',
-            description: title,
-            email: response.email,
-            amount: totCharge
-          });
-        }
-      },
-      error: function(xhr, error) {
-        console.log('in error');
-        console.log(error);
-        // alert("there was an error");
-      }
+    handler.open({
+      amount: get_total_charge()
     });
   });
 });
 
+function get_total_charge() {
+  var rate = $("#make_reservation").data().spaceRate;
+  return rate * get_total_time() * 100;
+}
+
+function get_total_time() {
+  var events = get_events();
+  var hours = 0;
+  for (var i = 0; i < events.length; i++) {
+    var event_length = get_time_diff(events[i]);
+    hours += event_length;
+  }
+
+  return hours;
+}
+
+function get_time_diff(event) {
+  var millis = event.end - event.start;
+  var hours = millis_to_hours(millis);
+  return hours;
+}
+
+function millis_to_hours(millis) {
+  return millis / 1000 / 60 / 60;
+}
+
+function get_events() {
+  return $("#calendar").weekCalendar('serializeEvents');
+}
 
