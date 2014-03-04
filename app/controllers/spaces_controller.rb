@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = Space.scoped
+    @spaces = Space.scoped.where(active: 1)
     @spaces = @spaces.title(params[:title]) if params[:title].present?
     @spaces = @spaces.rate_less(params[:rate]) if params[:rate].present?
   end
@@ -123,9 +123,9 @@ def calendar_info(space)
   }
 end
 
-def get_openings(space)
-  get_openings_for_four_weeks(week_openings(DateTime.now, space))
-end
+# def get_openings(space)
+#   get_openings_for_four_weeks(week_openings(DateTime.now, space))
+# end
 
 def get_openings_for_four_weeks(one_week_openings)
   openings = []
@@ -143,11 +143,23 @@ end
 def week_openings(day, space)
   sunday = day - day.wday.day
   space.availabilities.all.collect do |availability|
-  {"start" => DateTime.new(sunday.year, sunday.month, sunday.day, availability.start_time.hour, availability.start_time.min, 0, '-6') + availability.day.day - 6.hour,
-   "end" => DateTime.new(sunday.year, sunday.month, sunday.day, availability.end_time.hour, availability.end_time.min, 0, '-6') + availability.day.day - 6.hour,
+  {"start" => convert_availability_date(sunday, availability.start_time, availability.day, false),
+   "end" => convert_availability_date(sunday, availability.end_time, availability.day, true),
    "title" => "",
    "day" => availability.day}
   end
+end
+
+def convert_availability_date(sunday, availability_dt, day_num, end_time)
+  adjusted_availability = if availability_dt.hour < 6
+    availability_dt + 18.hour
+  elsif availability_dt.hour == 6 && end_time
+    availability_dt + 18.hour - 1.minute
+  else
+    availability_dt - 6.hour
+  end
+
+  DateTime.new(sunday.year, sunday.month, sunday.day, adjusted_availability.hour, adjusted_availability.min, 0, '-6') + day_num.day
 end
 
 def get_reservations(space)

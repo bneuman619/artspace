@@ -1,5 +1,7 @@
 <div class="nav">
-  <h1 id="title2">Artspace</h1>
+  <div class="search_bar"><%= render "shared/search" %></div>
+  <%= image_tag "artspace.svg", id:"logo" %>
+  <h1 id="title2">Space</h1>
   <% if session[:current_user_id] != nil %>
   <% user = User.find(session[:current_user_id]) %>
   <%= link_to 'Home', user %>

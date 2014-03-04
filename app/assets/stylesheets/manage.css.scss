@@ -36,6 +36,7 @@
   width: 100%;
   float: left;
   display: inline;
+  font-family: 'Jura', sans-serif;
 }
 
 div.upcoming_reservations{
@@ -79,7 +80,9 @@ div.options{
   color: lightgray;
   text-align: center;
 }
-div.space_holder1{
+div.upcoming_reservations{
   font-family: 'Jura', sans-serif;
 }
-
+.reservation_holder{
+  background-color: purple;
+}
