@@ -5,7 +5,8 @@
     <ul id="manager_nav">
       <% @spaces.each do |space| %>
       <li>
-        <%= link_to "#{space.title}", "##{space.title}" %>
+        <% space_name = space.title.gsub(/\s/, "") %>
+        <%= link_to "#{space.title}", "##{space_name}" %>
       </li>
       <% end %>
     </ul>
@@ -13,10 +14,11 @@
 
 
   <% @spaces.each do |space| %>
-    <div class="reservation_holder" id="<%= space.title %>">
+
 
       <h2 id="link"><%= space.title %></h2>
-      <div class="upcoming_reservations">
+      <% space_name = space.title.gsub(/\s/, "") %>
+      <div class="upcoming_reservations", id="<%=space_name%>">
         <h2 class="inactive"><% if space.active == 0 %>INACTIVE<% end %></h2>
         <h3> UPCOMING RESERVATIONS </h3>
         <% space.upcoming_reservations.each do |r| %>
@@ -36,7 +38,7 @@
                       class: "search_it", method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
       </div>
-    </div>
+
   <% end %>
 
 
