@@ -44,6 +44,7 @@ class PaymentsController < ApplicationController
     if response.paid
       resp = create_reservations(params["reservation_data"])
       resp["payment"] = response
+      resp["totalCharge"] = resp["payment"]["amount"]
 
       render json: resp.to_json
     else
