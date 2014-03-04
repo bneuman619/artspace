@@ -3,7 +3,7 @@
 <div id="page">
   <div id="edit_div" class="spaceform form_container" style="margin-top: 10em; width: 800px;">
       <div id="uploads_container"></div>
-      <p>Upload Photos: <%= render "shared/pic_form" %></p>
+      <p>Upload Photos:<br><span id="rmv_msg" hidden>click on newly uploaded photo to remove</span><%= render "shared/pic_form" %></p>
       <%=form_tag(controller: "spaces", action: "update_pic", method: "post") do%>
         <input type="hidden" name="space_id" value=<%=@space.id%>>
         <% @photos.each do |photo| %>

@@ -10,8 +10,9 @@ $(function() {
   );
 
   $('#s3-uploader').bind('s3_upload_complete', function(e, content) {
-    $("#uploads_container").append('<img class="remove_img" src=' + content['url'] + ' height="125" width="125">')
+    $("#uploads_container").append('<img style="padding-left: 5px;" class="remove_img" src=' + content['url'] + ' height="125" width="125">')
     imgArray.push(content['url'] )
+    $("#rmv_msg").fadeIn("slow");
     $("#form_container").append('<input type="hidden" name="pic_url" value=' + imgArray + '>')
   });
 
@@ -19,7 +20,7 @@ $(function() {
     if ($(event.target).hasClass('remove_img')) {
       var index = imgArray.indexOf($(event.target).attr('src'));
         imgArray.splice(index, 1)
-      $(event.target).fadeOut();
+      $(event.target).fadeOut("slow");
     }
   })
 
@@ -34,7 +35,7 @@ $(function() {
     var img_id = $(this).attr('name')
     if ( delete_max > 1 ) {
       delete_max --
-      $('#' + img_id).fadeOut();
+      $('#' + img_id).fadeOut("slow");
       $.post( "/delete_pic", {id: img_id} )
     }
     else {
