@@ -11,6 +11,11 @@ class ReservationsController < ApplicationController
 
   def destroy
   end
+
+  def confirmation
+    @space = Space.find(params[:spaceId])
+    # @reservations = 
+  end
 end
 
 
