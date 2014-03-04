@@ -21,7 +21,9 @@ class PaymentsController < ApplicationController
                                   publishable_api_key: @response.params["stripe_publishable_key"],
                                   refresh_token: @response.refresh_token,
                                   stripe_user_id: @response.params["stripe_user_id"])
-      redirect_to manage_path(current_user.id)
+
+      space = User.find(current_user.id).spaces_created.last.id
+      redirect_to space_path(space)
 
     end
   end
