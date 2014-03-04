@@ -71,7 +71,8 @@ h5{
 .search_bar{
   padding-top: 30px;
   width: 31%;
-  margin: 0 auto;
+  position: absolute;
+  right: 0;
   background-color: gray;
 }
 #search_form2{
