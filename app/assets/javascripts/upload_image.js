@@ -17,7 +17,7 @@ $(function() {
     if ($(event.target).hasClass('remove_img')) {
       var index = imgArray.indexOf($(event.target).attr('src'));
         imgArray.splice(index, 1)
-      $(event.target).hide();
+      $(event.target).fadeOut();
     }
   })
 

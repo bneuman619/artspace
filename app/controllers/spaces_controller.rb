@@ -81,6 +81,16 @@ class SpacesController < ApplicationController
     redirect_to new_space_path
   end
 
+  def update_pic
+    puts @space = Space.find_by_id(params["space_id"])
+    if params["pic_url"]
+      params["pic_url"].split(',').each do |url|
+        Photo.create(space: @space, url: url)
+      end
+    end
+    redirect_to manage_path(current_user.id)
+  end
+
   def edit_pic
     @space = Space.find(params[:id])
     @photos = Photo.where(space_id: @space.id).all
