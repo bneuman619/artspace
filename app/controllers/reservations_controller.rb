@@ -13,8 +13,17 @@ class ReservationsController < ApplicationController
   end
 
   def confirmation
-    @space = Space.find(params[:spaceId])
-    # @reservations = 
+    @total_charge = "$" + (params["charge"].to_i / 100).to_s
+    
+    reservation_ids = params["ids"].split(",").map(&:to_i)
+    @reservations = []
+    reservation_ids.each do |id|
+      @reservations  << Reservation.find(id)
+    end
+    @space = @reservations.first.space
+    
+    UserMailer.confirmation_email(@reservations, @total_charge).deliver
+
   end
 end
 

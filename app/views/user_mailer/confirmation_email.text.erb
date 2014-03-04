@@ -1,0 +1,16 @@
+Artspace.com
+==========================================================
+
+Your reservation has been booked.  <%=@total_charge%> will 
+be charged to your credit card.
+
+If you have any questions, please contact <%=@space.creator.first_name%> 
+<%=@space.creator.last_name%> at <%=@space.email%>.
+
+
+Reservation Details:
+<% @reservations.each do |r| %>
+  <%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y%I:%M %p") %> TO <%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %>
+<% end %>
+
+Thanks for booking with Artspace.com!
