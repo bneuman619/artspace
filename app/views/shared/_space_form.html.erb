@@ -2,10 +2,10 @@
   <%= form_for @space, :html => {:class => "spaceform"} do |f| %>
   <div id="form_container"></div>
   <li><p>please provide a title for your space<br>this is how artists will search for your space<br><%= f.text_field   :title, placeholder: "Title" %></p></li>
-  <li><p><%= f.text_area    :description, placeholder: "Description", size: "60x12" %></p></li>
+  <li><p><%= f.text_area    :description, placeholder: "Please provide a description of your space. Include anything you may want to share with artists who will be renting your space.", size: "60x12" %></p></li>
   <li><p><%= f.text_field   :dimensions, placeholder: "Dimensions" %></p></li>
 
-  <li><p>list any equipment that is provided in the space<br><%= f.text_area   :ammenities, placeholder: "Ammenities", size: "60x6" %></p></li>
+  <li><p>Ammenities<br><%= f.text_area   :ammenities, placeholder: "Please list any equipment that is provided in the space.", size: "60x6" %></p></li>
   <p>Permitted Uses:</p>
   <p>
     <% for use in Use.find(:all) %>

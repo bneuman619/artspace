@@ -1,6 +1,6 @@
 <%= render "shared/top_nav" %>
 <div id="page">
-  <div id="title7">CLICK ON A TITLE TO NAVIGATE TO YOUR OPTIONS</div>
+  <div id="title7">CLICK ON A TITLE TO VIEW YOUR SPACE</div>
   <div id="nav_wrapper">
     <ul id="manager_nav">
       <% @spaces.each do |space| %>
@@ -16,12 +16,15 @@
   <% @spaces.each do |space| %>
 
 
-      <h2 id="link"><%= space.title %></h2>
+      <h2 id="link"><%= link_to "#{space.title}", space_path(space.id) %></h2>
       <% space_name = space.title.gsub(/\s/, "") %>
       <div class="upcoming_reservations", id="<%=space_name%>">
         <h2 class="inactive"><% if space.active == 0 %>INACTIVE<% end %></h2>
         <h3> UPCOMING RESERVATIONS </h3>
-        <% space.upcoming_reservations.each do |r| %>
+        <% if space.upcoming_reservations == [] %>
+          <p><span class="color">There are no upcoming reservations for this space.</span></p>
+        <% end %>
+        <% space.upcoming_reservations.limit(5).each do |r| %>
           <p><span class="color">RENTER </span><%= r.renter.first_name %>  <%= r.renter.last_name %><span class="color"> FROM </span><%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y      %I:%M %p") %><span class="color"> TO </span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %></p>
         <% end %>
       </div>
@@ -33,6 +36,7 @@
         <% end %>
         <p><%= link_to "EDIT SCHEDULE", edit_availabilities_path(space.id)%></p>
         <p><%= link_to "EDIT PHOTOS", edit_pic_path(space.id) %></p>
+        <p><%= link_to "VIEW ALL UPCOMING RESERVATIONS", edit_pic_path(space.id) %></p>
         <% if space.active == 1 %>
         <%= button_to "Deactivate Space", { action: "destroy", id: space.id, :controller=>"spaces" },
                       class: "search_it", method: :delete, data: { confirm: "Are you sure?" } %>

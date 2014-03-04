@@ -7,16 +7,16 @@
   z-index: 10;
   img{
     height: 200px;
-    margin-top: -110px;
+    margin-top: -30px;
     margin-left: 90px;
   }
   a{
     text-decoration: none;
     color: white;
     font-family: 'Jura', sans-serif;
+    margin-top: 100px;
+    margin-right: 14%;
     float: right;
-    margin-right: 12%;
-    margin-top: 20px;
     &:hover{
       color: lightgray;
       font-weight: bold;
@@ -28,7 +28,7 @@
   margin-left: 170px;
   margin-top: -195px;
   font-family: 'Over the Rainbow', cursive;
-  color: darkgreen;
+  color: #993344;
   opacity: 0%;
   font-size: 50px;
   text-shadow: 5px 3px 3px lightgray;
@@ -73,11 +73,11 @@
   bottom: 0;
   margin-top: 100px; 
   height: 50px;
-  clear:both;  
+  clear:all;  
   z-index: 10;
 }
 .search_it2 {
-  background-color: darkgreen;
+  background-color: #993344;
   color: white;
   border-radius: 20px;
   border: 3px solid gray;
@@ -87,8 +87,8 @@
 }
 .search_it2:hover{
   border: 1px solid darkgreen;
-  background: -webkit-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
-  background: -o-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
-  background: -moz-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
-  background: linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
+  background: -webkit-linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
+  background: -o-linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
+  background: -moz-linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
+  background: linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
 }

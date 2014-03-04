@@ -6,7 +6,6 @@ function make_creation_calendar(events_input) {
     defaultFreeBusy: {free: true},
     displayFreeBusys: false,
     buttons: false,
-    showHeader: false,
     displayOddEven: true,
     allowEventDelete: true,
     daysToShow: 7,
@@ -18,6 +17,10 @@ function make_creation_calendar(events_input) {
 
     height: function($calendar){
       return $(window).height() - $('h1').outerHeight(true);
+    },
+
+    title: function() {
+      return "Mark the weekly business hours for your space on the calendar below";
     },
 
     eventRender : function(calEvent, $event) {

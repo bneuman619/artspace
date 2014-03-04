@@ -50,7 +50,7 @@ div.upcoming_reservations{
   padding: 1%;
   h3{
     font-family: 'Jura', sans-serif;
-    color: darkgreen;
+    color: #993344;
     font-weight: bold;
     margin-left: 30px;
   }
@@ -63,10 +63,11 @@ div.options{
   float: left;
   display: inline;
   margin: 1%;
+  margin-bottom: 100px;
   padding: 1%;
   a{
     font-family: 'Jura', sans-serif;
-    font-size: 25px;
+    font-size: 18px;
     margin-right: 50px;  
     color: gray;
     text-decoration: none;

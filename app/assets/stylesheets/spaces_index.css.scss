@@ -71,7 +71,8 @@ h5{
 .search_bar{
   padding-top: 30px;
   width: 31%;
-  margin: 0 auto;
+  position: absolute;
+  right: 0;
   background-color: gray;
 }
 #search_form2{
@@ -141,5 +142,15 @@ h5{
     background-color: lightgray;
     color: white;
     border: none;
+  }
+}
+h4 a{
+  font-family: 'Jura', sans-serif;
+  padding: 4%;  
+  color: gray;
+  text-decoration: none;
+  &:hover{
+    color: black;
+    font-weight: bold;
   }
 }
