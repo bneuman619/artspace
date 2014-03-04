@@ -4,7 +4,7 @@
   <h1 id="title2">Space</h1>
   <% if session[:current_user_id] != nil %>
   <% user = User.find(session[:current_user_id]) %>
-  <%= link_to 'Home', user %>
+  <%= link_to 'Profile', user %>
     <% if user.spaces_administrated == [] && user.spaces_created == [] %>
      <% else %>
      <%= link_to 'Manage', manage_path(user), method: :get %>
