@@ -34,11 +34,16 @@ function make_renter_calendar(events_input) {
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
         if (confirm('You want to delete this reservation?')) {
 
-          deleteEvent(calEvent, calendar);
+           calendar.weekCalendar('removeEvent',calEvent.id);
+           removeFreeBusy(calEvent, calendar);
         }
       },
 
     eventDrop : function(newCalEvent, oldCalEvent, element) {
+      removeFreeBusy(oldCalEvent, $("#calendar"));
+    },
+
+    eventResize : function(newCalEvent, oldCalEvent, element) {
       removeFreeBusy(oldCalEvent, $("#calendar"));
     },
 

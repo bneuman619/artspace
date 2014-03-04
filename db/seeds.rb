@@ -27,6 +27,13 @@ Use.create(category: "any")
 
 #-----------------------------------Seed Users-------------------------------------
 
+User.create(first_name: "George",
+            last_name: "Washington",
+            phone: "201-201-2010",
+            email: "georgewashington@valleyforge.com",
+            password: "password",
+            password_confirmation: "password")
+
 20.times do
   User.create(first_name: Faker::Name.first_name,
   			  last_name: Faker::Name.last_name,

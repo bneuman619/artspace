@@ -4,13 +4,16 @@ class Availability < ActiveRecord::Base
 
   def check_overlap
     availabilities = self.space.availabilities
-    overlaps = availabilities.any? do |availability|
+    overlaps = availabilities.select do |availability|
       self.start_time.between?(availability.start_time, availability.end_time) ||
       self.end_time.between?(availability.start_time, availability.end_time)
     end
 
-    if overlaps
-       self.errors[:time_range] << "Availability can not overlap with other availabilities"
+    unless overlaps.empty?
+       overlap_info = overlaps.reduce("") do |string, overlap|
+         string += overlap.to_s + "      "
+       end
+       self.errors[:time_range] << overlap_info
     end
   end
 end
