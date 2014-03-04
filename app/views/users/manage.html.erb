@@ -24,7 +24,7 @@
         <% if space.upcoming_reservations == [] %>
           <p><span class="color">There are no upcoming reservations for this space.</span></p>
         <% end %>
-        <% space.upcoming_reservations.limit(5).each do |r| %>
+        <% space.upcoming_reservations.order(:start_time).limit(5).each do |r| %>
           <p><span class="color">RENTER </span><%= r.renter.first_name %>  <%= r.renter.last_name %><span class="color"> FROM </span><%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y      %I:%M %p") %><span class="color"> TO </span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %></p>
         <% end %>
       </div>
