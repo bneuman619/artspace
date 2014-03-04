@@ -10,7 +10,7 @@
       <% end %>
     </ul>
   </div>
-    
+
 
   <% @spaces.each do |space| %>
     <div class="reservation_holder" id="<%= space.title %>">
@@ -20,7 +20,7 @@
         <h2 class="inactive"><% if space.active == 0 %>INACTIVE<% end %></h2>
         <h3> UPCOMING RESERVATIONS </h3>
         <% space.upcoming_reservations.each do |r| %>
-          <p><span class="color">RENTER </span><%= r.renter.first_name %>  <%= r.renter.last_name %><span class="color"> FROM </span><%= r.start_time %><span class="color"> TO </span><%= r.end_time %></p>
+          <p><span class="color">RENTER </span><%= r.renter.first_name %>  <%= r.renter.last_name %><span class="color"> FROM </span><%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y      %I:%M %p") %><span class="color"> TO </span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %></p>
         <% end %>
       </div>
       <div class="options">
@@ -30,7 +30,7 @@
           <p><%= link_to "ACTIVATE/EDIT DETAILS", edit_space_path(space.id)%></p>
         <% end %>
         <p><%= link_to "EDIT SCHEDULE", edit_availabilities_path(space.id)%></p>
-        <p><%= link_to "EDIT PHOTOS", edit_space_path(space.id) %></p>
+        <p><%= link_to "EDIT PHOTOS", edit_pic_path(space.id) %></p>
         <% if space.active == 1 %>
         <%= button_to "Deactivate Space", { action: "destroy", id: space.id, :controller=>"spaces" },
                       class: "search_it", method: :delete, data: { confirm: "Are you sure?" } %>
@@ -39,7 +39,7 @@
     </div>
   <% end %>
 
-    
+
 
 </div>
 
