@@ -30,6 +30,7 @@
 .wc-container table {
   border-collapse: collapse;
   border-spacing: 0;
+
 }
 .wc-container table td {
   margin: 0;
@@ -97,6 +98,8 @@ table.wc-time-slots {
 .wc-scrollable-grid .wc-day-column-last,
 .wc-scrollable-grid .wc-day-column-middle{border-width: 0 0 0 1px; border-style: dashed;}
 .wc-scrollable-grid .wc-day-column-first{border-width: 0 0 0 3px; border-style: double;}
+
+.wc-scrollable-grid{ border: 10px solid gray;}
 
 .wc-day-column-inner {
     width: 100%;
@@ -259,7 +262,7 @@ table.wc-time-slots {
 .free-busy-free{}
 .free-busy-busy{
   /*background:url("/images/ui-bg_flat_0_aaaaaa_40x100.png") repeat scroll 50% 50% #666666;*/
-  background-color: #cc8800;
+  background-color: #993344;
 }
 
 /** hourLine */
