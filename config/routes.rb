@@ -11,6 +11,7 @@ Artspace::Application.routes.draw do
 
   resources :spaces do
     resources :availabilities, only: [:new, :update]
+    resources :reservations, only: [:index]
   end
 
   get "spaces/:space_id/edit_availabilities", to: "availabilities#edit", as: "edit_availabilities"
