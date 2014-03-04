@@ -1,6 +1,6 @@
 .wc-container {
   font-size: 14px;
-  font-family: arial, helvetica;
+  font-family: 'Jura', sans-serif;
 }
 
 .wc-toolbar {
@@ -42,7 +42,7 @@
   border-style:solid;
 }
 .wc-header table{
-    width: 100%;
+  width: 100%;
   table-layout:fixed;
 }
 
@@ -61,12 +61,12 @@
 }
 
 .wc-header .wc-user-header{
-    text-align: center;
-    padding: 0.4em 0;
+  text-align: center;
+  padding: 0.4em 0;
   overflow:hidden;
 }
 .wc-grid-timeslot-header {
-    background: #eee;
+  background: #eee;
 }
 
 
@@ -259,7 +259,7 @@ table.wc-time-slots {
 .free-busy-free{}
 .free-busy-busy{
   /*background:url("/images/ui-bg_flat_0_aaaaaa_40x100.png") repeat scroll 50% 50% #666666;*/
-  background-color: gray;
+  background-color: darkgreen;
 }
 
 /** hourLine */
