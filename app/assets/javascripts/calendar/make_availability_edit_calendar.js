@@ -14,7 +14,6 @@ function make_availability_edit_calendar(events_input) {
     dateFormat: 'd F y',
     allowCalEventOverlap: false,
     buttons: false,
-    showHeader: false,
 
     height: function($calendar){
       return $(window).height() - $('h1').outerHeight(true);
@@ -27,6 +26,10 @@ function make_availability_edit_calendar(events_input) {
           border:'1px solid #888'
         });
       }
+    },
+
+    title: function() {
+      return "Mark the weekly business hours for your space on the calendar below";
     },
 
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
