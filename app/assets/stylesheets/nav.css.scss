@@ -15,7 +15,7 @@
     color: white;
     font-family: 'Jura', sans-serif;
     float: right;
-    margin-right: 15%;
+    margin-right: 12%;
     margin-top: 20px;
     &:hover{
       color: lightgray;
@@ -75,4 +75,20 @@
   height: 50px;
   clear:both;  
   z-index: 10;
+}
+.search_it2 {
+  background-color: darkgreen;
+  color: white;
+  border-radius: 20px;
+  border: 3px solid gray;
+  padding: 13px;
+  font-family: 'Jura', sans-serif;
+  font-size: 14px;
+}
+.search_it2:hover{
+  border: 1px solid darkgreen;
+  background: -webkit-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
+  background: -o-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
+  background: -moz-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
+  background: linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
 }
