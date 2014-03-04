@@ -57,7 +57,8 @@ gem 'faker'
 gem 'debugger', group: [:development, :test]
 
 #for deploying to heroku
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
+ruby "2.0.0"
 
 # Use dotenv for handling environment variables
 gem 'dotenv-rails'
