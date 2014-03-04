@@ -2,7 +2,7 @@
 <div id="title4">Edit My Space Pictures</div>
 <div id="page">
   <div id="edit_div" class="spaceform form_container">
-    <form>
+    <form action=<%= manage_path %>
 
       <% @photos.each do |photo| %>
        <p id=<%=photo.id%> ><img src=<%=photo.url%> style="max-height: 600px; max-width: 600px;"><br>
@@ -12,6 +12,7 @@
     </form>
 
     <p>Upload Photos: <%= render "shared/pic_form" %></p>
-
+    <input type="submit" value="Save Photos">
   </div>
+</div>
 </div>
