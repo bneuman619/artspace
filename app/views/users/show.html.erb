@@ -13,7 +13,7 @@
 	<div id="upcoming" class="user_show">
 	  <h2>Upcoming Rentals</h2>
 	  <% current_user.upcoming_reservations.each do |r| %>
-	  <p><span class="color">AT</span><%= r.space.title %><span class="color">FROM</span><%= r.start_time %><span class="color">TO</span><%= r.end_time %></p>
+	  <p><span class="color">AT</span><%= r.space.title %><span class="color">FROM</span><%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y     %I:%M %p") %><span class="color">TO</span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %></p>
 	  <%= r.space.address %>     <%= r.space.city %>,    <%= r.space.state %>     <%= r.space.zipcode %>
 	  <hr>
 	  <% end %>
