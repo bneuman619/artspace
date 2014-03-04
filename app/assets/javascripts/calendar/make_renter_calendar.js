@@ -1,5 +1,3 @@
-modifiedEvents = []
-
 function make_renter_calendar(events_input) {
   var calendar = {
     scrollToHourMillis : 0,
@@ -22,16 +20,8 @@ function make_renter_calendar(events_input) {
       return $(window).height() - $('h1').outerHeight(true);
     },
 
-    eventRender : function(calEvent, $event) {
-      if (calEvent.end.getTime() < new Date().getTime()) {
-        $event.find('.wc-time').css({
-          backgroundColor: '#999',
-          border:'1px solid #888'
-        });
-      }
-    },
-
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
+        console.log(calEvent);
         if (confirm('You want to delete this reservation?')) {
 
            calendar.weekCalendar('removeEvent',calEvent.id);
@@ -49,6 +39,7 @@ function make_renter_calendar(events_input) {
 
     eventNew : function(calEvent, $event, FreeBusyManager, calendar) {
       var isFree = true;
+      calEvent.id = "new_event_" + new Date().getTime();
       $.each(FreeBusyManager.getFreeBusys(calEvent.start, calEvent.end), function() {
         if (
           this.getStart().getTime() != calEvent.end.getTime()
@@ -141,4 +132,8 @@ function deleteEvent(calEvent, calendar) {
 
 function removeEvent(calEvent, calendar) {
   calendar.weekCalendar('removeEvent',calEvent.id);
+}
+
+function generateEventId() {
+  return "new_event_" + new Date().getTime();
 }

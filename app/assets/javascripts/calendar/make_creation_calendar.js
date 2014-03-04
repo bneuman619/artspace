@@ -23,18 +23,9 @@ function make_creation_calendar(events_input) {
       return "Mark the weekly business hours for your space on the calendar below";
     },
 
-    eventRender : function(calEvent, $event) {
-      if (calEvent.end.getTime() < new Date().getTime()) {
-        $event.find('.wc-time').css({
-          backgroundColor: '#999',
-          border:'1px solid #888'
-        });
-      }
-    },
-
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
       if (confirm('You want to delete this reservation?')) {
-        removeEvent(calEvent, calendar);
+        calendar.weekCalendar('removeEvent',calEvent.id);
       }
     },
 
@@ -50,6 +41,10 @@ function make_creation_calendar(events_input) {
     eventBody: function() {
       return "Available hours";
     },
+
+    eventNew: function (calEvent) {
+      calEvent.id = generateEventId();
+    }
 
   }
 
