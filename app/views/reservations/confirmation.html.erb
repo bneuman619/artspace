@@ -1,8 +1,8 @@
-<%= render "shared/top_nav" %>
 <div id="page">
-  <p>
+  <%= render "shared/top_nav" %>
+  <div>
     Your reservation has been booked.  <%=@total_charge%> will be charged to your credit card.
-  </p>
+  </div>
   <p>
     If you have any questions, please contact <%=@space.creator.first_name%> <%=@space.creator.last_name%> at <%=@space.email%>.
   </p>
@@ -10,7 +10,7 @@
   <h2>Reservation Details:</h2>
   <ul>
     <% @reservations.each do |r| %>
-      <%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y%I:%M %p") %><span class="color"> TO </span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %>
+      <%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y %I:%M %p") %><span class="color"> TO </span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %>
     <% end %>
   </ul>
   <br><br>

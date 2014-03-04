@@ -6,14 +6,14 @@ class ReservationsController < ApplicationController
     render json: reservation_info.to_json
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def destroy
   end
 
   def confirmation
-    @total_charge = "$" + (params["charge"].to_i / 100).to_s
+    @total_charge = "$" + (params["amount"].to_i / 100).to_s
     
     reservation_ids = params["ids"].split(",").map(&:to_i)
     @reservations = []
@@ -22,7 +22,7 @@ class ReservationsController < ApplicationController
     end
     @space = @reservations.first.space
     
-    UserMailer.confirmation_email(@reservations, @total_charge).deliver
+    # UserMailer.confirmation_email(current_user, @reservations, @total_charge).deliver
 
   end
 end

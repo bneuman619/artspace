@@ -25,7 +25,7 @@ $(document).ready(function() {
 
         else {
           var res_ids = response.reservation_ids.join(',');
-          window.location = "/reservations/confirmation?ids=" + res_ids;
+          window.location = "/reservations/confirmation?ids=" + res_ids +"&amount=" + get_total_charge();
         }
       });
     }
