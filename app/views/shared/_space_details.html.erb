@@ -1,9 +1,9 @@
-<ul id="edit_space_fields">  
-  <li><p>please provide a title for your space<br>this is how artists will search for your space<br><%= f.text_field   :title, placeholder: "Title" %></p></li>
-  <li><p><%= f.text_area    :description, placeholder: "Description", size: "60x12" %></p></li>
-  <li><p><%= f.text_field   :dimensions, placeholder: "Dimensions" %></p></li>
-  
-  <li><p>list any equipment that is provided in the space<br><%= f.text_area   :ammenities, placeholder: "Ammenities", size: "60x6" %></p></li>
+<ul id="edit_space_fields">
+  <li><p>please provide a title for your space<br>this is how artists will search for your space<br><%= f.text_field   :title, placeholder: "Title", :required => true  %></p></li>
+  <li><p><%= f.text_area    :description, placeholder: "Description", size: "60x12", :required => true  %></p></li>
+  <li><p><%= f.text_field   :dimensions, placeholder: "Dimensions", :required => true  %></p></li>
+
+  <li><p>list any equipment that is provided in the space<br><%= f.text_area   :ammenities, placeholder: "Amenities", size: "60x6", :required => true  %></p></li>
   <p>Permitted Uses:</p>
   <p>
     <% for use in Use.find(:all) %>
@@ -13,12 +13,12 @@
       </div>
     <% end %>
   </p>
- 
-  <li><p>please specify an hourly rental rate<br><%= f.number_field :rate, placeholder: "Rate" %></p></li>
-  <li><p>street address<br><%= f.text_field   :address, placeholder: "Address" %></p></li>
-  <li><p><%= f.text_field   :city, placeholder: "City" %></p></li>
-  <li><p><%= f.text_field   :state, placeholder: "State" %></p></li>
-  <li><p><%= f.text_field :zipcode, placeholder: "Zipcode" %></p></li>
-  <li><p>I would like to receive emails regarding rentals here<br><%= f.email_field  :email, placeholder: "Email" %></p></li>
+
+  <li><p>please specify an hourly rental rate<br><%= f.number_field :rate, placeholder: "Rate", :required => true  %></p></li>
+  <li><p>street address<br><%= f.text_field   :address, placeholder: "Address", :required => true  %></p></li>
+  <li><p><%= f.text_field   :city, placeholder: "City", :required => true  %></p></li>
+  <li><p><%= f.text_field   :state, placeholder: "State", :required => true  %></p></li>
+  <li><p><%= f.text_field :zipcode, placeholder: "Zipcode", :required => true  %></p></li>
+  <li><p>I would like to receive emails regarding rentals here<br><%= f.email_field  :email, placeholder: "Email", :required => true  %></p></li>
   <li><p>business phonenumber<br><%= f.text_field :phone, placeholder: "Phone" %></p></li>
 </ul>
