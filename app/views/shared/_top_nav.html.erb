@@ -1,4 +1,5 @@
 <div class="nav">
+  <div class="search_bar"><%= render "shared/search" %></div>
   <%= image_tag "artspace.svg", id:"logo" %>
   <h1 id="title2">Space</h1>
   <% if session[:current_user_id] != nil %>

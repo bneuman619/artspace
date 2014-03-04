@@ -7,16 +7,16 @@
   z-index: 10;
   img{
     height: 200px;
-    margin-top: -30px;
-    margin-left: 150px;
+    margin-top: -110px;
+    margin-left: 90px;
   }
   a{
     text-decoration: none;
     color: white;
     font-family: 'Jura', sans-serif;
     float: right;
-    margin-right: 100px;
-    margin-top: 90px;
+    margin-right: 12%;
+    margin-top: 20px;
     &:hover{
       color: lightgray;
       font-weight: bold;
@@ -25,13 +25,45 @@
 }
 #title2{
   position: absolute;
-  margin-left: 240px;
+  margin-left: 170px;
   margin-top: -195px;
   font-family: 'Over the Rainbow', cursive;
   color: darkgreen;
   opacity: 0%;
   font-size: 50px;
   text-shadow: 5px 3px 3px lightgray;
+}
+#search_form2{
+  padding: 3%;
+  width: 200px;
+  border: 3px solid gray;
+  border-radius: 20px;
+  font-family: 'Jura', sans-serif;
+  font-size: 14px;
+}
+#rate_form2{
+  padding: 3%;
+  width: 40px;
+  border: 3px solid gray;
+  border-radius: 20px;
+  font-family: 'Jura', sans-serif;
+  font-size: 14px;
+}
+.description{
+  font-family: 'Jura', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: gray;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+  word-spacing: 7px;
+  line-height: 120%;
+  border: 1px solid lightgray;
+  padding: 20px;
+  border-radius: 40px;
 }
 
 .footer{
@@ -43,4 +75,20 @@
   height: 50px;
   clear:both;  
   z-index: 10;
+}
+.search_it2 {
+  background-color: darkgreen;
+  color: white;
+  border-radius: 20px;
+  border: 3px solid gray;
+  padding: 13px;
+  font-family: 'Jura', sans-serif;
+  font-size: 14px;
+}
+.search_it2:hover{
+  border: 1px solid darkgreen;
+  background: -webkit-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
+  background: -o-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
+  background: -moz-linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
+  background: linear-gradient(darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, lightgray);
 }
