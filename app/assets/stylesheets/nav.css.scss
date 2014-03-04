@@ -1,17 +1,22 @@
 .nav{
   background-color: gray;
-  height: 100px;
+  height: 120px;
   width: 100%;
   position: fixed;
   top: 0px;
   z-index: 10;
+  img{
+    width: 12%;
+    margin-top: -40px;
+    margin-left: 150px;
+  }
   a{
     text-decoration: none;
     color: white;
     font-family: 'Jura', sans-serif;
     float: right;
     margin-right: 100px;
-    margin-top: 80px;
+    margin-top: 90px;
     &:hover{
       color: lightgray;
       font-weight: bold;
@@ -20,10 +25,10 @@
 }
 #title2{
   position: absolute;
-  margin-left: 10%;
-  margin-top: 0;
-  font-family: 'Jura', sans-serif;
-  color: #696969;
+  margin-left: 240px;
+  margin-top: -195px;
+  font-family: 'Over the Rainbow', cursive;
+  color: darkgreen;
   opacity: 0%;
   font-size: 50px;
   text-shadow: 5px 3px 3px lightgray;

@@ -120,6 +120,11 @@ h5{
   position: absolute;
   z-index: 10;
   margin-left: 5%;
+  &:hover{
+    background-color: lightgray;
+    color: white;
+    border: none;
+  }
 }
 #forward{
   background-color: white;
@@ -133,4 +138,9 @@ h5{
   position: absolute;
   z-index: 10;
   margin-left: 90%;
+  &:hover{
+    background-color: lightgray;
+    color: white;
+    border: none;
+  }
 }
