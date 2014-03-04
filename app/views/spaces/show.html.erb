@@ -23,7 +23,7 @@
   <p><h5>per hour |</h5><%= @space.rate %></p>
   <p><h5>address |</h5><br><%= @space.address %><br><%= @space.city %>, <%= @space.state %> <%= @space.zipcode %></p>
   <p><h5>phone |</h5><%= @space.phone %></p>     
-  <p><h5>email |</h5><%= @space.email %></p>
+  <p><h5>email |</h5><%= mail_to @space.email, @space.email, subject: "Inquiry from Artspace.com regarding the #{@space.title} space" %></p>
 </div>
 <% if @space.active == 1 %>
   <% if current_user %> 

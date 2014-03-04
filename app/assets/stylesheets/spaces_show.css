@@ -25,3 +25,11 @@
   color: red;
   text-shadow: none;
 }
+
+.contents a {
+  text-decoration: none;
+  color: inherit;
+}
+.contents a:hover {
+  color: darkgreen;
+}
