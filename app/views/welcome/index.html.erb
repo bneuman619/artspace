@@ -14,12 +14,22 @@
 	</p>
   <% end %>
 </div>
-<div id="login">
-  <p>|<%= link_to 'Login', login_path, method: :get %></p>
-</div>
-<div id="signup">  
-  <p>|<%= link_to 'Sign Up', signup_path, method: :get %></p>
-</div>
+<% if session[:current_user_id] %>
+	<div id="login">
+	  <p>|<%= link_to 'Profile', user_path(session[:current_user_id]) %></p>
+	</div>
+	<div id="signup">  
+	  <p>|<%= link_to 'Logout', logout_path, method: :delete %></p>
+	</div>
+<% else %>
+	<div id="login">
+	  <p>|<%= link_to 'Login', login_path, method: :get %></p>
+	</div>
+	<div id="signup">  
+	  <p>|<%= link_to 'Sign Up', signup_path, method: :get %></p>
+	</div>
+<% end %>
+
 
 <div id="focal">
 </div>
