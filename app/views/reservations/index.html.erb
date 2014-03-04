@@ -1,0 +1,9 @@
+<%= render "shared/top_nav" %>
+<div id="title7">All Upcoming Reservations for <%=@space.title%></div>
+<div class="all_reservations">
+	<% @reservations.each do |r| %>
+		<p><span class="color">RENTER </span><%= r.renter.first_name %>  <%= r.renter.last_name %><span class="color"> FROM </span><%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y      %I:%M %p") %><span class="color"> TO </span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %></p>
+	<% end %>
+</div>
+<div class="link"><%= link_to "BACK", manage_path(current_user.id) %></div>
+<%= render "shared/footer" %>
