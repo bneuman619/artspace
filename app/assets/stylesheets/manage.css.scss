@@ -87,3 +87,26 @@ div.upcoming_reservations{
 .reservation_holder{
   background-color: purple;
 }
+.all_reservations{
+  font-family: 'Jura', sans-serif;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  width: 55%;
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 1%;
+  margin-top: 20px;
+}
+.link{
+  width: 100%;
+  text-align: center;
+  a{
+  text-decoration: none;
+  font-size: 40px;
+  font-family: 'Jura', sans-serif;
+  color: #993344;
+    &:hover{
+      font-weight: bold;
+    }
+  }
+}

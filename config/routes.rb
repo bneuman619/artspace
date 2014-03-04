@@ -28,6 +28,8 @@ Artspace::Application.routes.draw do
   post "payments/charge", to: "payments#charge", as: "payment_charge"
   get "payments/pos", to: "payments#pos", as: "pos"
 
+  get "spaces/:space_id/reservations", to: "reservations#index", as: "view_reservations"
+
   #homepage is still welcome#index
   #not logged in home is welcome#index
   #logged in home is users#show
