@@ -11,7 +11,6 @@ Artspace::Application.routes.draw do
 
   resources :spaces do
     resources :availabilities, only: [:new, :update]
-    resources :reservations, only: [:index]
   end
 
   get "spaces/:space_id/edit_availabilities", to: "availabilities#edit", as: "edit_availabilities"
@@ -28,6 +27,8 @@ Artspace::Application.routes.draw do
   get "payments/callback", to: "payments#callback", as: "payments_callback"
   post "payments/charge", to: "payments#charge", as: "payment_charge"
   get "payments/pos", to: "payments#pos", as: "pos"
+
+  get "spaces/:space_id/reservations", to: "reservations#index", as: "view_reservations"
 
   #homepage is still welcome#index
   #not logged in home is welcome#index

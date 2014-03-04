@@ -1,5 +1,10 @@
 class ReservationsController < ApplicationController
 
+  def index
+    @space = Space.find(params[:space_id])
+    @reservations = @space.reservations
+  end
+
   def create
     reservation_info = create_reservations(params)
     reservation_info[:total_price] = 0
