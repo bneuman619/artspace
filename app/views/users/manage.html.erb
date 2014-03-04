@@ -1,6 +1,6 @@
 <%= render "shared/top_nav" %>
 <div id="page">
-  <div id="title7">CLICK ON A TITLE TO NAVIGATE TO YOUR OPTIONS</div>
+  <div id="title7">CLICK ON A TITLE TO VIEW YOUR SPACE</div>
   <div id="nav_wrapper">
     <ul id="manager_nav">
       <% @spaces.each do |space| %>
@@ -16,7 +16,7 @@
   <% @spaces.each do |space| %>
 
 
-      <h2 id="link"><%= space.title %></h2>
+      <h2 id="link"><%= link_to "#{space.title}", space_path(space.id) %></h2>
       <% space_name = space.title.gsub(/\s/, "") %>
       <div class="upcoming_reservations", id="<%=space_name%>">
         <h2 class="inactive"><% if space.active == 0 %>INACTIVE<% end %></h2>
