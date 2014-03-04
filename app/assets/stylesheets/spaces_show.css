@@ -33,3 +33,9 @@
 .contents a:hover {
   color: darkgreen;
 }
+
+.money {
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+}

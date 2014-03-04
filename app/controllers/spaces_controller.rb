@@ -18,11 +18,14 @@ class SpacesController < ApplicationController
         SpaceUse.create(space_id: @space.id, use_id: u.to_i)
       end
 
-    if params["pic_url"]
-      params["pic_url"].split(',').each do |url|
-        Photo.create(space: @space, url: url)
+      if params["pic_url"]
+        params["pic_url"].split(',').each do |url|
+          Photo.create(space: @space, url: url)
+        end
+
+      else
+        @space.photos << Photo.first
       end
-    end
       # redirect_to manage_path(session[:current_user_id])
       # redirect_to manage_path(session[:current_user_id])
 

@@ -26,7 +26,7 @@ function send_reservation_info() {
 
     else {
       var res_ids = response.reservation_ids.join(',');
-      window.location = "/reservations/confirm?ids=" + res_ids;
+      window.location = "/reservations/confirmation?ids=" + res_ids + "&amount=0";
     }
   });
 }

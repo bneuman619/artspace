@@ -16,8 +16,8 @@ Artspace::Application.routes.draw do
   get "spaces/:space_id/edit_availabilities", to: "availabilities#edit", as: "edit_availabilities"
   post "spaces/availabilities/update", to: "availabilities#update", as: "update_availabilities"
   resources :availabilities, only: [:create]
-  resources :reservations, only: [:create, :show, :destroy]
-  get 'reservations/confirm', to: "reservations#confirm", as: "confirm_reservations"
+  resources :reservations, only: [:create, :destroy]
+  get "reservations/confirmation", to: "reservations#confirmation", as: "reservations_confirmation"
 
   get  "spaces/:id/pic", to: "spaces#edit_pic", as: "edit_pic"
   post "uploaded", to: "spaces#add_photo", as: "uploaded"
@@ -27,6 +27,8 @@ Artspace::Application.routes.draw do
   get "payments/callback", to: "payments#callback", as: "payments_callback"
   post "payments/charge", to: "payments#charge", as: "payment_charge"
   get "payments/pos", to: "payments#pos", as: "pos"
+
+  get "spaces/:space_id/reservations", to: "reservations#index", as: "view_reservations"
 
   #homepage is still welcome#index
   #not logged in home is welcome#index
