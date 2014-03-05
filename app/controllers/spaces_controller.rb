@@ -1,5 +1,3 @@
-require_relative 'controller_helpers'
-
 class SpacesController < ApplicationController
   include CalendarHelpers
 
