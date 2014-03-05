@@ -1,5 +1,4 @@
 class ReservationsController < ApplicationController
-
   def index
     @space = Space.find(params[:space_id])
     @reservations = @space.reservations

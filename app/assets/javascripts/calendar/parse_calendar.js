@@ -18,8 +18,8 @@ function parse_for_renter(calendar_data) {
 
   var eventData = {
     events : [],
-
-    freebusys: calendar_data.openings.concat(calendar_data.reservations)
+    freebusys: calendar_data.openings.concat(calendar_data.reservations),
+    options : calendar_options()
   };
 
   return eventData;
@@ -29,9 +29,36 @@ function parse_for_availability_edit(calendar_data) {
   var eventData = {
     events : calendar_data,
     freebusys: [],
+    options : calendar_options()
   };
 
   return eventData;
+}
+
+function parse_for_new_availabilities() {
+  var eventData = {
+    events : [],
+    freebusys: [],
+    options : calendar_options()
+  };
+
+  return eventData;
+}
+
+function calendar_options() {
+  var calendar_options = {
+    scrollToHourMillis : 0,
+    timeslotsPerHour: 2,
+    timeslotHeight: 20,
+    displayOddEven: true,
+    allowEventDelete: true,
+    daysToShow: 7,
+    headerSeparator: ' ',
+    allowCalEventOverlap: false,
+    businessHours: false,
+  };
+
+  return calendar_options;
 }
 
 function get_day(date) {

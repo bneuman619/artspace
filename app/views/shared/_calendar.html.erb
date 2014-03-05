@@ -1,6 +1,7 @@
 <script id='calendar_info' type='application/json'>
  <%= @calendar_info.html_safe %>
 </script>
+<% if current_user %>
 <script>
 $(document).ready(function() {
   handler = StripeCheckout.configure({
@@ -32,6 +33,7 @@ $(document).ready(function() {
   })
 });
 </script>
+<% end %>
 
 <div id="calendarbox">
   <% if current_user %>
@@ -52,9 +54,8 @@ $(document).ready(function() {
 $(document).ready(function() {
   <% if current_user %>
     show_renter_calendar("#calendar");
-    console.log(<%= @calendar_info.html_safe %>);
   <% else %>
-    show_read_only_calendar("#calendar");
+    show_renter_calendar("#calendar", read_only = true);
   <% end %>
 });
 

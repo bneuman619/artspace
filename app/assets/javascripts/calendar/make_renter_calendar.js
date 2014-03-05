@@ -1,27 +1,31 @@
 function make_renter_calendar(events_input) {
   var calendar = {
-    scrollToHourMillis : 0,
-    timeslotsPerHour: 2,
-    timeslotHeight: 20,
+    // scrollToHourMillis : 0,
+    // timeslotsPerHour: 2,
+    // timeslotHeight: 20,
+    // displayOddEven: true,
+    // allowEventDelete: true,
+    // daysToShow: 7,
+    // headerSeparator: ' ',
+    // allowCalEventOverlap: false,
+    // businessHours: false,
+
+    dateFormat: 'F d',
     defaultFreeBusy: {free: false},
     displayFreeBusys: true,
-    allowEventDelete: true,
-    displayOddEven: true,
-    daysToShow: 7,
-    switchDisplay: {'1 day': 1, 'full week': 7},
-    headerSeparator: ' ',
     useShortDayNames: true,
-    allowCalEventOverlap: false,
-    dateFormat: 'F d',
-
-    businessHours: false,
-
+    
+    switchDisplay: {'1 day': 1, 'full week': 7},
+    
     height: function($calendar){
       return $(window).height() - $('h1').outerHeight(true);
     },
 
+    data: function(start, end, callback) {
+      callback(events_input);
+    },
+
     eventDelete: function(calEvent, element, dayFreeBusyManager, calendar, clickEvent) {
-        console.log(calEvent);
         if (confirm('You want to delete this reservation?')) {
 
            calendar.weekCalendar('removeEvent',calEvent.id);
@@ -82,10 +86,6 @@ function make_renter_calendar(events_input) {
 
     eventBody: function() {
       return "Reservation";
-    },
-
-    data: function(start, end, callback) {
-      callback(events_input);
     },
 
     title: function(date, calendar) {
