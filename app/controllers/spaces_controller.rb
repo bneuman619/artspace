@@ -15,31 +15,13 @@ class SpacesController < ApplicationController
   def create
     @use_ids = params[:space][:use_ids] ||= []
     @space = Space.new(space_params)
-    @space.creator_id = session[:current_user_id]
+    @space.creator_id = current_user.id
     if @space.save
-      @use_ids.each do |u|
-        SpaceUse.create(space_id: @space.id, use_id: u.to_i)
-      end
-
-      if params["pic_url"]
-        params["pic_url"].split(',').each do |url|
-          Photo.create(space: @space, url: url)
-        end
-
-      else
-        @space.photos << Photo.first
-      end
-      # redirect_to manage_path(session[:current_user_id])
-      # redirect_to manage_path(session[:current_user_id])
-
-      # Redirect to space availability
+      insert_uses(@space.id, @use_ids)
+      save_photos(@space, params["pic_url"])
       redirect_to new_space_availability_path(@space)
-
-      # Add stripe to process flow when creating a space
-      # redirect_to new_payment_path
-
     else
-      #raise some sort of error and send the creator back to the form
+      flash[:notice] = "Space could not be saved! " + @space.errors.full_messages
     end
   end
 
@@ -119,6 +101,22 @@ class SpacesController < ApplicationController
                                   :ammenities, :rate, :address,
                                   :city, :state, :zipcode, :email,
                                   :phone)
+  end
+
+  def insert_uses(space_id, use_ids)
+    @use_ids.each do |u|
+      SpaceUse.create(space_id: @space.id, use_id: u.to_i)
+    end
+  end
+
+  def save_photos(space, pic_url)
+    if pic_url
+      pic_url.split(',').each do |url|
+        Photo.create(space: space, url: url)
+      end
+    else
+      space.photos << Photo.first
+    end
   end
 
 end
