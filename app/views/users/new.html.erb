@@ -1,4 +1,7 @@
 
 <%= render "shared/top_nav" %>
 <%= render "shared/user_form" %>
+<% flash.each do |key, val| %>
+  <%= val %>
+<% end %>
 <%= render "shared/footer" %>

@@ -2,7 +2,7 @@ require_relative 'controller_helpers'
 
 class SpacesController < ApplicationController
   include ControllerHelpers
-  
+
   def index
     @spaces = Space.scoped.where(active: 1)
     @spaces = @spaces.title(params[:title]) if params[:title].present?
@@ -10,6 +10,7 @@ class SpacesController < ApplicationController
   end
 
   def new
+    redirect_to root_path if !current_user
     @space = Space.new
   end
 
