@@ -93,30 +93,38 @@
 #signin{
   position: absolute;
   width: 80%;
-  margin-top: 80px;
-  margin-left: 250px;
+  margin-top: 410px;
+  margin-left: 400px;
 }
 
 #title{
   position: absolute;
-  font-family: 'Jura', sans-serif;
-  color: gray;
+  margin-top: 50px;
+  margin-left: 250px;
+  font-family: 'Over the Rainbow', cursive;
+  color: #993344;
+  opacity: 0%;
   font-size: 50px;
-  text-shadow: 5px 3px 3px lightgray;
-  margin-left: 275px;
+}
+
+.homelogo{
+  position: absolute;
+  margin-top: -110px;
+  margin-left: -300px;
+  width: 250px;
 }
 #search_form{
-  padding: 1%;
-  width: 120px;
-  border: 3px solid gray;
+  padding: 1.5%;
+  width: 275px;
+  border: 3px solid lightgray;
   border-radius: 20px;
   font-family: 'Jura', sans-serif;
   font-size: 14px;
 }
 #rate_form{
-  padding: 1%;
+  padding: 1.5%;
   width: 40px;
-  border: 3px solid gray;
+  border: 3px solid lightgray;
   border-radius: 20px;
   font-family: 'Jura', sans-serif;
   font-size: 14px;

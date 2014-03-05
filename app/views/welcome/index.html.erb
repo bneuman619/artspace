@@ -4,13 +4,14 @@
 </div>
 <div class="white_bar3">
 </div>
+<%= image_tag "artspace.svg", id:"logo", class: "homelogo" %>
 <h1 id="title">Artspace</h1>
 <div id="signin">
   <%= form_tag(spaces_path, :method => "get") do %>
 	<p>
-	  <%= text_field_tag :title, params[:title], placeholder: "search for space", size: 20, id:"search_form" %>
+	  <%= text_field_tag :title, params[:title], placeholder: "find space for your artistic endeavors", size: 20, id:"search_form" %>
 	  <%= text_field_tag :rate, params[:rate], placeholder: "max $", size: 10, id:"rate_form" %>
-	  <%= submit_tag "Search", :name => nil, :class => "search_it" %>
+	  <%= submit_tag "Search", :name => nil, :class => "search_it2" %>
 	</p>
   <% end %>
 </div>
