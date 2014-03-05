@@ -8,11 +8,11 @@
         <input type="hidden" name="space_id" value=<%=@space.id%>>
         <% @photos.each do |photo| %>
           <p id=<%=photo.id%> ><img src=<%=photo.url%> style="max-height: 600px; max-width: 600px;"><br>
-          <input class="old_pic" type="button" name=<%=photo.id%> value="delete"><br></p>
+          <input class="old_pic search_it2" type="button" name=<%=photo.id%> value="delete"><br></p>
         <%end%>
 
       <div id="form_container"></div>
-      <input type="submit" value="Save Photos">
+      <input type="submit" value="Save Photos" class="search_it2">
       <%end%>
   </div>
 </div>
