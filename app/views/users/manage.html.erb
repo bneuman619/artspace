@@ -15,10 +15,11 @@
 
   <% @spaces.each do |space| %>
 
-
-      <h2 id="link"><%= link_to "#{space.title}", space_path(space.id) %></h2>
       <% space_name = space.title.gsub(/\s/, "") %>
-      <div class="upcoming_reservations", id="<%=space_name%>">
+      <h2 id="link"><span id="<%=space_name%>"></span><%= link_to "#{space.title}", space_path(space.id) %></h2>
+
+
+      <div class="upcoming_reservations">
         <h2 class="inactive"><% if space.active == 0 %>INACTIVE<% end %></h2>
         <h3> UPCOMING RESERVATIONS </h3>
         <% if space.upcoming_reservations == [] %>
@@ -45,7 +46,7 @@
 
   <% end %>
 
-
-<%= render "shared/footer" %>
 </div>
+<%= render "shared/footer" %>
+
 
