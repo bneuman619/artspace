@@ -88,7 +88,19 @@ Space.all.each do |space|
   5.times do
     start_hour = rand(13..21)
     end_hour = start_hour + 2
-    day = rand(3..10)
+    day = rand(3..9)
+    space.reservations.create(renter_id: rand(1..20),
+               start_time: DateTime.new(2014,3,day,start_hour,0,0),
+               end_time: DateTime.new(2014,3,day,end_hour,0,0),
+               num_people: rand(1..10),
+               intended_use: Faker::Lorem.paragraph
+            )
+  end
+
+  5.times do
+    start_hour = rand(13..21)
+    end_hour = start_hour + 2
+    day = rand(10..16)
     space.reservations.create(renter_id: rand(1..20),
                start_time: DateTime.new(2014,3,day,start_hour,0,0),
                end_time: DateTime.new(2014,3,day,end_hour,0,0),
@@ -119,8 +131,8 @@ end
 end
 
 #-----------------------Seed Payments----------------------------------------------
-Payment.create(creator_id: 1, secret_api_key: "sk_test_mC0xJbEJjQn6fTFFXbF1iY0H", publishable_api_key: "pk_test_pnsJYKvwITr1blAJDXU8Yjv7", refresh_token: "rt_3aBCE7XsHeyoi5yqjCXndALQ6JIKltGTHH11KuPS0KBdUehx", stripe_user_id: "acct_103aBC2tZaA3CnwC")
-Payment.create(creator_id: 2, secret_api_key: "sk_test_bZj3yCI2T3bzV85XRzvzRzFl", publishable_api_key: "pk_test_GoDAjXI0FKBPyEUuT5qmNGbv", refresh_token: "rt_3aOB4oZsceUP5AVIBQ4hmYHeo715KjVrm9iGhmFVzDqLplDf", stripe_user_id: "acct_103Zex26RoKDB1cW")
+# Payment.create(creator_id: 1, secret_api_key: "sk_test_mC0xJbEJjQn6fTFFXbF1iY0H", publishable_api_key: "pk_test_pnsJYKvwITr1blAJDXU8Yjv7", refresh_token: "rt_3aBCE7XsHeyoi5yqjCXndALQ6JIKltGTHH11KuPS0KBdUehx", stripe_user_id: "acct_103aBC2tZaA3CnwC")
+# Payment.create(creator_id: 2, secret_api_key: "sk_test_bZj3yCI2T3bzV85XRzvzRzFl", publishable_api_key: "pk_test_GoDAjXI0FKBPyEUuT5qmNGbv", refresh_token: "rt_3aOB4oZsceUP5AVIBQ4hmYHeo715KjVrm9iGhmFVzDqLplDf", stripe_user_id: "acct_103Zex26RoKDB1cW")
 
 
 

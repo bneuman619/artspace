@@ -5,7 +5,7 @@
 
 #focal{
   height: 690px;
-  width: 60%;
+  width: 800px;
   margin: 100px auto;
   background: url(image_path('dance_photo.jpg')) no-repeat;
   border-radius: 80px;
@@ -15,11 +15,11 @@
   background-color: white;
   width: 30%;
   height: 100px;
-  float: right;
-  margin-left: 70%;
-  margin-top: 250px;
+  right: 0;
+  position: absolute;
   padding-left: 50px;
   border-radius: 30px;
+  margin-top: 500px;
   p{
     padding-top: 12%;
     padding-left: 10%;
@@ -41,9 +41,11 @@
   width: 30%;
   height: 100px;
   float: right;
-  margin-left: 70%;
   padding-left: 100px;
   border-radius: 30px;
+  right: 0;
+  position: absolute;
+  margin-top: 600px;
   p{
     padding-left: 10%;
     a{
@@ -59,53 +61,70 @@
   }
 }
 
-.white_bar{
+.white_bar1{
   background-color: white;
   width: 35%;
   height: 80px;
   float: left;
-  margin-right: 60%;
+  padding-left: 100px;
+  border-radius: 30px;
+}
+.white_bar2{
+  background-color: white;
+  margin-top: 80px;
+  width: 35%;
+  height: 80px;
+  position: absolute; 
+  left: 0;
   padding-left: 100px;
   border-radius: 30px;
 }
 
-.white_bar2{
+.white_bar3{
   background-color: white;
   width: 25%;
   height: 80px;
   float: left;
-  margin-right: 60%;
+  position: absolute;
   padding-left: 100px;
   border-radius: 30px;
+  margin-top: 160px;
 }
 #signin{
   position: absolute;
-  margin-left: 15%;
-  margin-top: 65px;
-  width: 100%;
+  width: 80%;
+  margin-top: 410px;
+  margin-left: 400px;
 }
 
 #title{
   position: absolute;
-  margin-left: 18%;
-  margin-top: 0;
-  font-family: 'Jura', sans-serif;
-  color: gray;
+  margin-top: 50px;
+  margin-left: 250px;
+  font-family: 'Over the Rainbow', cursive;
+  color: #993344;
+  opacity: 0%;
   font-size: 50px;
-  text-shadow: 5px 3px 3px lightgray;
+}
+
+.homelogo{
+  position: absolute;
+  margin-top: -110px;
+  margin-left: -300px;
+  width: 250px;
 }
 #search_form{
-  padding: 1%;
-  width: 120px;
-  border: 3px solid gray;
+  padding: 1.5%;
+  width: 275px;
+  border: 3px solid lightgray;
   border-radius: 20px;
   font-family: 'Jura', sans-serif;
   font-size: 14px;
 }
 #rate_form{
-  padding: 1%;
+  padding: 1.5%;
   width: 40px;
-  border: 3px solid gray;
+  border: 3px solid lightgray;
   border-radius: 20px;
   font-family: 'Jura', sans-serif;
   font-size: 14px;
@@ -125,4 +144,25 @@
   background: -o-linear-gradient(gray, gray, gray, gray, gray, lightgray);
   background: -moz-linear-gradient(gray, gray, gray, gray, gray, lightgray);
   background: linear-gradient(gray, gray, gray, gray, gray, lightgray);
+}
+.opening_quote{
+  position: absolute;
+  z-index: 10;
+  font-family: 'Alex Brush', cursive;
+  font-size: 50px;
+  color: white;
+  text-shadow: 5px 5px 5px black;
+  margin-top: 500px;
+  margin-left: 400px;
+}
+.text{
+  position: absolute;
+  z-index: 10;
+  color: white;
+  font-family: 'Jura', sans-serif;
+  font-size: 16px;
+  width: 20%;
+  padding: 0;
+  margin-top: 550px;
+  margin-left: 50px;
 }
