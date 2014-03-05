@@ -31,7 +31,7 @@ $(document).ready(function() {
             console.log(response);
           }
           else {
-          window.location = "/users/" + $("#edit_availabilities").data().userId + "/manage";
+            window.location = "/users/" + $("#edit_availabilities").data().userId + "/manage";
           }
         },
 
