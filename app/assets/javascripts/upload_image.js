@@ -14,7 +14,7 @@ $(function() {
     imgArray.push(content['url'] )
     $("#rmv_msg").fadeIn("slow");
     $("#file-" + content['unique_id']).fadeOut(1000);
-    $("#form_container").append('<input type="hidden" name="pic_url" value=' + imgArray + '>')
+    $("#form_container").html('<input type="hidden" name="pic_url" value=' + imgArray + '>')
   });
 
   $('#s3-uploader').bind("s3_upload_failed", function(e, content) {
@@ -28,6 +28,7 @@ $(function() {
       var index = imgArray.indexOf($(event.target).attr('src'));
         imgArray.splice(index, 1)
       $(event.target).fadeOut("slow");
+      $("#form_container").html('<input type="hidden" name="pic_url" value=' + imgArray + '>')
     }
   })
 

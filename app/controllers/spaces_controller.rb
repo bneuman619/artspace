@@ -90,6 +90,7 @@ class SpacesController < ApplicationController
   def update_pic
     puts @space = Space.find_by_id(params["space_id"])
     if params["pic_url"]
+      puts params["pic_url"]
       params["pic_url"].split(',').each do |url|
         Photo.create(space: @space, url: url)
       end
