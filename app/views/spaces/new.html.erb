@@ -2,6 +2,9 @@
 
 <div id="page">
   <div id="title3">Register A New Space with ArtSpace</div>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
   <div id="photo_uploader">
     <p>Upload Photos:<br><span id="rmv_msg" hidden>click on newly uploaded photo to remove</span><%= render "shared/pic_form" %></p>
   </div>
