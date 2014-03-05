@@ -1,6 +1,3 @@
-$(document).ready( function() {
-});
-
 function get_calendar_data() {
   var calendar_data = JSON.parse($("#calendar_info").html());
   return calendar_data;

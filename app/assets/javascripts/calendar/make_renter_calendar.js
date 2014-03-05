@@ -1,22 +1,15 @@
 function make_renter_calendar(events_input) {
   var calendar = {
-    // scrollToHourMillis : 0,
-    // timeslotsPerHour: 2,
-    // timeslotHeight: 20,
-    // displayOddEven: true,
-    // allowEventDelete: true,
-    // daysToShow: 7,
-    // headerSeparator: ' ',
-    // allowCalEventOverlap: false,
-    // businessHours: false,
-
     dateFormat: 'F d',
     defaultFreeBusy: {free: false},
     displayFreeBusys: true,
     useShortDayNames: true,
-    
+
     switchDisplay: {'1 day': 1, 'full week': 7},
-    
+    date: new Date(2014, 2, 9),
+    minDate: new Date(2014, 2, 2),
+    maxDate: new Date(2014, 2, 29),
+
     height: function($calendar){
       return $(window).height() - $('h1').outerHeight(true);
     },

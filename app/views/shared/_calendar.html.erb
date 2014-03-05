@@ -4,33 +4,7 @@
 <% if current_user %>
 <script>
 $(document).ready(function() {
-  handler = StripeCheckout.configure({
-    //key: 'pk_test_XYAoxUJ6VE4GGzZr7hQujucR', //Our publishable api key
-    name: "Artspace",
-    key: $('#pub_key').val(),
-    description: $("#make_reservation").data().spaceTitle,
-    email: $("#make_reservation").data().spaceEmail,
-    token: function(token, args) {
-      var data = { token_key: token.id,
-                   amount: get_total_charge(),
-                   description: $("#make_reservation").data().spaceTitle,
-                   reservation_data: { space_id: $("#make_reservation").data("space-id"),
-                                       reservations: get_events()
-                                     }
-                  };
-
-      $.post( '/payments/charge', data, function(response) {
-        if(response.status == 'error') {
-          alert(response.error)
-        }
-
-        else {
-          var res_ids = response.reservation_ids.join(',');
-          window.location = "/reservations/confirmation?ids=" + res_ids +"&amount=" + get_total_charge();
-        }
-      });
-    }
-  })
+  handler = StripeCheckout.configure(stripe_config());
 });
 </script>
 <% end %>
