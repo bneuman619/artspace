@@ -14,9 +14,12 @@ function make_renter_calendar(events_input) {
     defaultFreeBusy: {free: false},
     displayFreeBusys: true,
     useShortDayNames: true,
-    
+
     switchDisplay: {'1 day': 1, 'full week': 7},
-    
+    date: new Date(2014, 2, 9),
+    minDate: new Date(2014, 2, 2),
+    maxDate: new Date(2014, 2, 29),
+
     height: function($calendar){
       return $(window).height() - $('h1').outerHeight(true);
     },
