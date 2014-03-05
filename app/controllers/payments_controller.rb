@@ -54,10 +54,10 @@ class PaymentsController < ApplicationController
     end
   end
 
-  def pos
-    @publishable_key = current_user.publishable_key #current_space.creator.publishable_key
-    @email = current_user.email
-  end
+  # def pos
+  #   @publishable_key = current_user.publishable_key #current_space.creator.publishable_key
+  #   @email = current_user.email
+  # end
 end
 
 
