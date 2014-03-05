@@ -134,7 +134,7 @@ end
 # Payment.create(creator_id: 1, secret_api_key: "sk_test_mC0xJbEJjQn6fTFFXbF1iY0H", publishable_api_key: "pk_test_pnsJYKvwITr1blAJDXU8Yjv7", refresh_token: "rt_3aBCE7XsHeyoi5yqjCXndALQ6JIKltGTHH11KuPS0KBdUehx", stripe_user_id: "acct_103aBC2tZaA3CnwC")
 # Payment.create(creator_id: 2, secret_api_key: "sk_test_bZj3yCI2T3bzV85XRzvzRzFl", publishable_api_key: "pk_test_GoDAjXI0FKBPyEUuT5qmNGbv", refresh_token: "rt_3aOB4oZsceUP5AVIBQ4hmYHeo715KjVrm9iGhmFVzDqLplDf", stripe_user_id: "acct_103Zex26RoKDB1cW")
 Payment.create(creator_id: 1, secret_api_key: "sk_test_1bDMZ95bU3Xa3EdqVVkv5o1m", publishable_api_key: "pk_test_caQ4h6AFl9aE97UbMmqkqVSV", refresh_token: "rt_3c0nv6uiCGmripb3LHPpx4UF6TEpYl8bcO9gHpqcKMFs6skn...", stripe_user_id: "acct_103aWM2TTcvmqKrL", created_at: "2014-03-05 21:41:50", updated_at: "2014-03-05 21:41:50")
-
+Payment.create(creator_id: 2, secret_api_key: "sk_test_1bDMZ95bU3Xa3EdqVVkv5o1m", publishable_api_key: "pk_test_caQ4h6AFl9aE97UbMmqkqVSV", refresh_token: "rt_3c0nv6uiCGmripb3LHPpx4UF6TEpYl8bcO9gHpqcKMFs6skn...", stripe_user_id: "acct_103aWM2TTcvmqKrL", created_at: "2014-03-05 21:41:50", updated_at: "2014-03-05 21:41:50")
 
 #----------------------Seed Images___________________________________________________
 
