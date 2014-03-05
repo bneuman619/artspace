@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
 
   def upcoming_reservations
-  	reservations.where("start_time > ?", Date.today)
+  	reservations.where("start_time > ?", Date.today).order(:start_time)
   end
 
   def favorite_spaces
