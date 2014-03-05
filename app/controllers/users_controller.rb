@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
   def new
+    if current_user
+      redirect_to user_path(current_user)
+    end
     @user = User.new
   end
 
@@ -10,7 +13,8 @@ class UsersController < ApplicationController
       session[:current_user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      render root_url
+      flash.now[:alert] = "Invalid info - check to make sure passwords match"
+      render 'users/new'
     end
   end
 
@@ -21,7 +25,7 @@ class UsersController < ApplicationController
     if session[:current_user_id]
       @spaces = current_user.spaces_created
       creator_id = @spaces.first.creator_id
-    else 
+    else
       render "welcome/index"
     end
   end
