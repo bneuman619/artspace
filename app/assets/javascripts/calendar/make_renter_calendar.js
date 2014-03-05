@@ -1,15 +1,5 @@
 function make_renter_calendar(events_input) {
   var calendar = {
-    // scrollToHourMillis : 0,
-    // timeslotsPerHour: 2,
-    // timeslotHeight: 20,
-    // displayOddEven: true,
-    // allowEventDelete: true,
-    // daysToShow: 7,
-    // headerSeparator: ' ',
-    // allowCalEventOverlap: false,
-    // businessHours: false,
-
     dateFormat: 'F d',
     defaultFreeBusy: {free: false},
     displayFreeBusys: true,
