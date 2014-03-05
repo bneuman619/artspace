@@ -1,19 +1,23 @@
+<%= render "shared/top_nav" %>
 <div id="page">
-  <%= render "shared/top_nav" %>
-  <div>
-    Your reservation has been booked.  <%=@total_charge%> will be charged to your credit card.
-  </div>
-  <p>
-    If you have any questions, please contact <%=@space.creator.first_name%> <%=@space.creator.last_name%> at <%=@space.email%>.
-  </p>
   
-  <h2>Reservation Details:</h2>
-  <ul>
-    <% @reservations.each do |r| %>
-      <%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y %I:%M %p") %><span class="color"> TO </span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %>
-    <% end %>
-  </ul>
-  <br><br>
-  <p>Thanks for booking with Artspace!</p>
+  <div id="title7">
+    Your reservation has been booked.
+  </div>
+  <div class="all_reservations">
+    <p><%=@total_charge%> will be charged to your credit card. If you have any questions, please contact <%=@space.creator.first_name%> <%=@space.creator.last_name%> at <%= mail_to @space.email, @space.email %>.
+    </p>
+    
+    <h2>Reservation Details:</h2>
+
+    
+      <% @reservations.each do |r| %>
+        <p><span class="color"> FROM </span><%= r.start_time.in_time_zone(-6).strftime("%a %m/%d/%y      %I:%M %p") %><span class="color"> TO </span><%= r.end_time.in_time_zone(-6).strftime("%I:%M %p") %></p>
+      <% end %>
+   
+
+    <br><br>
+    <p>Thanks for booking with Artspace!</p>
+  </div>
   <%= render "shared/footer" %>
 </div>
