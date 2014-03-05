@@ -6,6 +6,9 @@
 .wc-toolbar {
   padding: 1em;
   font-size:0.8em;
+  border: 10px solid lightgray;
+  border-radius: 10px;
+  width: 97.5%;
 }
 
 .wc-toolbar .wc-nav {
@@ -30,6 +33,7 @@
 .wc-container table {
   border-collapse: collapse;
   border-spacing: 0;
+
 }
 .wc-container table td {
   margin: 0;
@@ -42,8 +46,10 @@
   border-style:solid;
 }
 .wc-header table{
-  width: 100%;
+  width: 101%;
   table-layout:fixed;
+  border: 10px solid lightgray;
+  border-radius: 10px;
 }
 
 .wc-grid-timeslot-header,
@@ -97,6 +103,8 @@ table.wc-time-slots {
 .wc-scrollable-grid .wc-day-column-last,
 .wc-scrollable-grid .wc-day-column-middle{border-width: 0 0 0 1px; border-style: dashed;}
 .wc-scrollable-grid .wc-day-column-first{border-width: 0 0 0 3px; border-style: double;}
+
+.wc-scrollable-grid{ border: 5px solid lightgray;}
 
 .wc-day-column-inner {
     width: 100%;
@@ -259,7 +267,7 @@ table.wc-time-slots {
 .free-busy-free{}
 .free-busy-busy{
   /*background:url("/images/ui-bg_flat_0_aaaaaa_40x100.png") repeat scroll 50% 50% #666666;*/
-  background-color: #cc8800;
+  background-color: #993344;
 }
 
 /** hourLine */
