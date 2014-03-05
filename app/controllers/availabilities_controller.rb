@@ -1,6 +1,7 @@
 class AvailabilitiesController < ApplicationController
-  include ControllerHelpers
-  
+  include AvailabilityHelpers
+  include CalendarHelpers
+
   def new
   end
 
