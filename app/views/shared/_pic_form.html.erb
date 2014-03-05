@@ -1,5 +1,5 @@
 
-  <p><%= s3_uploader_form callback_url: uploaded_url, callback_method: "POST", max_file_size: 1.megabytes, callback_param: "upload[image_url]", id: "s3-uploader" do %>
+  <p><%= s3_uploader_form callback_method: "POST", max_file_size: 1.megabytes, callback_param: "upload[image_url]", id: "s3-uploader" do %>
   <%= hidden_field_tag  "Content-Type", "" %>
   <%= file_field_tag :file, accept: "image/png,image/jpeg", multiple: true %></p>
   <% end %>
