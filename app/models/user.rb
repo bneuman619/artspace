@@ -17,10 +17,9 @@ class User < ActiveRecord::Base
   end
 
   def favorite_spaces
-  	spaces = reservations.order(:id).limit(3).collect do |r|
-  	  r.space
-  	end
-    spaces.uniq
+    reservation_count = reservations.group_by(&:space_id).map{ |space, res| {space => res.count} }
+    top3 = reservation_count.map{ |r| p r.flatten}.sort{|a,b| b[1]<=>a[1] }.take(3)
+    top3.map{ |t| Space.find(t[0])}
   end
 
   def publishable_key
