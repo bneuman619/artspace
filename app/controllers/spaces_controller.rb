@@ -52,20 +52,14 @@ class SpacesController < ApplicationController
 
   def destroy
     space = Space.find(params[:id])
-    # remove availability of space
     space.availabilities.clear
-    # mark space inactive
     space.active = 0
     space.save
-    redirect_to manage_path(current_user.id)
-  end
-
-  def add_photo
-    redirect_to new_space_path
+    redirect_to manage_path(current_user)
   end
 
   def update_pic
-    puts @space = Space.find_by_id(params["space_id"])
+    @space = Space.find_by_id(params["space_id"])
     if params["pic_url"]
       params["pic_url"].split(',').each do |url|
         Photo.create(space: @space, url: url)
@@ -77,11 +71,8 @@ class SpacesController < ApplicationController
   def edit_pic
     @space = Space.find(params[:id])
     @photos = Photo.where(space_id: @space.id).all
-    if !session[:current_user_id]
-      render "welcome/index"
-    elsif session[:current_user_id] != @space.creator_id
-      redirect_to user_path(current_user.id)
-    end
+    redirect_to root_path and return unless current_user
+    redirect_to user_path(current_user) unless current_user == @space.creator
   end
 
   def delete_photo
