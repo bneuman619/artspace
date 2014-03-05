@@ -25,7 +25,7 @@
     margin:0 auto;
     margin-bottom: 200px;
     padding-top: 5px;
-    overflow: auto;
+    overflow: hidden;
     background-color: white;
     border-radius: 5px;
 }
@@ -42,7 +42,7 @@
 .space_holder {
     float:left;
     width:450px;
-    height: 300px;
+    height: 275px;
     background-color: white;
     font-family: 'Jura', sans-serif;
     color: black;
@@ -93,9 +93,10 @@ h5{
 }
 .description{
   font-family: 'Jura', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  color: gray;
+  color: lightgray;
+  background-color: #993344;
   text-align: center;
   width: 70%;
   margin: 0 auto;
@@ -112,10 +113,10 @@ h5{
   text-align: center;
   padding-top: 15px;
   font-weight: bold;
-  color: lightgray;
+  color: #993344;
   width: 50px;
   height: 35px;
-  border: 1px solid lightgray;
+  border: 1px solid #993344;
   border-radius: 40px;
   position: absolute;
   z-index: 10;
@@ -124,16 +125,17 @@ h5{
     background-color: lightgray;
     color: white;
     border: none;
+    cursor: pointer;
   }
 }
 #forward{
   background-color: white;
   text-align: center;
   padding-top: 15px;
-  color: lightgray;
+  color: #993344;
   width: 50px;
   height: 35px;
-  border: 1px solid lightgray;
+  border: 1px solid #993344;
   border-radius: 40px;
   position: absolute;
   z-index: 10;
@@ -142,6 +144,7 @@ h5{
     background-color: lightgray;
     color: white;
     border: none;
+    cursor: pointer;
   }
 }
 h4 a{
