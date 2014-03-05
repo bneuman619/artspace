@@ -5,7 +5,7 @@ $(function() {
   $('#s3-uploader').S3Uploader(
     {
       remove_completed_progress_bar: false,
-      progress_bar_target: $('#uploads_container')
+      progress_bar_target: $('#progress_container')
     }
   );
 
