@@ -40,7 +40,7 @@
         <p><%= link_to "VIEW ALL UPCOMING RESERVATIONS", view_reservations_path(space.id) %></p>
         <% if space.active == 1 %>
         <%= button_to "Deactivate Space", { action: "destroy", id: space.id, :controller=>"spaces" },
-                      class: "search_it", method: :delete, data: { confirm: "Are you sure?" } %>
+                      class: "main_button gray_button", method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
       </div>
 
