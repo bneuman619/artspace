@@ -3,6 +3,7 @@
   <%= image_tag "artspace.svg", id:"logo" %>
   <h1 id="title2">Space</h1>
   <% if current_user %>
+  <%= link_to 'Home', root_url %>
   <%= link_to 'Profile', current_user %>
     <% if current_user.spaces_administrated == [] && current_user.spaces_created == [] %>
      <% else %>
