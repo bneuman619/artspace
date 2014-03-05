@@ -15,7 +15,7 @@
     color: white;
     font-family: 'Jura', sans-serif;
     margin-top: 100px;
-    margin-right: 14%;
+    margin-right: 10%;
     float: right;
     &:hover{
       color: lightgray;
@@ -91,4 +91,12 @@
   background: -o-linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
   background: -moz-linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
   background: linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
+}
+.hello{
+  color: white;
+  font-family: 'Jura', sans-serif;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 80%;
+  z-index: 20;
 }
