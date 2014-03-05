@@ -6,7 +6,7 @@
 }
 
 #thumbnails img {
-  border: 1px solid grey;
+  border: 3px solid white;
   height: 85px;
   width: 85px;
   background-color: lightgrey;
@@ -39,4 +39,7 @@
   font-family: Arial;
   font-size: 12px;
   font-weight: bold;
+}
+.info_section{
+  background-color: #993344;
 }

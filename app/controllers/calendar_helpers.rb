@@ -1,14 +1,4 @@
-module ControllerHelpers
-  def parse_availability(availability)
-    {start_time: parse_availability_time(DateTime.parse(availability[:start])),
-    end_time: parse_availability_time(DateTime.parse(availability[:end])),
-    day: DateTime.parse(availability[:start]).wday}
-  end
-
-  def parse_availability_time(time)
-    DateTime.new(2000, 01, 01, time.hour, time.minute, time.second, '-6')
-  end
-
+module CalendarHelpers
   def calendar_info(space)
     {openings: get_openings_for_four_weeks(week_openings(DateTime.now, space)),
      reservations: get_reservations(space)
@@ -59,5 +49,4 @@ module ControllerHelpers
         "title" => reservation.renter.first_name + reservation.renter.last_name}
     end
   end
-
 end
