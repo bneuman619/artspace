@@ -1,7 +1,7 @@
 require_relative 'controller_helpers'
 
 class SpacesController < ApplicationController
-  include ControllerHelpers
+  include CalendarHelpers
 
   def index
     @spaces = Space.scoped.where(active: 1)

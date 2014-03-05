@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  include ReservationHelpers
+
   def index
     @space = Space.find(params[:space_id])
     @reservations = @space.reservations
@@ -48,32 +50,13 @@ class ReservationsController < ApplicationController
   end
 end
 
-def get_secret_key(space_id)
-  Space.find(space_id).creator.secret_key
-end
 
-def make_payment(payment_info, payee_secret_key)
-  token = payment_info["token_key"] # obtained with checkout.js
-  amount = payment_info["amount"]
-  description = payment_info["description"]
-  Stripe.api_key = payee_secret_key
 
-  # space = Space.find(payment_info["reservation_data"]["space_id"])
-  # Stripe.api_key = space.creator.secret_key
-
-  Stripe::Charge.create(
-    :amount => amount,
-    :currency => "usd",
-    :card => token,
-    :description => description
-  )
-end
-
-def unavailable_timerange_check(reservation)
-  reservation.space.availabilities.none? do |availability|
-    reservation.start_time.between?(availability.start_time, availability.end_time) &&
-    reservation.end_time.between?(availability.start_time, availability.end_time)
-  end
-end
+# def unavailable_timerange_check(reservation)
+#   reservation.space.availabilities.none? do |availability|
+#     reservation.start_time.between?(availability.start_time, availability.end_time) &&
+#     reservation.end_time.between?(availability.start_time, availability.end_time)
+#   end
+# end
 
 

@@ -28,31 +28,31 @@ class PaymentsController < ApplicationController
     end
   end
 
-  def charge
-    token = params["token_key"] # obtained with checkout.js
-    amount = params["amount"]
-    space = Space.find(params["reservation_data"]["space_id"])
-    description = params["description"]
+  # def charge
+  #   token = params["token_key"] # obtained with checkout.js
+  #   amount = params["amount"]
+  #   space = Space.find(params["reservation_data"]["space_id"])
+  #   description = params["description"]
 
-    Stripe.api_key = space.creator.secret_key
+  #   Stripe.api_key = space.creator.secret_key
 
-    response =  Stripe::Charge.create(
-      :amount => amount,
-      :currency => "usd",
-      :card => token,
-      :description => description
-    )
+  #   response =  Stripe::Charge.create(
+  #     :amount => amount,
+  #     :currency => "usd",
+  #     :card => token,
+  #     :description => description
+  #   )
 
-    if response.paid
-      resp = create_reservations(params["reservation_data"])
-      resp["payment"] = response
-      resp["totalCharge"] = resp["payment"]["amount"]
+  #   if response.paid
+  #     resp = create_reservations(params["reservation_data"])
+  #     resp["payment"] = response
+  #     resp["totalCharge"] = resp["payment"]["amount"]
 
-      render json: resp.to_json
-    else
-      render json: {status: 'error', error: 'problem with charge'}.to_json
-    end
-  end
+  #     render json: resp.to_json
+  #   else
+  #     render json: {status: 'error', error: 'problem with charge'}.to_json
+  #   end
+  # end
 
   # def pos
   #   @publishable_key = current_user.publishable_key #current_space.creator.publishable_key
