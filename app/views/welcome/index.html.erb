@@ -1,32 +1,32 @@
-<div class="white_bar1">
+<div class="bar_style bar1">
 </div>
-<div class="white_bar2">
+<div class="bar_style bar2">
 </div>
-<div class="white_bar3">
+<div class="bar_style bar3">
 </div>
 <%= image_tag "artspace.svg", id:"logo", class: "homelogo" %>
 <h1 id="title">Artspace</h1>
-<div id="signin">
+<div id="search">
   <%= form_tag(spaces_path, :method => "get") do %>
 	<p>
-	  <%= text_field_tag :title, params[:title], placeholder: "find space for your artistic endeavors", size: 20, id:"search_form" %>
-	  <%= text_field_tag :rate, params[:rate], placeholder: "max $", size: 10, id:"rate_form" %>
-	  <%= submit_tag "Search", :name => nil, :class => "search_it2" %>
+	  <%= text_field_tag :title, params[:title], placeholder: "find space for your artistic endeavors", size: 20, class:"search_style", id:"search_size" %>
+	  <%= text_field_tag :rate, params[:rate], placeholder: "max $", size: 10, class:"search_style", id:"rate_size" %>
+	  <%= submit_tag "Search", :name => nil, :class => "main_button red_button" %>
 	</p>
   <% end %>
 </div>
 <% if session[:current_user_id] %>
-	<div id="login">
+	<div class="home_options top_home_link">
 	  <p>|<%= link_to 'Profile', user_path(session[:current_user_id]) %></p>
 	</div>
-	<div id="signup">  
+	<div class="home_options bottom_home_link">  
 	  <p>|<%= link_to 'Logout', logout_path, method: :delete %></p>
 	</div>
 <% else %>
-	<div id="login">
+	<div class="home_options top_home_link">
 	  <p>|<%= link_to 'Login', login_path, method: :get %></p>
 	</div>
-	<div id="signup">  
+	<div class="home_options bottom_home_link">  
 	  <p>|<%= link_to 'Sign Up', signup_path, method: :get %></p>
 	</div>
 <% end %>

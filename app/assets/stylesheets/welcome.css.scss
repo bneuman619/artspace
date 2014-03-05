@@ -1,7 +1,9 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+/*----------------------------------HOME------------------------------*/
+$logo-font:   'Over the Rainbow', cursive;
+$main-color:  #993344;
 
 #focal{
   height: 690px;
@@ -11,41 +13,13 @@
   border-radius: 80px;
 }
 
-#login{
+.home_options{
   background-color: white;
   width: 30%;
   height: 100px;
-  right: 0;
-  position: absolute;
-  padding-left: 50px;
-  border-radius: 30px;
-  margin-top: 500px;
-  p{
-    padding-top: 12%;
-    padding-left: 10%;
-    a{
-      font-family: 'Jura', sans-serif;
-  	  padding: 4%;	
-  	  color: gray;
-      text-decoration: none;
-      &:hover{
-        color: black;
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-#signup{
-  background-color: white;
-  width: 30%;
-  height: 100px;
-  float: right;
-  padding-left: 100px;
   border-radius: 30px;
   right: 0;
   position: absolute;
-  margin-top: 600px;
   p{
     padding-left: 10%;
     a{
@@ -61,50 +35,50 @@
   }
 }
 
-.white_bar1{
-  background-color: white;
-  width: 35%;
-  height: 80px;
-  float: left;
-  padding-left: 100px;
-  border-radius: 30px;
-}
-.white_bar2{
-  background-color: white;
-  margin-top: 80px;
-  width: 35%;
-  height: 80px;
-  position: absolute; 
-  left: 0;
-  padding-left: 100px;
-  border-radius: 30px;
+.top_home_link{
+  margin-top: 500px;
+  padding-left: 50px;
+  p{
+    padding-top: 12%;
+  }
 }
 
-.white_bar3{
+.bottom_home_link{
+  margin-top: 600px;
+  padding-left: 100px;
+}
+
+.bar_style{
   background-color: white;
-  width: 25%;
   height: 80px;
+  border-radius: 30px;
+  padding-left: 100px;
+}
+
+.bar1{
+  width: 35%;
+  float: left;
+}
+
+.bar2{
+  margin-top: 80px;
+  width: 35%;
+  position: absolute; 
+  left: 0;
+}
+
+.bar3{
+  width: 25%;
   float: left;
   position: absolute;
-  padding-left: 100px;
-  border-radius: 30px;
   margin-top: 160px;
 }
-#signin{
+
+#search{
   position: absolute;
   width: 80%;
   margin-top: 410px;
   margin-left: 400px;
-}
-
-#title{
-  position: absolute;
-  margin-top: 50px;
-  margin-left: 250px;
-  font-family: 'Over the Rainbow', cursive;
-  color: #993344;
-  opacity: 0%;
-  font-size: 50px;
 }
 
 .homelogo{
@@ -113,38 +87,69 @@
   margin-left: -300px;
   width: 250px;
 }
-#search_form{
+
+#title{
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 250px;
+  font-family: $logo-font;
+  color: $main-color;
+  font-size: 50px;
+}
+
+.search_style{
   padding: 1.5%;
+  border: 3px solid lightgray;
+  border-radius: 20px;
+  font-family: 'Jura', sans-serif;
+  font-size: 14px;
+}
+
+#search_size{
   width: 275px;
-  border: 3px solid lightgray;
-  border-radius: 20px;
-  font-family: 'Jura', sans-serif;
-  font-size: 14px;
 }
-#rate_form{
-  padding: 1.5%;
+
+#rate_size{
   width: 40px;
-  border: 3px solid lightgray;
-  border-radius: 20px;
-  font-family: 'Jura', sans-serif;
-  font-size: 14px;
 }
-.search_it {
-  background-color: gray;
+
+.main_button{
   color: white;
   border-radius: 20px;
   border: 3px solid gray;
   padding: 13px;
   font-family: 'Jura', sans-serif;
   font-size: 14px;
+  &:hover{
+    border: 1px solid gray;
+  }
 }
-.search_it:hover{
-  border: 1px solid gray;
-  background: -webkit-linear-gradient(gray, gray, gray, gray, gray, lightgray);
-  background: -o-linear-gradient(gray, gray, gray, gray, gray, lightgray);
-  background: -moz-linear-gradient(gray, gray, gray, gray, gray, lightgray);
-  background: linear-gradient(gray, gray, gray, gray, gray, lightgray);
+.red_button{
+  background-color: $main-color;
+  &:hover{
+    background: -webkit-linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
+    background: -o-linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
+    background: -moz-linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
+    background: linear-gradient(#993344, #993344, #993344, #993344, #993344, lightgray);
+  }
 }
+.gray_button{
+  background-color: gray;
+  &:hover{
+    background: -webkit-linear-gradient(gray, gray, gray, gray, gray, lightgray);
+    background: -o-linear-gradient(gray, gray, gray, gray, gray, lightgray);
+    background: -moz-linear-gradient(gray, gray, gray, gray, gray, lightgray);
+    background: linear-gradient(gray, gray, gray, gray, gray, lightgray);
+  }
+}
+
+
+
+
+
+
+
+
 .opening_quote{
   position: absolute;
   z-index: 10;

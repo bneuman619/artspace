@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 <div id="calendarbox">
   <% if current_user %>
-  <button class="search_it" id="make_reservation" data-space-id='<%=@space.id%>' data-space-title='<%=@space.title%>' data-space-email='<%=@space.email%>' data-space-rate='<%=@space.rate%>'>Make Reservation</button>
+  <button class="main_button red_button" id="make_reservation" data-space-id='<%=@space.id%>' data-space-title='<%=@space.title%>' data-space-email='<%=@space.email%>' data-space-rate='<%=@space.rate%>'>Make Reservation</button>
   <% end %>
   <div id="calendar">
   </div>
