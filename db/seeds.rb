@@ -163,6 +163,7 @@ end
 # https://s3.amazonaws.com/rentspaces/uploads/1393793550915-avlx57x6sguy2e29-e4a45dc51eacfeb964193f208e908e2b/images.jpeg
 # https://s3.amazonaws.com/rentspaces/uploads/1393794127242-ugv41c3owv2yy14i-051bd9a4f9b4afe9b19fa26c4c4d15e8/1251910935-yd-a-528x343.jpg
 # https://s3.amazonaws.com/rentspaces/uploads/1393793556754-hfngcnc56gmygb9-e4a45dc51eacfeb964193f208e908e2b/Rosana-empty-studio.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393794127242-ugv41c3owv2yy14i-051bd9a4f9b4afe9b19fa26c4c4d15e8/1251910935-yd-a-528x343.jpg
 #14
 
 

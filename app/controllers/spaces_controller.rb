@@ -85,7 +85,7 @@ class SpacesController < ApplicationController
     redirect_to manage_path(current_user.id)
   end
 
-  def add_photo #temporary testing route
+  def add_photo
     redirect_to new_space_path
   end
 
