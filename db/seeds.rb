@@ -132,7 +132,7 @@ IMG_ARRAY = [ "https://s3.amazonaws.com/rentspaces/uploads%2F1393793550915-avlx5
               "https://s3.amazonaws.com/rentspaces/uploads%2F1393794116931-bkpqo7pvez2rzfr-051bd9a4f9b4afe9b19fa26c4c4d15e8%2FRosana-empty-studio.jpg",
               "https://s3.amazonaws.com/rentspaces/uploads%2F1393794127242-ugv41c3owv2yy14i-051bd9a4f9b4afe9b19fa26c4c4d15e8%2F1251910935-yd-a-528x343.jpg",
               "https://s3.amazonaws.com/rentspaces/uploads%2F1393793550915-avlx57x6sguy2e29-e4a45dc51eacfeb964193f208e908e2b%2Fimages.jpeg",
-              "https://s3.amazonaws.com/rentspaces/uploads%2F1393793556754-hfngcnc56gmygb9-e4a45dc51eacfeb964193f208e908e2b%2FRosana-empty-studio.jpg",
+              "https://s3.amazonaws.com/rentspaces/uploads/1393793556754-hfngcnc56gmygb9-e4a45dc51eacfeb964193f208e908e2b/Rosana-empty-studio.jpg",
               "https://s3.amazonaws.com/rentspaces/uploads%2F1393786528482-pj9aezsu8qfflxr-dc20b9d73fdc6e87bab2b3935f8d2e2c%2Fimage_view.jpeg",
               "https://s3.amazonaws.com/rentspaces/uploads%2F1393786238790-gwip961oje3a0pb9-4ea79c2f649e7b192497a0571ab54669%2Fsouth_space_large.jpg",
               "https://s3.amazonaws.com/rentspaces/uploads%2F1393786143147-0esjp61262zqia4i-54f4514197f477b174bab6c11a466241%2Fdl2.jpg",
@@ -147,6 +147,37 @@ Space.all.each do |space|
     Photo.create(space: space, url: IMG_ARRAY.sample)
   end
 end
+
+
+
+
+# https://s3.amazonaws.com/rentspaces/uploads/1393785811893-n0yau8vrclo0qkt9-4c20bbe51412da2e07a6b3b216b998f7/download.jpeg
+# https://s3.amazonaws.com/rentspaces/uploads/1393786143147-0esjp61262zqia4i-54f4514197f477b174bab6c11a466241/dl2.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393786148919-dxo28k26efef80k9-54f4514197f477b174bab6c11a466241/tumblr_l00r7wG6xt1qzoh1b.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393786238790-gwip961oje3a0pb9-4ea79c2f649e7b192497a0571ab54669/south_space_large.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393786528482-pj9aezsu8qfflxr-dc20b9d73fdc6e87bab2b3935f8d2e2c/image_view.jpeg
+# https://s3.amazonaws.com/rentspaces/uploads/1393787711815-9ul6lz3r6gsnhfr-7f0797ab436b8098227f8d3abcf09c82/Original-Empty-Room-Resized.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393787719281-qbjt34jv4bpm0a4i-7f0797ab436b8098227f8d3abcf09c82/I%2Bbelieve%2Bit%2Bwould%2Bbe%2Bsomething%2Blike%2Bthis%2B_93d4703edf64676729594cc837f99582.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393790193377-49930nsk2urtfbt9-c423f8f12cc74fb17dc49585590f0ca5/177904033_80ebca4fd3_o.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393791233711-tqnasgt4sjg7gb9-1e54f0261d5ad5fbd9d89db420efef14/dance_space.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393793550915-avlx57x6sguy2e29-e4a45dc51eacfeb964193f208e908e2b/images.jpeg
+# https://s3.amazonaws.com/rentspaces/uploads/1393794127242-ugv41c3owv2yy14i-051bd9a4f9b4afe9b19fa26c4c4d15e8/1251910935-yd-a-528x343.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393793556754-hfngcnc56gmygb9-e4a45dc51eacfeb964193f208e908e2b/Rosana-empty-studio.jpg
+#14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
