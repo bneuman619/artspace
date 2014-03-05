@@ -5,7 +5,7 @@ $(function() {
   $('#s3-uploader').S3Uploader(
     {
       remove_completed_progress_bar: false,
-      progress_bar_target: $('#uploads_container')
+      progress_bar_target: $('#progress_container')
     }
   );
 
@@ -13,7 +13,6 @@ $(function() {
     $("#uploads_container").append('<img style="padding-left: 5px;" class="remove_img" src=' + content['url'] + ' height="125" width="125">')
     imgArray.push(content['url'] )
     $("#rmv_msg").fadeIn("slow");
-    console.log("content: " + content['unique_id'])
     $("#file-" + content['unique_id']).fadeOut(1000);
     $("#form_container").append('<input type="hidden" name="pic_url" value=' + imgArray + '>')
   });
