@@ -164,7 +164,13 @@ end
 # https://s3.amazonaws.com/rentspaces/uploads/1393794127242-ugv41c3owv2yy14i-051bd9a4f9b4afe9b19fa26c4c4d15e8/1251910935-yd-a-528x343.jpg
 # https://s3.amazonaws.com/rentspaces/uploads/1393793556754-hfngcnc56gmygb9-e4a45dc51eacfeb964193f208e908e2b/Rosana-empty-studio.jpg
 # https://s3.amazonaws.com/rentspaces/uploads/1393794127242-ugv41c3owv2yy14i-051bd9a4f9b4afe9b19fa26c4c4d15e8/1251910935-yd-a-528x343.jpg
-#14
+# https://s3.amazonaws.com/rentspaces/uploads/1393857056084-zvalncahh6ywrk9-a57e6ea588502e0309282eaf9698e8a5/mms_picture+copy.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393857071031-13nwxwzd1ln89f6r-a57e6ea588502e0309282eaf9698e8a5/mms_picture.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393861299877-44fahvii1j68ncdi-73c797abf11bbd6d22cfba3f2e4a4468/mms_picture+(1)+copy.jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393861381975-bddxfzkxfyxh6w29-e876072773b4cce0fc818245fad93b75/mms_picture+(1).jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393861452673-r7pjok8clult0529-c4698ce628f9862e1d1e695d92055ea7/mms_picture+(2).jpg
+# https://s3.amazonaws.com/rentspaces/uploads/1393874804694-b8rgrf4rf3d9ggb9-62a79ae1c92acddfd4450b3883a66465/sanfran.jpg
+#25
 
 
 
