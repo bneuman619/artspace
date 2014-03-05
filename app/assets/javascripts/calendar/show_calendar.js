@@ -1,12 +1,8 @@
-function show_renter_calendar(selector){
+function show_renter_calendar(selector, read_only){
   var calendar = make_renter_calendar(parse_for_renter(get_calendar_data()));
-  console.log(calendar);
-  $(selector).weekCalendar(calendar);
-}
-
-function show_read_only_calendar(selector) {
-  var calendar = make_renter_calendar(parse_for_renter(get_calendar_data()));
-  calendar.allowEventCreation = false;
+  if (read_only) {
+    calendar.allowEventCreation = false;
+  }
   $(selector).weekCalendar(calendar);
 }
 
