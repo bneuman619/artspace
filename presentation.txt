@@ -1,0 +1,95 @@
+ARTSPACE PRESENTATION
+
+Hello- Intro to the problem
+Laura intro.
+
+Teaser- Show search results page
+
+Intro- Who I am, what I like to do
+As an artist I am interested in the connection between technical creativity and design
+
+Process-Story
+We care a lot about process, and it helped
+Clear, personal statement about the vision for the project
+
+Hash out user stories, extract from Laura's head
+***show whiteboards
+2 main user flows
+
+AirBnb & Domu...what do we like? what don't we like?
+***show whiteboards with drawings
+Selection of target audience
+
+From each perspective, what do I want to see/what do I need to be able to do to accomplish the task that I want to accomplish
+***show balsamiq
+
+tool spiking 
+***faked whiteboard
+day and a half researching tools
+technologies rose out of wireframe
+clarified our flow and the structure of our database
+basic actions in our controllers
+***sql designer
+
+modeling collab
+
+fundamental routing
+
+weekend-remote hangouts, morning scrums, standups 2 or 3 times a day
+***wishlist
+
+put all of our technologies together
+
+morning review of the user experience
+
+followed by the evening push to heroku to see that everything still worked
+
+at which point we brought it to our target audience to be reviewed in order to pinpoint how to take what we have now and make it a useful real-world application
+
+and here is some of the feedback that we got that can easily be introduced to the product we have thus far
+As 
+
+
+
+
+
+
+
+
+
+
+restating of problem
+
+beginning of problem -user stories, hightlight our perspectives leading to disagreements and how we settled them
+  be decisive, stick with a decision to get an MVP 
+
+then we showed program to target audience, great feedback that was directly about some of the things we weren't sure about
+
+because we went with the simpler thing, we can now extend our application to do that pretty easily
+
+^^upfront story
+
+here is a reflection on how our process led us to this point
+
+wireframes
+
+spiking 
+
+workflow
+
+
+
+As an artist in Chicago who also works for an independent venue, I have been subjected to some really complicated scheduling processes. When and if you can find a place to practice your art, you call "the guy" and they usually cannot accommodate your personal schedule. From the business end, availabiliy isn't very well-communicated to employees, resulting in double bookings, unneccesarily turning renters down, or having trouble filling the space when schedules change. We want to solve this problem for both parties.
+
+
+
+
+
+
+
+
+As we brought our project to a close, we thought it would be great to test it on our target audience for a review of practicality and to provide some direction for further development. We took it to Visceral Dance Chicago where we presented it to the owner and studio manager They were thrilled that we identified the need for a tool like this, bringing to attention the fact that there is only one venue in Chicago that makes their calendar available for the community to see, and that the way they display information is pretty confusing to decipher. They appreciated the clarity with which we present information to users, which you will see shortly. One of the main notes for improvement would involve generating a confirmation email, providing the owner with the option to approve or decline a reservation instead of booking space automatically, which, ironically was our initial intuition. The path we chose to follow, however, was one of very direct and clear decision making that will allow us to implement this feature smoothly if we choose to continue working on this project in the future.
+
+
+
+

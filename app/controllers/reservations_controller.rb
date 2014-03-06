@@ -28,9 +28,6 @@ class ReservationsController < ApplicationController
     end
   end
 
-  # def show
-  # end
-
   def destroy
   end
 
@@ -51,12 +48,5 @@ class ReservationsController < ApplicationController
 end
 
 
-
-# def unavailable_timerange_check(reservation)
-#   reservation.space.availabilities.none? do |availability|
-#     reservation.start_time.between?(availability.start_time, availability.end_time) &&
-#     reservation.end_time.between?(availability.start_time, availability.end_time)
-#   end
-# end
 
 

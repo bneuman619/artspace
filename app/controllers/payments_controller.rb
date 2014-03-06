@@ -1,7 +1,6 @@
 class PaymentsController < ApplicationController
 
   def new
-    # Redirect the user to the authorize_uri endpoint
     url = Payment.get_url
     redirect_to url
   end
@@ -14,7 +13,6 @@ class PaymentsController < ApplicationController
     else
 
       code = params[:code]
-      # Make a request to the access_token_uri endpoint to get an access_token
       @response = Payment.get_authorization_tokens(code)
 
       current_user.payments.create(secret_api_key: @response.token,
@@ -28,36 +26,6 @@ class PaymentsController < ApplicationController
     end
   end
 
-  # def charge
-  #   token = params["token_key"] # obtained with checkout.js
-  #   amount = params["amount"]
-  #   space = Space.find(params["reservation_data"]["space_id"])
-  #   description = params["description"]
-
-  #   Stripe.api_key = space.creator.secret_key
-
-  #   response =  Stripe::Charge.create(
-  #     :amount => amount,
-  #     :currency => "usd",
-  #     :card => token,
-  #     :description => description
-  #   )
-
-  #   if response.paid
-  #     resp = create_reservations(params["reservation_data"])
-  #     resp["payment"] = response
-  #     resp["totalCharge"] = resp["payment"]["amount"]
-
-  #     render json: resp.to_json
-  #   else
-  #     render json: {status: 'error', error: 'problem with charge'}.to_json
-  #   end
-  # end
-
-  # def pos
-  #   @publishable_key = current_user.publishable_key #current_space.creator.publishable_key
-  #   @email = current_user.email
-  # end
 end
 
 
