@@ -10,14 +10,14 @@ module ReservationHelpers
           num_people: reservation[:num_people])
     end
 
-    invalid_reservations = get_invalid_reservations(reservations)
+    # invalid_reservations = get_invalid_reservations(reservations)
 
-    if invalid_reservations
-      {status: 'error', error: "Invalid reservations", invalid_reservations: invalid_reservations}
-    else
+    # if invalid_reservations
+    #   {status: 'error', error: "Invalid reservations", invalid_reservations: invalid_reservations}
+    # else
       reservations.each(&:save)
       {status: 'success', reservation_ids: reservations.collect(&:id)}
-    end
+    # end
   end
 
   def make_payment(payment_info, payee_secret_key)

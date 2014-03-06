@@ -177,7 +177,11 @@ Space.all.each do |space|
   end
 end
 
-
+#-------------------------------------------DST fix----------------------------------------------------#
+Space.all.each do |space|
+  space.reservations.create(renter_id: 1, start_time: DateTime.new(2014,3,9,23,0,0),
+               end_time: DateTime.new(2014,3,9,23,59,59))
+end
 
 
 # "https://s3.amazonaws.com/rentspaces/uploads/1393785811893-n0yau8vrclo0qkt9-4c20bbe51412da2e07a6b3b216b998f7/download.jpeg",
