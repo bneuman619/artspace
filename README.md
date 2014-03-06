@@ -11,13 +11,19 @@ Artists can locate and secure the space they need in one place.
 
 
 After you download the repo, populate the .env.development file with the following keys:
+
 ARTSPACE_CLIENT_ID= {the Stripe app client ID}
+
 ARTSPACE_SECRET_API_KEY= {the Stripe secret app key}
+
 AWS_ACCESS_KEY_ID= {amazon web service S3 access keys}
+
 AWS_SECRET_ACCESS_KEY= {amazon web service S3 access keys}
+
 AWS_BUCKET= {name of the folder where you're storing the photos}
 
 If no AWS* keys are available, you will have to comment out the html in app/views/shared/picform.html.erb data.
+
 ARTSPACE* keys are required.
 
 
