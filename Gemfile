@@ -69,3 +69,6 @@ gem 'oauth2'
 
 # Use jquery-turbolinks to resolve the javascript loading problem
 gem 'jquery-turbolinks'
+
+#for the css
+gem 'normalize-rails'
