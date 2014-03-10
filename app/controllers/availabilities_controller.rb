@@ -56,34 +56,6 @@ class AvailabilitiesController < ApplicationController
   end
 end
 
-# def parse_availability(availability)
-#   {start_time: parse_availability_time(DateTime.parse(availability[:start])),
-#   end_time: parse_availability_time(DateTime.parse(availability[:end])),
-#   day: DateTime.parse(availability[:start]).wday}
-# end
 
-# def parse_availability_time(time)
-#   DateTime.new(2000, 01, 01, time.hour, time.minute, time.second, '-6')
-# end
-
-# def get_openings(space)
-#   today = DateTime.now
-#   this_sunday = today - today.wday
-#   space.availabilities.all.collect do |availability|
-#     start_time = availability.start_time - 6.hour
-#     end_time = availability.end_time - 6.hour
-#   {"start" => DateTime.new(this_sunday.year, this_sunday.month, this_sunday.day, start_time.hour, start_time.min, 0,'-6') + availability.day.day,
-#    "end" => DateTime.new(this_sunday.year, this_sunday.month, this_sunday.day, end_time.hour, end_time.min, 0, '-6') + availability.day.day,
-#    "title" => ""}
-#   end
-# end
-
-# def convert_availability_date(sunday, availability_dt, day_num)
-#   if availability_dt.hour <= 6
-#     DateTime.new(sunday.year, sunday.month, sunday.day + 1, availability.dt.hour, availability.dt.min, 0, '-6') + day_num.day - 6.hour
-#   else
-#     DateTime.new(sunday.year, sunday.month, sunday.day, availability.dt.hour, availability.dt.min, 0, '-6') + day_num.day - 6.hour
-#   end
-# end
 
 
