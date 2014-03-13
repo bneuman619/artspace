@@ -1,3 +1,9 @@
+BEN NEUMAN FORK INFORMATION:
+
+I was responsible for the code relating to the calendar and scheduling. The front-end code appears in app/assets/javascripts/calendar. It depends on the JQuery Week Calendar (calendar/lib). The views (with a little inline JS) appear in app/views/shared/*_calendar.html.erb. The relevant controllers are all the helper files in app/controllers (AvailabilitiesHelpers, ReservationsHelpers, CalendarHelpers), everything in AvailabilitiesController, ReservationsController#create, and the calendar lines in SpacesController#show.
+
+
+
 # ArtSpace
 
 
