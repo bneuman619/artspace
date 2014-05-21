@@ -58,7 +58,7 @@ gem 'debugger', group: [:development, :test]
 
 #for deploying to heroku
 gem 'rails_12factor', group: :production
-ruby "1.9.3"
+
 
 # Use dotenv for handling environment variables
 gem 'dotenv-rails'
