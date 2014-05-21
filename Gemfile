@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -58,7 +58,7 @@ gem 'debugger', group: [:development, :test]
 
 #for deploying to heroku
 gem 'rails_12factor', group: :production
-ruby "2.0.0"
+ruby "1.9.3"
 
 # Use dotenv for handling environment variables
 gem 'dotenv-rails'
@@ -69,6 +69,8 @@ gem 'oauth2'
 
 # Use jquery-turbolinks to resolve the javascript loading problem
 gem 'jquery-turbolinks'
+gem 'unicorn'
+gem 'therubyracer', platforms: :ruby
 
 #for the css
 gem 'normalize-rails'
